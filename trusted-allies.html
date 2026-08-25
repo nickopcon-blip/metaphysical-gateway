@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trusted Allies · The Metaphysical Gateway</title>
+<meta name="description" content="The constellation of teachers and circles behind The Metaphysical Gateway — Hawaiian lineage, Huna training, energy classes, and psychic development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ============================================================
+   CONFIG-FRIENDLY TOKENS — customize everything here
+   ============================================================ */
+:root{
+  --void:#050310;          /* page ground — deep space black          */
+  --deep:#0d0722;          /* panel / card ground                     */
+  --deeper:#090517;        /* alternating section ground              */
+  --ink:#ece9f7;           /* primary text (violet-biased off-white)  */
+  --dim:#9b93b8;           /* secondary text                          */
+  --faint:#5d5480;         /* tertiary / rules                        */
+  --arcane:#9d6bff;        /* primary purple accent                   */
+  --arcane-soft:rgba(157,107,255,.14);
+  --stardust:#f0c987;      /* gold — sigils, prices                   */
+  --fire:#ff8a5c; --ice:#7dd8f7; --storm:#c9b8ff; --air:#bfe9c9;
+  --display:'Cinzel',Georgia,serif;
+  --body:'Spectral',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--void);color:var(--ink);
+  font-family:var(--body);font-weight:300;font-size:1.06rem;line-height:1.7;
+  overflow-x:hidden;
+}
+::selection{background:var(--arcane);color:#fff}
+
+/* ---------- cosmic canvas (site-wide, fixed) ---------- */
+#cosmos{position:fixed;inset:0;z-index:0;display:block;width:100%;height:100%}
+.veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 0%,transparent 0%,rgba(5,3,16,.55) 75%,rgba(5,3,16,.9) 100%)}
+
+/* ---------- structure ---------- */
+main{position:relative;z-index:2}
+section{padding:6.5rem 1.5rem}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1.1rem}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;text-wrap:balance}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.9rem}
+.lede{color:var(--dim);max-width:38rem;font-size:1.1rem}
+.alt{background:linear-gradient(180deg,transparent,rgba(13,7,34,.72) 12%,rgba(13,7,34,.72) 88%,transparent)}
+
+/* ---------- hero ---------- */
+header.hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 6rem}
+#herovideo{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2s ease}
+#herovideo.live{opacity:.34}
+.sigil-top{font-size:1.5rem;color:var(--stardust);letter-spacing:1.2em;padding-left:1.2em;margin-bottom:2rem;opacity:.9}
+h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:700;letter-spacing:.08em;
+  background:linear-gradient(120deg,#f4efff 20%,var(--storm) 45%,var(--arcane) 70%,#f4efff 95%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 9s linear infinite}
+@keyframes shimmer{to{background-position:220% 0}}
+.tagline{margin-top:1.4rem;font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--dim);font-style:italic;max-width:34rem}
+.tagline b{color:var(--ink);font-weight:600}
+.ctas{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{font-family:var(--mono);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  padding:1rem 1.9rem;border-radius:2px;transition:all .3s ease;display:inline-block}
+.btn-primary{color:#0a0618;background:linear-gradient(120deg,var(--stardust),#ffe9c4);box-shadow:0 0 28px rgba(240,201,135,.25)}
+.btn-primary:hover{box-shadow:0 0 44px rgba(240,201,135,.5);transform:translateY(-2px)}
+.btn-ghost{color:var(--storm);border:1px solid rgba(201,184,255,.35)}
+.btn-ghost:hover{border-color:var(--arcane);color:#fff;box-shadow:0 0 24px var(--arcane-soft)}
+.scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);color:var(--faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- offer chart ---------- */
+.chart-scroll{overflow-x:auto;margin-top:3rem;padding-bottom:.5rem}
+table.tiers{border-collapse:collapse;width:100%;min-width:1040px}
+.tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
+.tiers td:first-child,.tiers th:first-child{text-align:left;min-width:230px}
+.tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
+.tiername{font-family:var(--display);font-size:1.12rem;font-weight:600;letter-spacing:.04em}
+.tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
+.price{display:block;font-family:var(--mono);font-size:1.28rem;color:var(--stardust);margin-top:.7rem}
+.price small{display:block;font-size:.7rem;color:var(--dim);margin-top:.2rem;letter-spacing:.05em}
+.rowlabel{font-weight:400;color:var(--ink)}
+.rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
+.sigil{color:var(--stardust);font-size:1.05rem;text-shadow:0 0 10px rgba(240,201,135,.55)}
+.no{color:#2e2847}
+td.feat,th.feat{background:linear-gradient(180deg,rgba(157,107,255,.13),rgba(157,107,255,.05));border-left:1px solid rgba(157,107,255,.35);border-right:1px solid rgba(157,107,255,.35)}
+th.feat{position:relative}
+.crown{position:absolute;top:.55rem;left:0;right:0;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--arcane)}
+.chart-notes{margin-top:1.6rem;display:grid;gap:.45rem;color:var(--dim);font-size:.92rem;font-style:italic}
+.chart-notes span{color:var(--stardust);font-style:normal}
+
+/* ---------- areas of life ---------- */
+.areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:3rem}
+.area{background:rgba(13,7,34,.66);border:1px solid rgba(93,84,128,.3);border-top:2px solid var(--el);padding:1.8rem 1.5rem;border-radius:3px;backdrop-filter:blur(4px);transition:transform .35s ease,box-shadow .35s ease}
+.area:hover{transform:translateY(-5px);box-shadow:0 12px 40px -18px var(--el)}
+.area .rune{font-size:1.4rem;color:var(--el);text-shadow:0 0 14px var(--el)}
+.area h3{font-size:1.05rem;margin:.9rem 0 .5rem;letter-spacing:.05em}
+.area p{color:var(--dim);font-size:.94rem}
+
+/* ---------- monday ---------- */
+.monday{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+.monday .free{font-family:var(--mono);color:var(--air);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase}
+.topics{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.6rem}
+.topic{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--storm);border:1px solid rgba(201,184,255,.28);padding:.45rem .8rem;border-radius:2rem;transition:all .3s}
+.topic:hover{border-color:var(--stardust);color:var(--stardust);text-shadow:0 0 8px rgba(240,201,135,.4)}
+.moon-card{background:rgba(13,7,34,.72);border:1px solid rgba(157,107,255,.3);padding:2.4rem 2rem;border-radius:4px;text-align:center;box-shadow:0 0 60px -20px var(--arcane)}
+.moon-card h3{font-size:1.35rem;margin-bottom:.6rem}
+.moon-card p{color:var(--dim);font-size:.95rem;margin-bottom:1.6rem}
+
+/* ---------- constellation / lineage ---------- */
+.lineage{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:3rem}
+.star-card{position:relative;background:rgba(9,5,23,.7);border:1px solid rgba(93,84,128,.3);padding:1.9rem 1.6rem;border-radius:3px;transition:border-color .3s,box-shadow .3s}
+.star-card:hover{border-color:rgba(240,201,135,.5);box-shadow:0 0 34px -12px rgba(240,201,135,.4)}
+.star-card .who{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--stardust)}
+.star-card h3{font-size:1.08rem;margin:.7rem 0 .5rem}
+.star-card p{color:var(--dim);font-size:.92rem}
+
+
+/* ---------- top nav ---------- */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
+.topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
+.navbrand{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
+.navlinks{display:flex;gap:1.35rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.2rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.navlinks a:hover{color:var(--stardust)}
+.navlinks a.active{color:var(--stardust);border-bottom-color:rgba(240,201,135,.55)}
+@media (max-width:700px){.topnav .navwrap{justify-content:center}}
+/* ---------- sub-page hero ---------- */
+header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
+header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
+
+/* ---------- footer ---------- */
+footer{position:relative;z-index:2;border-top:1px solid rgba(93,84,128,.25);padding:3.5rem 1.5rem 2.5rem;background:rgba(5,3,16,.85)}
+footer .wrap{display:grid;gap:1.4rem;text-align:center}
+.foot-sigil{color:var(--stardust);letter-spacing:1em;padding-left:1em}
+.disclaimer{color:var(--faint);font-size:.8rem;max-width:46rem;margin:0 auto;font-style:italic}
+.fineprint{color:var(--faint);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em}
+
+@media (max-width:760px){
+  section{padding:4.5rem 1.2rem}
+  .monday{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,h1.brand,.scrollcue{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<canvas id="cosmos" aria-hidden="true"></canvas>
+<!-- HYBRID BACKGROUND: drop a hosted .mp4/.webm URL into data-src to enable the
+     rolling-video hero. If absent, slow, or blocked, the living galaxy canvas
+     carries the page — zero bandwidth, instant load. -->
+<video id="herovideo" data-src="" muted loop playsinline aria-hidden="true"></video>
+<div class="veil" aria-hidden="true"></div>
+
+
+<nav class="topnav" aria-label="Site">
+  <div class="navwrap">
+    <a class="navbrand" href="index.html"><span class="nb-sigil">✦</span>THE METAPHYSICAL GATEWAY</a>
+    <div class="navlinks">
+      <a href="index.html#path">The Path</a>
+      <a href="index.html#monday">Metaphysical Monday</a>
+      <a href="trusted-allies.html" class="active">Trusted Allies</a>
+      <a href="ai-coaching.html">AI Coaching</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero page-hero">
+  <div class="sigil-top">✦ ✧ ✦</div>
+  <h1 class="brand">TRUSTED ALLIES</h1>
+  <p class="tagline">The teachers I study with, teach beside, and <b>send my people to.</b></p>
+</header>
+
+<main>
+<!-- ==================== TRUSTED ALLIES ==================== -->
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">The Constellation</div>
+    <h2>No One Ascends Alone</h2>
+    <p class="lede">This work doesn't live alone, and neither should you. These are the teachers and circles I study with, teach beside, and send my own people to — each one a star I navigate by. When something here calls you, follow it.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap reveal">
+    <div class="lineage" style="grid-template-columns:repeat(auto-fit,minmax(310px,1fr))">
+      <div class="star-card">
+        <div class="who">Kumu Patrick · Dr. Patrick Scott</div>
+        <h3>STFU — Psychic Development</h3>
+        <p>My Kumu. A teacher of energy work carrying an unbroken Hawaiian lineage stretching back roughly twenty-three generations — one of the only non-Hawaiians ever brought into it — and a clinician whose practice serves tens of thousands. We studied together in Hawaii, and it is with his blessing that these teachings travel beyond the islands. His STFU program develops psychic ability the grounded way: protection first, practice always, of the light only.</p>
+      </div>
+      <div class="star-card">
+        <div class="who">Patrick &amp; Lisset · MMP</div>
+        <h3>Huna Events &amp; Mastery Mornings</h3>
+        <p>Live Huna trainings and the Tuesday Mastery Morning calls — the working practice ground for this lineage's tools. Breath, energy, release, repeated weekly until it lives in you. If Metaphysical Monday lights something up, MMP is where you train it.</p>
+      </div>
+      <div class="star-card">
+        <div class="who">Valen</div>
+        <h3>Intro to ERC Energy Classes</h3>
+        <p>A gentle first doorway into energy work — where I send beginners to feel energy move for themselves before any deeper practice. Small classes, real refinement, zero pressure. Start here if "energy work" is still just a phrase to you.</p>
+      </div>
+      <div class="star-card">
+        <div class="who">Coming Soon · Nick as Alakaʻi</div>
+        <h3>Huna Classes</h3>
+        <p>My own Huna teaching within the Halau, taught as an Alakaʻi under Kumu Patrick — the same tools this site is built on, taught in the lineage's own way. Announced first on Metaphysical Monday, so save your seat there to hear it early.</p>
+      </div>
+    </div>
+    <p style="margin-top:3rem;text-align:center">
+      <a class="btn btn-primary" href="index.html#monday">Join Metaphysical Monday — Free</a>
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-sigil">✦ ✧ ✦</div>
+    <p class="disclaimer">Sessions and classes are spiritual and personal-growth work. Nothing here diagnoses, treats, cures, or prevents any condition, and nothing here is medical, psychological, financial, or legal advice. People report profound experiences — you remain, always, at choice.</p>
+    <div class="fineprint">© 2026 · THE METAPHYSICAL GATEWAY · ALL OF THE LIGHT</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   LIVING GALAXY — canvas starfield + drifting nebulae
+   Tuned for performance: capped counts, DPR-aware, pauses when
+   hidden, honors prefers-reduced-motion.
+   ============================================================ */
+(function(){
+  const c=document.getElementById('cosmos'),x=c.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,stars=[],nebulae=[],dust=[],t=0,raf;
+  const DPR=Math.min(devicePixelRatio||1,2);
+  function size(){
+    W=innerWidth;H=innerHeight;
+    c.width=W*DPR;c.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);
+    seed();
+  }
+  function seed(){
+    const n=Math.min(240,Math.floor(W*H/9000));
+    stars=Array.from({length:n},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.3+.2,
+      tw:Math.random()*Math.PI*2,
+      sp:.15+Math.random()*.5,
+      hue:[260,265,45,190,15][Math.floor(Math.random()*5)]
+    }));
+    const cols=[[157,107,255],[125,216,247],[255,138,92],[240,201,135]];
+    nebulae=Array.from({length:4},(_,i)=>({
+      x:Math.random()*W,y:Math.random()*H,
+      r:Math.min(W,H)*(.35+Math.random()*.3),
+      col:cols[i%cols.length],
+      dx:(Math.random()-.5)*.06,dy:(Math.random()-.5)*.04,
+      a:.05+Math.random()*.04
+    }));
+    dust=Array.from({length:Math.min(70,Math.floor(W/16))},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.12,vy:-(.05+Math.random()*.14),
+      r:Math.random()*1+.3,a:.1+Math.random()*.25
+    }));
+  }
+  function frame(){
+    t+=.016;
+    x.fillStyle='#050310';x.fillRect(0,0,W,H);
+    /* nebulae */
+    for(const n of nebulae){
+      n.x+=n.dx;n.y+=n.dy;
+      if(n.x<-n.r)n.x=W+n.r;if(n.x>W+n.r)n.x=-n.r;
+      if(n.y<-n.r)n.y=H+n.r;if(n.y>H+n.r)n.y=-n.r;
+      const g=x.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+      g.addColorStop(0,`rgba(${n.col[0]},${n.col[1]},${n.col[2]},${n.a})`);
+      g.addColorStop(1,'rgba(5,3,16,0)');
+      x.fillStyle=g;x.fillRect(n.x-n.r,n.y-n.r,n.r*2,n.r*2);
+    }
+    /* stars */
+    for(const s of stars){
+      const tw=.55+.45*Math.sin(t*s.sp*2+s.tw);
+      x.fillStyle=`hsla(${s.hue},80%,85%,${tw})`;
+      x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill();
+    }
+    /* rising stardust */
+    for(const d of dust){
+      d.x+=d.vx;d.y+=d.vy;
+      if(d.y<-4){d.y=H+4;d.x=Math.random()*W}
+      x.fillStyle=`rgba(240,201,135,${d.a*(.6+.4*Math.sin(t+d.x))})`;
+      x.beginPath();x.arc(d.x,d.y,d.r,0,7);x.fill();
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  size();addEventListener('resize',size);
+  if(reduce){ t=1; frameOnce(); function frameOnce(){x.fillStyle='#050310';x.fillRect(0,0,W,H);
+    for(const n of nebulae){const g=x.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+      g.addColorStop(0,`rgba(${n.col[0]},${n.col[1]},${n.col[2]},${n.a})`);g.addColorStop(1,'rgba(5,3,16,0)');
+      x.fillStyle=g;x.fillRect(n.x-n.r,n.y-n.r,n.r*2,n.r*2);}
+    for(const s of stars){x.fillStyle=`hsla(${s.hue},80%,85%,.7)`;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill();}}
+  } else {
+    frame();
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden)cancelAnimationFrame(raf);else frame();
+    });
+  }
+})();
+
+/* ---------- hybrid hero video: activates only if a src is set AND loads fast ---------- */
+(function(){
+  const v=document.getElementById('herovideo');
+  const src=v.getAttribute('data-src');
+  if(!src)return;
+  const timer=setTimeout(()=>{v.removeAttribute('src');v.load();},4000); // slow network → stay on canvas
+  v.addEventListener('canplaythrough',()=>{clearTimeout(timer);v.classList.add('live');v.play().catch(()=>{});},{once:true});
+  v.src=src;
+})();
+
+/* ---------- scroll reveals ---------- */
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+
+/* ---------- signup placeholder (wire to Kit/ESP form later) ---------- */
+document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('click',e=>{
+  e.preventDefault();
+  const orig=e.target.textContent;
+  e.target.textContent='✦ Link coming soon ✦';
+  setTimeout(()=>e.target.textContent=orig,2200);
+}));
+</script>
+</body>
+</html>
