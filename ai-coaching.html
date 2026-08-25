@@ -7,7 +7,7 @@
 <meta name="description" content="Free monthly AI office hours — coaching, consulting and brainstorming for anyone building with AI — plus free copy-paste Claude skills that instantly upgrade your setup.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* ============================================================
    CONFIG-FRIENDLY TOKENS — customize everything here
@@ -23,7 +23,8 @@
   --arcane-soft:rgba(157,107,255,.14);
   --stardust:#f0c987;      /* gold — sigils, prices                   */
   --fire:#ff8a5c; --ice:#7dd8f7; --storm:#c9b8ff; --air:#bfe9c9;
-  --display:'Cinzel',Georgia,serif;
+  --display:'Marcellus',Georgia,serif;
+  --accent:'Philosopher','Trebuchet MS',sans-serif;
   --body:'Spectral',Georgia,serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
   --maxw:1120px;
@@ -47,7 +48,7 @@ main{position:relative;z-index:2}
 section{padding:6.5rem 1.5rem}
 .wrap{max-width:var(--maxw);margin:0 auto}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1.1rem}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;text-wrap:balance}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance}
 h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.9rem}
 .lede{color:var(--dim);max-width:38rem;font-size:1.1rem}
 .alt{background:linear-gradient(180deg,transparent,rgba(13,7,34,.72) 12%,rgba(13,7,34,.72) 88%,transparent)}
@@ -57,7 +58,7 @@ header.hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-dire
 #herovideo{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2s ease}
 #herovideo.live{opacity:.34}
 .sigil-top{font-size:1.5rem;color:var(--stardust);letter-spacing:1.2em;padding-left:1.2em;margin-bottom:2rem;opacity:.9}
-h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:700;letter-spacing:.08em;
+h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:400;letter-spacing:.08em;
   background:linear-gradient(120deg,#f4efff 20%,var(--storm) 45%,var(--arcane) 70%,#f4efff 95%);
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:shimmer 9s linear infinite}
@@ -84,9 +85,9 @@ table.tiers{border-collapse:collapse;width:100%;min-width:1040px}
 .tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
 .tiers td:first-child,.tiers th:first-child{text-align:left;min-width:230px}
 .tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
-.tiername{font-family:var(--display);font-size:1.12rem;font-weight:600;letter-spacing:.04em}
+.tiername{font-family:var(--accent);font-size:1.12rem;font-weight:700;letter-spacing:.04em}
 .tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
-.price{display:block;font-family:var(--mono);font-size:1.28rem;color:var(--stardust);margin-top:.7rem}
+.price{display:block;font-family:var(--accent);font-size:1.28rem;color:var(--stardust);margin-top:.7rem}
 .price small{display:block;font-size:.7rem;color:var(--dim);margin-top:.2rem;letter-spacing:.05em}
 .rowlabel{font-weight:400;color:var(--ink)}
 .rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
@@ -128,7 +129,7 @@ th.feat{position:relative}
 /* ---------- top nav ---------- */
 .topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
 .topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
-.navbrand{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand{font-family:var(--display);font-size:.82rem;font-weight:400;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
 .navlinks{display:flex;gap:1.35rem;flex-wrap:wrap;justify-content:center}
 .navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.2rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
@@ -230,10 +231,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
     <p class="lede">Upgrades built for the community that make any Claude account sharper. No downloads, no extra steps — copy a block, paste it where it says, done.</p>
 
     <div class="promptcard">
-      <h3>🧭 Apprentice to Architect — start here</h3>
+      <h3>🧭 The Apprentice's Guide to AI — start here</h3>
       <p class="what">New to all of this? Paste this one prompt and Claude itself walks you through the whole setup, one step at a time — memory, the Auto-Learn instructions, the Save Point skill, your Claude HQ — then hands you a personal path to mastery. From first steps to sharp operator in one guided session.</p>
-      <pre class="promptbox" data-skill="skills/apprentice-to-architect.md">Loading the walkthrough… (if this doesn't load, refresh — or grab it on the call)</pre>
-      <button class="copybtn" data-copy="skills/apprentice-to-architect.md">Copy the Walkthrough</button>
+      <pre class="promptbox" data-skill="skills/apprentices-guide-to-ai.md">Loading the walkthrough… (if this doesn't load, refresh — or grab it on the call)</pre>
+      <button class="copybtn" data-copy="skills/apprentices-guide-to-ai.md">Copy the Guide</button>
       <p class="howto">paste into a new Claude chat → follow the steps</p>
     </div>
 
