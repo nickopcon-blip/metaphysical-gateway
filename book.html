@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Session · The Metaphysical Gateway</title>
+<meta name="description" content="Choose your time. Expand your awareness. Master your energy. Build your reality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --void:#050310; --deep:#0d0722; --ink:#ece9f7; --dim:#9b93b8; --faint:#5d5480;
+  --arcane:#9d6bff; --stardust:#f0c987; --ice:#7dd8f7;
+  --display:'Marcellus',Georgia,serif; --accent:'Philosopher','Trebuchet MS',sans-serif;
+  --body:'Spectral',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace; --maxw:820px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:112.5%}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-weight:300;font-size:1.06rem;line-height:1.7;overflow-x:hidden;
+  background-image:radial-gradient(ellipse 60% 40% at 20% 10%,rgba(24,70,160,.35),transparent),radial-gradient(ellipse 50% 40% at 85% 25%,rgba(10,110,150,.28),transparent),radial-gradient(ellipse 55% 45% at 70% 90%,rgba(70,38,140,.3),transparent),radial-gradient(ellipse 40% 30% at 10% 80%,rgba(16,110,70,.22),transparent);
+  background-attachment:fixed;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(1px 1px at 12% 22%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 34% 64%, #cfe2ff 50%, transparent 51%),radial-gradient(2px 2px at 56% 12%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 72% 42%, #ffe9c9 50%, transparent 51%),radial-gradient(1px 1px at 88% 78%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 22% 88%, #cfe2ff 50%, transparent 51%),radial-gradient(2px 2px at 44% 36%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 64% 70%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 6% 52%, #ffe9c9 50%, transparent 51%),radial-gradient(1px 1px at 94% 8%, #fff 50%, transparent 51%);
+  background-size:600px 600px}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
+.navwrap{max-width:1120px;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
+.navbrand{font-family:var(--display);font-size:.82rem;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand .nb{color:var(--stardust);margin-right:.55rem}
+.navlinks{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.45rem .95rem;border:1px solid rgba(93,84,128,.4);border-radius:2rem;transition:all .25s}
+.navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+main{max-width:var(--maxw);margin:0 auto;padding:9.5rem 1.4rem 5rem;position:relative;z-index:2}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1rem}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:.06em;margin-bottom:.5rem;background:linear-gradient(100deg,var(--arcane),var(--ink) 45%,var(--stardust));-webkit-background-clip:text;background-clip:text;color:transparent}
+.session{font-family:var(--accent);color:var(--stardust);font-size:1.15rem;margin-bottom:.4rem}
+.lede{color:var(--dim);max-width:38rem}
+.card{margin-top:2.6rem;background:rgba(13,7,34,.72);border:1px solid rgba(93,84,128,.35);border-radius:8px;padding:2rem 1.6rem;backdrop-filter:blur(4px)}
+.steps{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.4rem}
+.steps b{color:var(--stardust);font-weight:500}
+.days{display:flex;gap:.6rem;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:var(--ink);background:transparent;border:1px solid rgba(93,84,128,.5);padding:.6rem 1rem;border-radius:2rem;cursor:pointer;transition:all .25s}
+.chip:hover{border-color:rgba(240,201,135,.6);color:var(--stardust)}
+.chip.sel{border-color:var(--stardust);color:var(--stardust);background:rgba(240,201,135,.08)}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.6rem;margin-top:1.4rem}
+.tbtn{font-family:var(--mono);font-size:.8rem;color:var(--ice);background:transparent;border:1px solid rgba(125,216,247,.4);padding:.7rem .4rem;border-radius:4px;cursor:pointer;transition:all .25s}
+.tbtn:hover{background:rgba(125,216,247,.1);box-shadow:0 0 16px -6px rgba(125,216,247,.6)}
+.tbtn.sel{background:rgba(125,216,247,.16);border-color:var(--ice)}
+label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:1.2rem 0 .4rem}
+input,textarea{width:100%;background:rgba(5,3,16,.7);border:1px solid rgba(93,84,128,.5);border-radius:4px;color:var(--ink);font-family:var(--body);font-size:1rem;padding:.7rem .9rem}
+input:focus,textarea:focus{outline:none;border-color:var(--arcane)}
+.btn{display:inline-block;font-family:var(--mono);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:linear-gradient(120deg,#e8c987,#f5deb0);color:#1a1030;border:none;border-radius:3px;padding:1rem 1.8rem;cursor:pointer;margin-top:1.6rem;transition:all .3s}
+.btn:hover{box-shadow:0 0 30px -8px rgba(240,201,135,.8)}
+.btn:disabled{opacity:.5;cursor:wait}
+.back{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);background:none;border:none;cursor:pointer;margin-bottom:1.2rem;display:inline-block}
+.back:hover{color:var(--stardust)}
+.msg{color:var(--dim);font-style:italic}
+.err{color:#ff8a8a}
+.success h2{font-family:var(--display);font-weight:400;font-size:1.8rem;margin-bottom:.8rem;color:var(--stardust)}
+.success .when{font-family:var(--accent);font-size:1.3rem;color:var(--ice);margin:.6rem 0 1rem}
+.sig{color:var(--stardust);letter-spacing:.9em;padding-left:.9em;text-align:center;margin-top:3rem}
+footer{position:relative;z-index:2;text-align:center;color:var(--faint);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;padding:2rem 1rem 3rem}
+@media (max-width:700px){.navwrap{justify-content:center}}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <div class="navwrap">
+    <a class="navbrand" href="index.html"><span class="nb">✦</span>THE METAPHYSICAL GATEWAY</a>
+    <div class="navlinks">
+      <a href="index.html">The Path</a>
+      <a href="metaphysical-monday.html">Metaphys Monday's</a>
+      <a href="trusted-allies.html">Trusted Allies</a>
+      <a href="ai-coaching.html">AI Coaching</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="eyebrow" id="eyebrow">Payment received · One more step</div>
+  <h1>CHOOSE YOUR TIME</h1>
+  <div class="session" id="sessionLabel">…</div>
+  <p class="lede">Pick the day and time that feels right. The moment you confirm, it's on the calendar and an invite lands in your inbox.</p>
+
+  <div class="card" id="widget">
+    <div id="stage-loading"><p class="msg">Reading the stars (and the calendar)…</p></div>
+
+    <div id="stage-days" style="display:none">
+      <div class="steps"><b>1 · Day</b> &nbsp;→&nbsp; 2 · Time &nbsp;→&nbsp; 3 · Details</div>
+      <div class="days" id="dayList"></div>
+    </div>
+
+    <div id="stage-times" style="display:none">
+      <button class="back" id="backToDays">← different day</button>
+      <div class="steps">1 · Day &nbsp;→&nbsp; <b>2 · Time</b> &nbsp;→&nbsp; 3 · Details</div>
+      <div id="dayLabel" class="session"></div>
+      <div class="times" id="timeList"></div>
+    </div>
+
+    <div id="stage-form" style="display:none">
+      <button class="back" id="backToTimes">← different time</button>
+      <div class="steps">1 · Day &nbsp;→&nbsp; 2 · Time &nbsp;→&nbsp; <b>3 · Details</b></div>
+      <div class="session" id="chosenLabel"></div>
+      <label for="f-name">Your name</label>
+      <input id="f-name" type="text" autocomplete="name" maxlength="80">
+      <label for="f-email">Email — the invite goes here</label>
+      <input id="f-email" type="email" autocomplete="email" maxlength="120">
+      <label for="f-notes">Anything you want me to know (optional)</label>
+      <textarea id="f-notes" rows="3" maxlength="500"></textarea>
+      <div class="err" id="formErr" style="display:none;margin-top:.8rem"></div>
+      <button class="btn" id="confirmBtn">Confirm My Session ✦</button>
+    </div>
+
+    <div id="stage-success" class="success" style="display:none">
+      <h2>It is done. ✦</h2>
+      <div class="when" id="whenLabel"></div>
+      <p class="msg">A calendar invite is on its way to your inbox. Show up as you are — we'll handle the rest together.</p>
+      <p style="margin-top:1.4rem"><a class="btn" href="index.html">Return to the Gateway</a></p>
+    </div>
+
+    <div id="stage-error" style="display:none">
+      <p class="err" id="bigErr"></p>
+      <button class="btn" id="retryBtn">Try Again</button>
+    </div>
+  </div>
+
+  <div class="sig">✦ ✧ ✦</div>
+</main>
+<footer>© 2026 · THE METAPHYSICAL GATEWAY · ALL OF THE LIGHT</footer>
+
+<script>
+(function(){
+  var API_SLOTS = 'https://64-181-232-186.nip.io/webhook/gateway-booking-slots-9a71c3';
+  var API_BOOK  = 'https://64-181-232-186.nip.io/webhook/gateway-booking-book-4e8d17';
+  var TYPE_META = {
+    'first-call': 'First Call — 90 minutes',
+    'rapid':      'Rapid Release — 90 minutes',
+    'journey':    'The Journey — plan for ~6 hours',
+    'bts':        '90 Day Breakthrough — plan for a full day (7–10 hours)',
+    'coaching':   'Coaching Call — 90 minutes',
+    'alignment':  'Alignment Call — 30 minutes, free'
+  };
+  var params = new URLSearchParams(location.search);
+  var type = TYPE_META[params.get('type')] ? params.get('type') : 'alignment';
+  if (type === 'alignment') document.getElementById('eyebrow').textContent = 'Free · No strings';
+  document.getElementById('sessionLabel').textContent = TYPE_META[type];
+
+  var data = null, selDay = null, selSlot = null;
+  function show(id){ ['loading','days','times','form','success','error'].forEach(function(s){ document.getElementById('stage-'+s).style.display = (s===id)?'':'none'; }); }
+  function fail(msg){ document.getElementById('bigErr').textContent = msg; show('error'); }
+
+  function load(){
+    show('loading');
+    fetch(API_SLOTS + '?type=' + encodeURIComponent(type))
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if (!j.ok || !j.days || !j.days.length) return fail('No open times found right now — email me and we’ll find one together.');
+        data = j; renderDays();
+      })
+      .catch(function(){ fail('The calendar didn’t answer. Give it a breath and try again.'); });
+  }
+  function renderDays(){
+    var el = document.getElementById('dayList'); el.innerHTML = '';
+    data.days.forEach(function(day){
+      var b = document.createElement('button'); b.className = 'chip'; b.textContent = day.label;
+      b.onclick = function(){ selDay = day; renderTimes(); };
+      el.appendChild(b);
+    });
+    show('days');
+  }
+  function renderTimes(){
+    document.getElementById('dayLabel').textContent = selDay.label;
+    var el = document.getElementById('timeList'); el.innerHTML = '';
+    selDay.slots.forEach(function(sl){
+      var b = document.createElement('button'); b.className = 'tbtn'; b.textContent = sl.label;
+      b.onclick = function(){ selSlot = sl; document.getElementById('chosenLabel').textContent = selDay.label + ' · ' + sl.label + ' PT'; show('form'); };
+      el.appendChild(b);
+    });
+    show('times');
+  }
+  document.getElementById('backToDays').onclick = function(){ show('days'); };
+  document.getElementById('backToTimes').onclick = function(){ show('times'); };
+  document.getElementById('retryBtn').onclick = load;
+  document.getElementById('confirmBtn').onclick = function(){
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var notes = document.getElementById('f-notes').value.trim();
+    var errEl = document.getElementById('formErr');
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { errEl.textContent = 'Name and a real email, please — the invite needs somewhere to land.'; errEl.style.display=''; return; }
+    errEl.style.display='none';
+    var btn = this; btn.disabled = true; btn.textContent = 'Sealing it…';
+    fetch(API_BOOK, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({ type:type, start:selSlot.start, name:name, email:email, notes:notes }) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        btn.disabled = false; btn.textContent = 'Confirm My Session ✦';
+        if (j.ok) { document.getElementById('whenLabel').textContent = j.when; show('success'); }
+        else if (j.error === 'slot_taken') { errEl.textContent = 'That moment was just claimed by someone else — pick another and it’s yours.'; errEl.style.display=''; load(); }
+        else { errEl.textContent = 'Something slipped. Try once more.'; errEl.style.display=''; }
+      })
+      .catch(function(){ btn.disabled = false; btn.textContent = 'Confirm My Session ✦'; errEl.textContent = 'The connection wavered — try again.'; errEl.style.display=''; });
+  };
+  load();
+})();
+</script>
+</body>
+</html>
