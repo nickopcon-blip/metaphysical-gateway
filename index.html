@@ -90,12 +90,12 @@ table.tiers{border-collapse:collapse;width:100%;min-width:880px}
 .price{display:block;font-family:var(--accent);font-size:1.55rem;color:var(--stardust);margin-top:.7rem}
 .price small{display:block;font-size:.7rem;color:var(--dim);margin-top:.2rem;letter-spacing:.05em}
 
-.price .was{position:relative;display:inline-block;color:var(--dim);font-size:1.15rem;margin-right:.45rem}
-.price .was .zap{position:absolute;left:-8%;top:50%;width:116%;height:16px;transform:translateY(-50%);overflow:visible;pointer-events:none}
-.price .was .zap path{fill:none;stroke:#7dd8f7;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:0;filter:drop-shadow(0 0 3px rgba(125,216,247,.95));animation:zapdraw 1.4s ease-out both,zapflicker 3.2s 1.5s infinite}
-@keyframes zapdraw{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+.price .was{position:relative;display:inline-block;color:var(--dim);font-size:1.5rem;margin-right:.5rem}
+.price .was .zap{position:absolute;left:-8%;top:50%;width:116%;height:20px;transform:translateY(-50%);overflow:visible;pointer-events:none}
+.price .was .zap path{fill:#7dd8f7;filter:drop-shadow(0 0 5px rgba(125,216,247,.95));transform-origin:left center;animation:boltgrow .5s .25s ease-out both,zapflicker 3.2s 1.5s infinite}
+@keyframes boltgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes zapflicker{0%,100%{opacity:1}44%{opacity:.55}48%{opacity:1}62%{opacity:.7}66%{opacity:1}}
-.price .now{color:#7dd8f7;font-size:2.15rem;font-weight:700;text-shadow:0 0 18px rgba(125,216,247,.6)}
+.price .now{color:#7dd8f7;font-size:2.7rem;font-weight:700;text-shadow:0 0 20px rgba(125,216,247,.65)}
 
 .rowlabel{font-weight:400;color:var(--ink)}
 .rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
@@ -260,7 +260,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
             <th scope="col">
               <span class="tiername">The Release</span>
               <span class="tiersub">Rapid Release · one 90-min call</span>
-              <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M0 10 L36 8 L45 16 L57 2 L65 13 L100 9"/></svg></span> <b class="now">$99</b><small>your first call — then $333 for follow-ups</small></span>
+              <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small>your first call — then $333 for follow-ups</small></span>
             </th>
             <th scope="col">
               <span class="tiername">The Journey</span>
@@ -336,7 +336,7 @@ ASCENT-DEACTIVATED -->
       <div class="mtier">
         <span class="tiername">The Release</span>
         <span class="tiersub">Rapid Release · one 90-min call</span>
-        <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M0 10 L36 8 L45 16 L57 2 L65 13 L100 9"/></svg></span> <b class="now">$99</b><small>your first call — then $333 for follow-ups</small></span>
+        <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small>your first call — then $333 for follow-ups</small></span>
         <ul>
           <li class="sr"><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
         </ul>
