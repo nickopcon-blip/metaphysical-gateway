@@ -99,6 +99,18 @@ th.feat{position:relative}
 .chart-notes{margin-top:1.6rem;display:grid;gap:.45rem;color:var(--dim);font-size:.92rem;font-style:italic}
 .chart-notes span{color:var(--stardust);font-style:normal}
 
+/* ---------- mobile tier cards (chart alternative ≤760px) ---------- */
+.tiers-mobile{display:none}
+.mtier{border:1px solid rgba(93,84,128,.35);border-radius:6px;padding:1.6rem 1.4rem;background:rgba(13,7,34,.6)}
+.mtier.feat{border-color:rgba(157,107,255,.5);background:linear-gradient(180deg,rgba(157,107,255,.13),rgba(157,107,255,.04))}
+.mtier .crown{position:static;display:block;margin-bottom:.5rem}
+.mtier .tiername{font-size:1.25rem}
+.mtier ul{list-style:none;margin-top:1rem;display:grid;gap:.5rem}
+.mtier li{color:var(--dim);font-size:.93rem;padding-left:1.3rem;position:relative}
+.mtier li::before{content:'✦';position:absolute;left:0;color:var(--stardust);text-shadow:0 0 8px rgba(240,201,135,.5)}
+.mtier li b{color:var(--ink);font-weight:400}
+
+
 /* ---------- areas of life ---------- */
 .areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:3rem}
 .area{background:rgba(13,7,34,.66);border:1px solid rgba(93,84,128,.3);border-top:2px solid var(--el);padding:1.8rem 1.5rem;border-radius:3px;backdrop-filter:blur(4px);transition:transform .35s ease,box-shadow .35s ease}
@@ -131,10 +143,10 @@ th.feat{position:relative}
 .topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
 .navbrand{font-family:var(--display);font-size:.82rem;font-weight:400;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
-.navlinks{display:flex;gap:1.35rem;flex-wrap:wrap;justify-content:center}
-.navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.2rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
-.navlinks a:hover{color:var(--stardust)}
-.navlinks a.active{color:var(--stardust);border-bottom-color:rgba(240,201,135,.55)}
+.navlinks{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.45rem .95rem;border:1px solid rgba(93,84,128,.4);border-radius:2rem;transition:color .25s,border-color .25s,background .25s}
+.navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
 @media (max-width:700px){.topnav .navwrap{justify-content:center}}
 /* ---------- sub-page hero ---------- */
 header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
@@ -150,6 +162,10 @@ footer .wrap{display:grid;gap:1.4rem;text-align:center}
 @media (max-width:760px){
   section{padding:4.5rem 1.2rem}
   .monday{grid-template-columns:1fr}
+  .chart-scroll{display:none}
+  .tiers-mobile{display:grid;gap:1.1rem;margin-top:2.6rem}
+  .navlinks a{font-size:.6rem;padding:.4rem .75rem}
+  .navbrand{font-size:.72rem}
 }
 @media (prefers-reduced-motion:reduce){
   *,h1.brand,.scrollcue{animation:none!important;transition:none!important}
@@ -276,6 +292,57 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="tiers-mobile">
+      <div class="mtier">
+        <span class="tiername">The Release</span>
+        <span class="tiersub">Rapid Release · one 90-min call</span>
+        <span class="price">$222<small>first call: $99</small></span>
+        <ul>
+          <li><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
+        </ul>
+      </div>
+      <div class="mtier">
+        <span class="tiername">The Journey</span>
+        <span class="tiersub">Past-Life Regression &amp; Higher Source Connection · ~6 hrs</span>
+        <span class="price">$555<small>one-time session</small></span>
+        <ul>
+          <li>Everything in <b>The Release</b></li>
+          <li><b>Past-life regression</b></li>
+          <li><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
+        </ul>
+      </div>
+      <div class="mtier">
+        <span class="tiername">The Breakthrough</span>
+        <span class="tiersub">Breakthrough Session · two 5-hour sessions</span>
+        <span class="price">$8,000<small>installments available</small></span>
+        <ul>
+          <li>Everything in <b>The Journey</b></li>
+          <li><b>Breakthrough Session</b> — two 5-hour deep-clearing sessions</li>
+          <li><b>Integration follow-ups</b> — two 90-min calls, 30 &amp; 60 days after</li>
+        </ul>
+      </div>
+      <div class="mtier">
+        <span class="tiername">The Ascent</span>
+        <span class="tiersub">4-Month Coaching · after a completed Breakthrough</span>
+        <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
+        <ul>
+          <li><b>Deep release work</b> — whatever surfaces, cleared as we go</li>
+          <li><b>Coaching calls</b> — three 60–90 min calls per month × 4 months</li>
+          <li><b>Areas-of-Life curriculum</b> — choose your arena</li>
+          <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
+        </ul>
+      </div>
+      <div class="mtier feat">
+        <span class="crown">✦ The Complete Work</span>
+        <span class="tiername">The Full Path</span>
+        <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
+        <span class="price">$3,500/mo × 4<small>or pay in full: $12,000 — save $2,000</small></span>
+        <ul>
+          <li><b>Everything above</b> — the complete work, start to finish</li>
+        </ul>
+      </div>
     </div>
 
     <div class="chart-notes">
