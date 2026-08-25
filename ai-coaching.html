@@ -202,15 +202,15 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
       <div>
         <div class="eyebrow">Monthly · Free · Everyone Welcome</div>
         <h2>AI Office Hours</h2>
-        <p class="lede">Once a month I open a live group call — coaching, consulting, and brainstorming for anyone building with AI. Bring your questions, your half-built automations, your "is this even possible?" ideas. Hop in like office hours, ask, and leave with answers you can use the same day.</p>
+        <p class="lede">Once a month we open a live group call for coaching, consulting, and brainstorming for anyone building with AI. Bring your questions, your half-built automations, your "is this even possible?" ideas. Hop in like office hours, ask, and walk away with answers you can use the same day.</p>
         <div class="topics">
-          <span class="topic">Claude setups</span>
+          <span class="topic">Claude Cowork application</span>
           <span class="topic">automations</span>
           <span class="topic">AI for your business</span>
           <span class="topic">agents &amp; skills</span>
           <span class="topic">prompt craft</span>
           <span class="topic">live builds</span>
-          <span class="topic">Q&amp;A · anything AI</span>
+          <span class="topic">Q&amp;A</span>
         </div>
       </div>
       <div class="moon-card">
@@ -226,33 +226,31 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
 <section class="alt" id="skills">
   <div class="wrap reveal">
     <div class="eyebrow">Free · Copy &amp; Paste · Instant Upgrades</div>
-    <h2>Free Claude Skills</h2>
-    <p class="lede">Skills I built for my community that instantly upgrade any Claude account. No downloads, no setup — copy a block below, paste it into Claude, and say <b>"Save this as a skill."</b> That's it.</p>
+    <h2>Free Claude Upgrades</h2>
+    <p class="lede">Upgrades I built for my community that make any Claude account sharper. No downloads, no extra steps — copy a block, paste it where it says, done.</p>
 
     <div class="promptcard">
       <h3>💾 Save &amp; Close Check — <span style="font-family:var(--mono);font-size:.85em">/save</span></h3>
-      <p class="what">Never lose a chat's work again. Type /save and Claude sweeps the conversation, saves everything worth keeping, leaves a resume trail so "continue" works in any new chat, and tells you plainly: ✅ safe to close, or ⏳ not yet.</p>
+      <p class="what">Never lose a chat's work again. Type /save and Claude sweeps the conversation, saves everything worth keeping, leaves a resume trail so "continue" works in any new chat, and tells you plainly: ✅ safe to close, or ⏳ not yet. The paste already tells Claude to install itself as a skill.</p>
       <pre class="promptbox" data-skill="skills/save-skill.md">Loading the skill text… (if this doesn't load, refresh — or grab it on the call)</pre>
       <button class="copybtn" data-copy="skills/save-skill.md">Copy the Skill</button>
-      <p class="howto">paste into Claude → say "Save this as a skill" → done</p>
+      <p class="howto">paste into any Claude chat → done</p>
     </div>
 
     <div class="promptcard">
-      <h3>📚 Auto-Learn — <span style="font-family:var(--mono);font-size:.85em">/learn</span></h3>
-      <p class="what">Claude that upgrades itself. Every time you correct it or state a preference, it proposes a short instruction block you can paste into your settings — so the lesson becomes permanent. Type /learn anytime for a full sweep of the chat.</p>
-      <pre class="promptbox" data-skill="skills/learn-skill.md">Loading the skill text… (if this doesn't load, refresh — or grab it on the call)</pre>
-      <button class="copybtn" data-copy="skills/learn-skill.md">Copy the Skill</button>
-      <p class="howto">paste into Claude → say "Save this as a skill" → done</p>
+      <h3>📚 Auto-Learn — permanent lessons</h3>
+      <p class="what">Claude that upgrades itself. Every time you correct it or state a preference, it proposes a short block you can add to your instructions — so the lesson sticks forever. This one lives in your Claude instructions, not a skill.</p>
+      <pre class="promptbox" id="learnprefs">Whenever I correct you, state a preference, or we discover a better way of doing something, immediately propose a "📚 Instruction upgrade": a short paste-ready block of 1–3 instruction lines I can add to these preferences to make the lesson permanent. Propose, never apply — and keep proposals rare and short.</pre>
+      <button class="copybtn" data-copy="#learnprefs">Copy the Instructions</button>
+      <p class="howto">paste into Claude → Settings → Profile → preferences</p>
     </div>
 
     <div class="promptcard">
-      <h3>⚡ Zero-Install Version</h3>
-      <p class="what">No skills feature? Paste this straight into Claude's Settings → Profile preferences and you get a lite version of both behaviors everywhere.</p>
-      <pre class="promptbox" id="zeroinstall">When I type /save or signal I'm wrapping up a chat: sweep the conversation for decisions, unfinished work, and durable facts; save them to your memory or to a "Claude HQ" folder if one is connected (RESUME.md for open work, NOTES.md for facts); then tell me clearly either "✅ Safe to close" or "⏳ Not yet" with what remains. When I say "continue" in a new chat, find that saved state and pick up exactly where we left off.
-
-Whenever I correct you, state a preference, or we discover a better way of doing something, immediately propose a "📚 Instruction upgrade": a short paste-ready block of 1–3 instruction lines I can add to these preferences to make the lesson permanent. Propose, never apply — and keep proposals rare and short.</pre>
+      <h3>⚡ /save — Zero-Install Version</h3>
+      <p class="what">No skills feature on your plan? This lite version of /save lives in your instructions instead and works everywhere.</p>
+      <pre class="promptbox" id="zeroinstall">When I type /save or signal I'm wrapping up a chat: sweep the conversation for decisions, unfinished work, and durable facts; save them to your memory or to a "Claude HQ" folder if one is connected (RESUME.md for open work, NOTES.md for facts); then tell me clearly either "✅ Safe to close" or "⏳ Not yet" with what remains. When I say "continue" in a new chat, find that saved state and pick up exactly where we left off.</pre>
       <button class="copybtn" data-copy="#zeroinstall">Copy the Snippet</button>
-      <p class="howto">paste into Settings → Profile → preferences</p>
+      <p class="howto">paste into Claude → Settings → Profile → preferences</p>
     </div>
   </div>
 </section>
@@ -376,7 +374,7 @@ document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('clic
 /* ---------- free skills: load + copy ---------- */
 (function(){
   document.querySelectorAll('.promptbox[data-skill]').forEach(pre=>{
-    fetch(pre.getAttribute('data-skill')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{pre.textContent=t;}).catch(()=>{pre.textContent='Could not load the skill text — refresh the page, or hop on the monthly call and I\'ll hand it to you directly.';});
+    fetch(pre.getAttribute('data-skill')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{pre.textContent='Save this as a skill:\n\n'+t;}).catch(()=>{pre.textContent='Could not load the skill text — refresh the page, or hop on the monthly call and I\'ll hand it to you directly.';});
   });
   document.querySelectorAll('.copybtn[data-copy]').forEach(btn=>{
     btn.addEventListener('click',()=>{
