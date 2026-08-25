@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect · The Metaphysical Gateway</title>
+<meta name="description" content="Book an alignment call or send a message. Expand your awareness. Master your energy. Build your reality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --void:#050310; --deep:#0d0722; --ink:#ece9f7; --dim:#9b93b8; --faint:#5d5480;
+  --arcane:#9d6bff; --stardust:#f0c987; --ice:#7dd8f7;
+  --display:'Marcellus',Georgia,serif; --accent:'Philosopher','Trebuchet MS',sans-serif;
+  --body:'Spectral',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace; --maxw:900px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:112.5%}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-weight:300;font-size:1.06rem;line-height:1.7;overflow-x:hidden;
+  background-image:radial-gradient(ellipse 60% 40% at 20% 10%,rgba(24,70,160,.35),transparent),radial-gradient(ellipse 50% 40% at 85% 25%,rgba(10,110,150,.28),transparent),radial-gradient(ellipse 55% 45% at 70% 90%,rgba(70,38,140,.3),transparent),radial-gradient(ellipse 40% 30% at 10% 80%,rgba(16,110,70,.22),transparent);
+  background-attachment:fixed;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(1px 1px at 12% 22%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 34% 64%, #cfe2ff 50%, transparent 51%),radial-gradient(2px 2px at 56% 12%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 72% 42%, #ffe9c9 50%, transparent 51%),radial-gradient(1px 1px at 88% 78%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 22% 88%, #cfe2ff 50%, transparent 51%),radial-gradient(2px 2px at 44% 36%, #fff 50%, transparent 51%),radial-gradient(1px 1px at 64% 70%, #fff 50%, transparent 51%);
+  background-size:600px 600px}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
+.navwrap{max-width:1120px;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
+.navbrand{font-family:var(--display);font-size:.82rem;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand .nb{color:var(--stardust);margin-right:.55rem}
+.navlinks{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.45rem .95rem;border:1px solid rgba(93,84,128,.4);border-radius:2rem;transition:all .25s}
+.navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
+.themebtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid rgba(93,84,128,.4);border-radius:2rem;padding:.4rem .85rem;cursor:pointer;transition:all .25s}
+.themebtn:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+main{max-width:var(--maxw);margin:0 auto;padding:8.5rem 1.4rem 4rem;position:relative;z-index:2}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1rem}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,5vw,3rem);letter-spacing:.06em;margin-bottom:.6rem;background:linear-gradient(100deg,var(--arcane),var(--ink) 45%,var(--stardust));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:var(--dim);max-width:40rem}
+.photo{width:100%;border-radius:6px;border:1px solid rgba(93,84,128,.35);box-shadow:0 14px 50px -18px rgba(0,0,0,.85);display:block;margin-top:2.4rem}
+.grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.6rem;margin-top:2.4rem;align-items:start}
+.card{background:rgba(13,7,34,.72);border:1px solid rgba(93,84,128,.35);border-radius:8px;padding:2rem 1.6rem;backdrop-filter:blur(4px)}
+.card h2{font-family:var(--display);font-weight:400;font-size:1.4rem;margin-bottom:.7rem}
+.card p{color:var(--dim);font-size:.98rem;margin-bottom:1.2rem}
+label{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:1.1rem 0 .35rem}
+input,textarea{width:100%;background:rgba(5,3,16,.7);border:1px solid rgba(93,84,128,.5);border-radius:4px;color:var(--ink);font-family:var(--body);font-size:1rem;padding:.7rem .9rem}
+input:focus,textarea:focus{outline:none;border-color:var(--arcane)}
+.btn{display:inline-block;font-family:var(--mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:linear-gradient(120deg,#e8c987,#f5deb0);color:#1a1030;border:none;border-radius:3px;padding:.95rem 1.6rem;cursor:pointer;margin-top:1.4rem;transition:all .3s}
+.btn:hover{box-shadow:0 0 30px -8px rgba(240,201,135,.8)}
+.btn:disabled{opacity:.5;cursor:wait}
+.err{color:#ff8a8a;margin-top:.8rem}
+.okmsg{color:var(--ice);font-family:var(--accent);font-size:1.15rem;margin-top:1rem}
+.sig{color:var(--stardust);letter-spacing:.9em;padding-left:.9em;text-align:center;margin-top:3rem}
+footer{position:relative;z-index:2;text-align:center;color:var(--faint);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;padding:2rem 1rem 3rem}
+@media (max-width:760px){.grid{grid-template-columns:1fr}.navwrap{justify-content:center}}
+/* light mode */
+html[data-theme="light"]{--void:#f5f3fa;--deep:#ffffff;--ink:#241d3d;--dim:#54506e;--faint:#7d7794;--arcane:#6b3fd4;--stardust:#8a6a1a;--ice:#0e7ba6}
+html[data-theme="light"] body{background:linear-gradient(180deg,#f7f5fc,#ece7f7);background-attachment:fixed}
+html[data-theme="light"] body::before{display:none}
+html[data-theme="light"] .topnav{background:linear-gradient(180deg,rgba(247,245,252,.96),rgba(247,245,252,.75) 78%,transparent);border-bottom-color:rgba(107,63,212,.14)}
+html[data-theme="light"] .card{background:#fff;border-color:rgba(107,63,212,.2)}
+html[data-theme="light"] input,html[data-theme="light"] textarea{background:#fff;color:#241d3d;border-color:rgba(107,63,212,.3)}
+html[data-theme="light"] footer{background:rgba(247,245,252,.92)}
+html[data-theme="light"] h1{background:linear-gradient(100deg,#6b3fd4,#241d3d 45%,#8a6a1a);-webkit-background-clip:text;background-clip:text}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="Site">
+  <div class="navwrap">
+    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">◐ light</button>
+    <a class="navbrand" href="index.html"><span class="nb">✦</span>THE METAPHYSICAL GATEWAY</a>
+    <div class="navlinks">
+      <a href="index.html">The Path</a>
+      <a href="metaphysical-monday.html">Metaphys Monday's</a>
+      <a href="ai-coaching.html">AI Office Hours</a>
+      <a href="trusted-allies.html">Trusted Allies</a>
+      <a href="connect.html" class="active">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="eyebrow">Reach Out · Everyone Welcome</div>
+  <h1>CONNECT</h1>
+  <p class="lede">Two doors, both open. Book a free alignment call and we'll find what fits — or send a message and it lands directly with me.</p>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Book an Alignment Call</h2>
+        <p>Thirty minutes, free, no strings. We talk about where you are, where you're headed, and whether this work is a fit.</p>
+        <a class="btn" href="book.html?type=alignment">Choose Your Time ✦</a>
+      </div>
+      <img class="photo" src="media/photos/coaching-5-duo.jpg" alt="In session — the work is done together" loading="lazy">
+    </div>
+
+    <div class="card">
+      <h2>Send a Message</h2>
+      <p>Questions, curiosities, something you've never said out loud — all of it welcome. It comes straight to my inbox and I reply personally.</p>
+      <form id="cform" novalidate>
+        <label for="c-name">Your name *</label>
+        <input id="c-name" type="text" autocomplete="name" maxlength="80" required>
+        <label for="c-email">Email *</label>
+        <input id="c-email" type="email" autocomplete="email" maxlength="120" required>
+        <label for="c-phone">Phone (optional)</label>
+        <input id="c-phone" type="tel" autocomplete="tel" maxlength="40">
+        <label for="c-msg">Your message *</label>
+        <textarea id="c-msg" rows="6" maxlength="3000" required></textarea>
+        <div class="err" id="cerr" style="display:none"></div>
+        <div class="okmsg" id="cok" style="display:none">Received. ✦ It's in my inbox — I'll reply personally.</div>
+        <button class="btn" id="csend" type="submit">Send It ✦</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="sig">✦ ✧ ✦</div>
+</main>
+<footer>© 2026 · THE METAPHYSICAL GATEWAY · ALL OF THE LIGHT</footer>
+
+<script>
+(function(){
+  var API = 'https://64-181-232-186.nip.io/webhook/gateway-connect-7d2f91';
+  document.getElementById('cform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('c-name').value.trim();
+    var email = document.getElementById('c-email').value.trim();
+    var phone = document.getElementById('c-phone').value.trim();
+    var msg = document.getElementById('c-msg').value.trim();
+    var err = document.getElementById('cerr'), ok = document.getElementById('cok'), btn = document.getElementById('csend');
+    ok.style.display='none';
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !msg) { err.textContent='Name, a real email, and a message — those three and it flies.'; err.style.display=''; return; }
+    err.style.display='none'; btn.disabled = true; btn.textContent='Sending…';
+    fetch(API, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({name:name,email:email,phone:phone,message:msg}) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        btn.disabled=false; btn.textContent='Send It ✦';
+        if (j.ok) { ok.style.display=''; document.getElementById('cform').reset(); }
+        else { err.textContent='Something slipped — try once more.'; err.style.display=''; }
+      })
+      .catch(function(){ btn.disabled=false; btn.textContent='Send It ✦'; err.textContent='The connection wavered — try again.'; err.style.display=''; });
+  });
+  /* theme toggle */
+  try{ if(localStorage.getItem('tmg-theme')==='light') document.documentElement.setAttribute('data-theme','light'); }catch(e){}
+  var b=document.getElementById('themeToggle');
+  function label(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? '◑ dark' : '◐ light'; }
+  b.addEventListener('click',function(){
+    var l = document.documentElement.getAttribute('data-theme')==='light';
+    if(l){ document.documentElement.removeAttribute('data-theme'); } else { document.documentElement.setAttribute('data-theme','light'); }
+    try{ localStorage.setItem('tmg-theme', l?'dark':'light'); }catch(e){}
+    label();
+  });
+  label();
+})();
+</script>
+</body>
+</html>
