@@ -124,6 +124,21 @@ th.feat{position:relative}
 .star-card h3{font-size:1.08rem;margin:.7rem 0 .5rem}
 .star-card p{color:var(--dim);font-size:.92rem}
 
+
+/* ---------- top nav ---------- */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
+.topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
+.navbrand{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
+.navlinks{display:flex;gap:1.35rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.2rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.navlinks a:hover{color:var(--stardust)}
+.navlinks a.active{color:var(--stardust);border-bottom-color:rgba(240,201,135,.55)}
+@media (max-width:700px){.topnav .navwrap{justify-content:center}}
+/* ---------- sub-page hero ---------- */
+header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
+header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
+
 /* ---------- footer ---------- */
 footer{position:relative;z-index:2;border-top:1px solid rgba(93,84,128,.25);padding:3.5rem 1.5rem 2.5rem;background:rgba(5,3,16,.85)}
 footer .wrap{display:grid;gap:1.4rem;text-align:center}
@@ -150,6 +165,19 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
      carries the page — zero bandwidth, instant load. -->
 <video id="herovideo" data-src="" muted loop playsinline aria-hidden="true"></video>
 <div class="veil" aria-hidden="true"></div>
+
+
+<nav class="topnav" aria-label="Site">
+  <div class="navwrap">
+    <a class="navbrand" href="index.html"><span class="nb-sigil">✦</span>THE METAPHYSICAL GATEWAY</a>
+    <div class="navlinks">
+      <a href="index.html#path">The Path</a>
+      <a href="index.html#monday">Metaphysical Monday</a>
+      <a href="trusted-allies.html">Trusted Allies</a>
+      <a href="ai-coaching.html">AI Coaching</a>
+    </div>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="sigil-top">✦ ✧ ✦</div>
@@ -320,7 +348,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
 </section>
 
 <!-- ==================== THE CONSTELLATION ==================== -->
-<section class="alt">
+<section class="alt" id="constellation">
   <div class="wrap reveal">
     <div class="eyebrow">The Constellation</div>
     <h2>A Gateway to the Whole Sky</h2>
@@ -347,6 +375,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <p>My own Huna teaching within the Halau, as an Alaka'i under Kumu Patrick — announced first on Metaphysical Monday.</p>
       </div>
     </div>
+    <p style="margin-top:2.6rem;text-align:center"><a class="btn btn-ghost" href="trusted-allies.html">Meet the Trusted Allies ✦</a></p>
   </div>
 </section>
 
