@@ -7,7 +7,7 @@
 <meta name="description" content="The constellation of teachers and circles behind The Metaphysical Gateway — Hawaiian lineage, Huna training, energy classes, and psychic development.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* ============================================================
    CONFIG-FRIENDLY TOKENS — customize everything here
@@ -23,7 +23,8 @@
   --arcane-soft:rgba(157,107,255,.14);
   --stardust:#f0c987;      /* gold — sigils, prices                   */
   --fire:#ff8a5c; --ice:#7dd8f7; --storm:#c9b8ff; --air:#bfe9c9;
-  --display:'Cinzel',Georgia,serif;
+  --display:'Marcellus',Georgia,serif;
+  --accent:'Philosopher','Trebuchet MS',sans-serif;
   --body:'Spectral',Georgia,serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
   --maxw:1120px;
@@ -47,7 +48,7 @@ main{position:relative;z-index:2}
 section{padding:6.5rem 1.5rem}
 .wrap{max-width:var(--maxw);margin:0 auto}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1.1rem}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;text-wrap:balance}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance}
 h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.9rem}
 .lede{color:var(--dim);max-width:38rem;font-size:1.1rem}
 .alt{background:linear-gradient(180deg,transparent,rgba(13,7,34,.72) 12%,rgba(13,7,34,.72) 88%,transparent)}
@@ -57,7 +58,7 @@ header.hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-dire
 #herovideo{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2s ease}
 #herovideo.live{opacity:.34}
 .sigil-top{font-size:1.5rem;color:var(--stardust);letter-spacing:1.2em;padding-left:1.2em;margin-bottom:2rem;opacity:.9}
-h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:700;letter-spacing:.08em;
+h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:400;letter-spacing:.08em;
   background:linear-gradient(120deg,#f4efff 20%,var(--storm) 45%,var(--arcane) 70%,#f4efff 95%);
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:shimmer 9s linear infinite}
@@ -84,9 +85,9 @@ table.tiers{border-collapse:collapse;width:100%;min-width:1040px}
 .tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
 .tiers td:first-child,.tiers th:first-child{text-align:left;min-width:230px}
 .tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
-.tiername{font-family:var(--display);font-size:1.12rem;font-weight:600;letter-spacing:.04em}
+.tiername{font-family:var(--accent);font-size:1.12rem;font-weight:700;letter-spacing:.04em}
 .tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
-.price{display:block;font-family:var(--mono);font-size:1.28rem;color:var(--stardust);margin-top:.7rem}
+.price{display:block;font-family:var(--accent);font-size:1.28rem;color:var(--stardust);margin-top:.7rem}
 .price small{display:block;font-size:.7rem;color:var(--dim);margin-top:.2rem;letter-spacing:.05em}
 .rowlabel{font-weight:400;color:var(--ink)}
 .rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
@@ -128,7 +129,7 @@ th.feat{position:relative}
 /* ---------- top nav ---------- */
 .topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
 .topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
-.navbrand{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand{font-family:var(--display);font-size:.82rem;font-weight:400;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
 .navlinks{display:flex;gap:1.35rem;flex-wrap:wrap;justify-content:center}
 .navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.2rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
@@ -138,6 +139,12 @@ th.feat{position:relative}
 /* ---------- sub-page hero ---------- */
 header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
 header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
+
+
+/* ---------- living portraits (auto-activate when media/portraits/*.mp4 exist) ---------- */
+.portrait{display:none}
+.portrait.live{display:block;width:110px;height:110px;border-radius:50%;overflow:hidden;border:1px solid rgba(240,201,135,.45);box-shadow:0 0 26px -10px rgba(240,201,135,.5);margin-bottom:1.1rem}
+.portrait video{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ---------- allies: multi-offering cards ---------- */
 .allylist{display:grid;gap:1.5rem;margin-top:3rem}
@@ -207,6 +214,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
   <div class="wrap reveal">
     <div class="allylist">
       <div class="star-card ally">
+        <div class="portrait" data-portrait="media/portraits/patrick.mp4"></div>
         <div class="who">Kumu of Huna · Teacher of Hoʻomana</div>
         <h3>Dr. Patrick Scott</h3>
         <p>My Kumu. A teacher of energy work carrying an unbroken Hawaiian lineage, and a clinician whose practice serves tens of thousands. We studied together in Hawaii, and it is with his blessing that these teachings travel beyond the islands. Protection first, practice always, of the light only.</p>
@@ -217,6 +225,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         </div>
       </div>
       <div class="star-card ally">
+        <div class="portrait" data-portrait="media/portraits/lisset.mp4"></div>
         <div class="who">Huna · The Practice</div>
         <h3>Lisset King</h3>
         <p>The doorway into Huna, and the rhythm that keeps it alive. Lisset opens the path for newcomers and holds the practice ground where the lineage's tools become second nature.</p>
@@ -226,6 +235,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         </div>
       </div>
       <div class="star-card ally">
+        <div class="portrait" data-portrait="media/portraits/valen.mp4"></div>
         <div class="who">Energy Work · First Doorway</div>
         <h3>Valen Bishop</h3>
         <p>A gentle first doorway into energy work — where I send beginners to feel energy move for themselves before any deeper practice. Small calls, real refinement, zero pressure.</p>
@@ -356,6 +366,23 @@ document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('clic
   e.target.textContent='✦ Link coming soon ✦';
   setTimeout(()=>e.target.textContent=orig,2200);
 }));
+
+/* ---------- living portraits: dormant until clips are uploaded ---------- */
+(function(){
+  document.querySelectorAll('.portrait[data-portrait]').forEach(function(el){
+    var s = el.getAttribute('data-portrait');
+    fetch(s, {method:'HEAD'}).then(function(r){
+      if(!r.ok) return;
+      var v = document.createElement('video');
+      v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = s;
+      el.appendChild(v); el.classList.add('live');
+      var play = function(){ try{ v.currentTime = 0; v.play(); }catch(e){} };
+      el.addEventListener('mouseenter', play);
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ play(); io.unobserve(e.target); } }); }, {threshold:.6});
+      io.observe(el);
+    }).catch(function(){});
+  });
+})();
 </script>
 </body>
 </html>
