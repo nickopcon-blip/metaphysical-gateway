@@ -230,6 +230,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
     <p class="lede">Upgrades built for the community that make any Claude account sharper. No downloads, no extra steps — copy a block, paste it where it says, done.</p>
 
     <div class="promptcard">
+      <h3>🧭 Apprentice to Architect — start here</h3>
+      <p class="what">New to all of this? Paste this one prompt and Claude itself walks you through the whole setup, one step at a time — memory, the Auto-Learn instructions, the Save Point skill, your Claude HQ — then hands you a personal path to mastery. From first steps to sharp operator in one guided session.</p>
+      <pre class="promptbox" data-skill="skills/apprentice-to-architect.md">Loading the walkthrough… (if this doesn't load, refresh — or grab it on the call)</pre>
+      <button class="copybtn" data-copy="skills/apprentice-to-architect.md">Copy the Walkthrough</button>
+      <p class="howto">paste into a new Claude chat → follow the steps</p>
+    </div>
+
+    <div class="promptcard">
       <h3>📚 Auto-Learn — permanent lessons</h3>
       <p class="what">Claude that upgrades itself. Every time you correct it or state a preference, it proposes a short block you can add to your instructions — so the lesson sticks forever. This one lives in your Claude instructions, not a skill.</p>
       <pre class="promptbox" id="learnprefs">Whenever I correct you, state a preference, or we discover a better way of doing something, immediately propose a "📚 Instruction upgrade": a short paste-ready block of 1–3 instruction lines I can add to these preferences to make the lesson permanent. Propose, never apply — and keep proposals rare and short.</pre>
@@ -238,9 +246,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
     </div>
 
     <div class="promptcard">
-      <h3>💾 Save &amp; Close Check — <span style="font-family:var(--mono);font-size:.85em">/save</span></h3>
-      <p class="what">Never lose a chat's work again. Type /save and Claude sweeps the conversation, saves everything worth keeping, leaves a resume trail so "continue" works in any new chat, and tells you plainly: ✅ safe to close, or ⏳ not yet. The paste already tells Claude to install itself as a skill.</p>
-      <pre class="promptbox" data-skill="skills/save-skill.md">Loading the skill text… (if this doesn't load, refresh — or grab it on the call)</pre>
+      <h3>💾 Save Point — <span style="font-family:var(--mono);font-size:.85em">/save</span></h3>
+      <p class="what">A save point for your work, like a game. Type /save before closing any chat: Claude sweeps for everything worth keeping, stores it, and leaves a resume trail — so "continue" in a new chat picks up exactly where you left off. Ends with a clear verdict: ✅ safe to close, or ⏳ not yet. The paste installs itself as a skill.</p>
+      <pre class="promptbox" data-skill="skills/save-skill.md" data-prefix="Save this as a skill:  ">Loading the skill text… (if this doesn't load, refresh — or grab it on the call)</pre>
       <button class="copybtn" data-copy="skills/save-skill.md">Copy the Skill</button>
       <p class="howto">paste into any Claude chat → done</p>
     </div>
@@ -366,7 +374,7 @@ document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('clic
 /* ---------- free skills: load + copy ---------- */
 (function(){
   document.querySelectorAll('.promptbox[data-skill]').forEach(pre=>{
-    fetch(pre.getAttribute('data-skill')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{pre.textContent='Save this as a skill:\n\n'+t;}).catch(()=>{pre.textContent='Could not load the skill text — refresh the page, or hop on the monthly call and I\'ll hand it to you directly.';});
+    fetch(pre.getAttribute('data-skill')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{pre.textContent=(pre.getAttribute('data-prefix')||'')+t;}).catch(()=>{pre.textContent='Could not load the skill text — refresh the page, or hop on the monthly call and I\'ll hand it to you directly.';});
   });
   document.querySelectorAll('.copybtn[data-copy]').forEach(btn=>{
     btn.addEventListener('click',()=>{
