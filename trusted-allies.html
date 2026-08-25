@@ -168,6 +168,9 @@ footer .wrap{display:grid;gap:1.4rem;text-align:center}
   .tiers-mobile{display:grid;gap:1.1rem;margin-top:2.6rem}
   .navlinks a{font-size:.6rem;padding:.4rem .75rem}
   .navbrand{font-size:.72rem}
+  .navbrand{transition:opacity .2s}
+  .topnav.shrunk .navbrand{display:none}
+  .topnav.shrunk .navwrap{padding-top:.55rem;padding-bottom:.55rem}
 }
 @media (prefers-reduced-motion:reduce){
   *,h1.brand,.scrollcue{animation:none!important;transition:none!important}
@@ -386,6 +389,13 @@ document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('clic
       io.observe(el);
     }).catch(function(){});
   });
+})();
+
+/* ---------- mobile: collapse brand row on scroll, keep menu frozen ---------- */
+(function(){
+  var n = document.querySelector('.topnav'); if(!n) return;
+  var on = function(){ if(window.scrollY > 70){ n.classList.add('shrunk'); } else { n.classList.remove('shrunk'); } };
+  window.addEventListener('scroll', on, {passive:true}); on();
 })();
 </script>
 </body>
