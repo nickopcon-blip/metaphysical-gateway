@@ -126,6 +126,12 @@ th.feat{position:relative}
 .star-card p{color:var(--dim);font-size:.92rem}
 
 
+
+/* ---------- photos ---------- */
+.photo{width:100%;border-radius:6px;border:1px solid rgba(93,84,128,.35);box-shadow:0 14px 50px -18px rgba(0,0,0,.85);display:block}
+.photorow{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-top:2.6rem;align-items:start}
+.headshot{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top;border:1px solid rgba(240,201,135,.55);box-shadow:0 0 34px -8px rgba(240,201,135,.55);margin:0 auto;display:block}
+
 /* ---------- top nav ---------- */
 .topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
 .topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
@@ -220,6 +226,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
           <span class="topic">live builds</span>
           <span class="topic">Q&amp;A</span>
         </div>
+        <img class="photo" src="media/photos/coaching-3-laptop.jpg" alt="Working session" loading="lazy" style="margin-top:2.2rem">
       </div>
       <div class="moon-card">
         <h3>Join the Next Call</h3>
