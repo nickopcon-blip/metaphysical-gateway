@@ -81,7 +81,7 @@ h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:400;letter-spacing:.08em
 
 /* ---------- offer chart ---------- */
 .chart-scroll{overflow-x:auto;margin-top:3rem;padding-bottom:.5rem}
-table.tiers{border-collapse:collapse;width:100%;min-width:1040px}
+table.tiers{border-collapse:collapse;width:100%;min-width:880px}
 .tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
 .tiers td:first-child,.tiers th:first-child{text-align:left;min-width:230px}
 .tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
@@ -125,6 +125,12 @@ th.feat{position:relative}
 .mtier li{color:var(--dim);font-size:.93rem;padding-left:1.3rem;position:relative}
 .mtier li::before{content:'✦';position:absolute;left:0;color:var(--stardust);text-shadow:0 0 8px rgba(240,201,135,.5)}
 .mtier li b{color:var(--ink);font-weight:400}
+
+/* ---------- 'plus' divider with shimmer wands ---------- */
+.plusline{display:flex;align-items:center;gap:.8rem;margin:.95rem 0 .15rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--arcane)}
+.plusline::before,.plusline::after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--arcane) 35%,#c9b8ff 50%,var(--arcane) 65%,transparent);background-size:220% 100%;animation:wandshimmer 2.6s linear infinite;box-shadow:0 0 8px -2px var(--arcane)}
+@keyframes wandshimmer{0%{background-position:220% 0}100%{background-position:-220% 0}}
+
 
 
 /* ---------- areas of life ---------- */
@@ -263,15 +269,17 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
               <span class="price">$555<small>one-time session</small></span>
             </th>
             <th scope="col">
-              <span class="tiername">The Breakthrough</span>
+              <span class="tiername">90 Day Breakthrough</span>
               <span class="tiersub">Breakthrough Session · one 7–10 hour session</span>
               <span class="price">$8,000<small>installments available</small></span>
             </th>
-            <th scope="col">
+            <!-- ASCENT-DEACTIVATED (2026-08-25 — uncomment to reactivate)
+<th scope="col">
               <span class="tiername">The Ascent</span>
               <span class="tiersub">4-Month Coaching · after a completed Breakthrough</span>
               <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
             </th>
+ASCENT-DEACTIVATED -->
             <th scope="col" class="feat">
               <span class="crown">✦ The Complete Work</span>
               <span class="tiername">The Full Path</span>
@@ -283,43 +291,43 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <tbody>
           <tr>
             <td class="rowlabel">Deep release work <small>baggage, limiting beliefs &amp; wounds — cleared before anything else</small></td>
-            <td><span class="sigil sr">✚</span></td>
+            <!-- ASCENT-DEACTIVATED <td><span class="sigil sr">✚</span></td> ASCENT-DEACTIVATED -->
             <td><span class="sigil sr">✚</span></td><td><span class="sigil sr">✚</span></td><td><span class="sigil sr">✚</span></td><td class="feat"><span class="sigil sr">✚</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Past-life regression</td>
-            <td><span class="no">·</span></td>
+            <!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED -->
             <td><span class="sigil em">🌀</span></td><td><span class="sigil em">🌀</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">🌀</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Higher source connection <small>channeled guidance &amp; karmic-pattern release</small></td>
-            <td><span class="no">·</span></td>
+            <!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED -->
             <td><span class="sigil em">🌀</span></td><td><span class="sigil em">🌀</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">🌀</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Breakthrough Session <small>one 7–10 hour deep-clearing session</small></td>
-            <td><span class="no">·</span></td>
+            <!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED -->
             <td><span class="no">·</span></td><td><span class="sigil em">❤️‍🔥</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">❤️‍🔥</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Integration follow-ups <small>two 90-min calls — 30 &amp; 60 days after</small></td>
-            <td><span class="no">·</span></td>
+            <!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED -->
             <td><span class="no">·</span></td><td><span class="sigil em">❤️‍🔥</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">❤️‍🔥</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Coaching calls <small>three 60–90 min calls per month × 4 months</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="no">·</span></td><td><span class="sigil em">📞</span></td><td class="feat"><span class="sigil em">📞</span></td>
+            <td><span class="no">·</span></td><td><span class="no">·</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil em">📞</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">📞</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Areas-of-Life curriculum <small>choose your arena — see below</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="no">·</span></td><td><span class="sigil">✦</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="no">·</span></td><td><span class="no">·</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil">✦</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Direct access <small>text me between calls; get on a call when it matters</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="no">·</span></td><td><span class="sigil">✦</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="no">·</span></td><td><span class="no">·</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil">✦</span></td>
           </tr>
         </tbody>
       </table>
@@ -340,21 +348,28 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <span class="price">$555<small>one-time session</small></span>
         <ul>
           <li>Everything in <b>The Release</b></li>
+        </ul>
+        <div class="plusline">plus</div>
+        <ul>
           <li class="soul"><b>Past-life regression</b></li>
           <li class="soul"><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
         </ul>
       </div>
       <div class="mtier">
-        <span class="tiername">The Breakthrough</span>
+        <span class="tiername">90 Day Breakthrough</span>
         <span class="tiersub">Breakthrough Session · one 7–10 hour session</span>
         <span class="price">$8,000<small>installments available</small></span>
         <ul>
           <li>Everything in <b>The Journey</b></li>
+        </ul>
+        <div class="plusline">plus</div>
+        <ul>
           <li class="fire"><b>Breakthrough Session</b> — one 7–10 hour deep-clearing session</li>
           <li class="fire"><b>Integration follow-ups</b> — two 90-min calls, 30 &amp; 60 days after</li>
         </ul>
       </div>
-      <div class="mtier">
+      <!-- ASCENT-DEACTIVATED (mobile card — uncomment to reactivate)
+<div class="mtier">
         <span class="tiername">The Ascent</span>
         <span class="tiersub">4-Month Coaching · after a completed Breakthrough</span>
         <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
@@ -365,6 +380,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
           <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
         </ul>
       </div>
+ASCENT-DEACTIVATED -->
       <div class="mtier feat">
         <span class="crown">✦ The Complete Work</span>
         <span class="tiername">The Full Path</span>
@@ -379,7 +395,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
     <div class="chart-notes">
       <div><span>✦</span> Never done this work before? Your first Rapid Release call is <span>$99</span> — the doorway.</div>
       <div><span>✦</span> Coaching opens only after a completed Breakthrough Session — the baggage goes first, so the coaching lands on the real you.</div>
-      <div><span>✦</span> The Breakthrough contains the full Journey within it. The Full Path contains everything.</div>
+      <div><span>✦</span> The 90 Day Breakthrough contains the full Journey within it. The Full Path contains everything.</div>
     </div>
   </div>
 </section>
