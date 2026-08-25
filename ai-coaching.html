@@ -238,8 +238,11 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
       <p class="howto">paste into a new Claude chat → follow the steps</p>
     </div>
 
+    <p style="text-align:center;margin:3rem 0 .5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--arcane)">— or upgrade piece by piece —</p>
+    <p class="lede" style="text-align:center;margin:0 auto">Take them one at a time. Add what you want, skip what you don't, customize each to your own craft.</p>
+
     <div class="promptcard">
-      <h3>📚 Auto-Learn — permanent lessons</h3>
+      <h3>📚 Self-Learning — lessons that stick</h3>
       <p class="what">Claude that upgrades itself. Every time you correct it or state a preference, it proposes a short block you can add to your instructions — so the lesson sticks forever. This one lives in your Claude instructions, not a skill — add it underneath whatever is already in that box; never replace what you have.</p>
       <pre class="promptbox" id="learnprefs">Whenever I correct you, state a preference, or we discover a better way of doing something, immediately propose a "📚 Instruction upgrade": a short paste-ready block of 1–3 instruction lines I can add to these preferences to make the lesson permanent. Propose, never apply — and keep proposals rare and short.</pre>
       <button class="copybtn" data-copy="#learnprefs">Copy the Instructions</button>
@@ -247,8 +250,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
     </div>
 
     <div class="promptcard">
-      <h3>💾 Save Point — <span style="font-family:var(--mono);font-size:.85em">/save</span></h3>
-      <p class="what">A save point for your work, like a game. Type /save before closing any chat: Claude sweeps for everything worth keeping, stores it, and leaves a resume trail — so "continue" in a new chat picks up exactly where you left off. Ends with a clear verdict: ✅ safe to close, or ⏳ not yet. The paste checks for conflicts, then installs itself as a skill.</p>
+      <h3>💾 Loose End Hunter — <span style="font-family:var(--mono);font-size:.85em">/save</span></h3>
+      <p class="what">Nothing falls through the cracks again. Type /save before closing a chat and Claude hunts down every loose end — unfinished work, decisions made, things worth keeping — saves what matters, and leaves a resume trail so "continue" in a new chat picks up exactly where you left off. Verdict every time: ✅ safe to close, or ⏳ not yet. The paste checks for conflicts, then installs itself as a skill.</p>
       <pre class="promptbox" data-skill="skills/save-skill.md" data-prefix="Save this as a skill:  ">Loading the skill text… (if this doesn't load, refresh — or grab it on the call)</pre>
       <button class="copybtn" data-copy="skills/save-skill.md">Copy the Skill</button>
       <p class="howto">paste into any Claude chat → done</p>
