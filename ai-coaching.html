@@ -131,10 +131,10 @@ th.feat{position:relative}
 .topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
 .navbrand{font-family:var(--display);font-size:.82rem;font-weight:400;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
-.navlinks{display:flex;gap:1.35rem;flex-wrap:wrap;justify-content:center}
-.navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.2rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
-.navlinks a:hover{color:var(--stardust)}
-.navlinks a.active{color:var(--stardust);border-bottom-color:rgba(240,201,135,.55)}
+.navlinks{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:.45rem .95rem;border:1px solid rgba(93,84,128,.4);border-radius:2rem;transition:color .25s,border-color .25s,background .25s}
+.navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
 @media (max-width:700px){.topnav .navwrap{justify-content:center}}
 /* ---------- sub-page hero ---------- */
 header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
@@ -159,6 +159,10 @@ footer .wrap{display:grid;gap:1.4rem;text-align:center}
 @media (max-width:760px){
   section{padding:4.5rem 1.2rem}
   .monday{grid-template-columns:1fr}
+  .chart-scroll{display:none}
+  .tiers-mobile{display:grid;gap:1.1rem;margin-top:2.6rem}
+  .navlinks a{font-size:.6rem;padding:.4rem .75rem}
+  .navbrand{font-size:.72rem}
 }
 @media (prefers-reduced-motion:reduce){
   *,h1.brand,.scrollcue{animation:none!important;transition:none!important}
