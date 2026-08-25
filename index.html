@@ -82,9 +82,10 @@ h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:400;letter-spacing:.08em
 
 /* ---------- offer chart ---------- */
 .chart-scroll{overflow-x:auto;margin-top:3rem;padding-bottom:.5rem}
-table.tiers{border-collapse:collapse;width:100%;min-width:880px}
+table.tiers{border-collapse:collapse;width:100%;min-width:990px}
 .tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
 .tiers td:last-child,.tiers th:last-child{text-align:left;min-width:330px;padding-left:1.6rem}
+.tiers th:not(:last-child),.tiers td:not(:last-child){min-width:165px}
 .tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
 .tiername{font-family:var(--accent);font-size:1.12rem;font-weight:700;letter-spacing:.04em}
 .tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
@@ -204,7 +205,7 @@ header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
 
 
 /* ---------- theme toggle + light mode ---------- */
-.themebtn{font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:var(--arcane);background:rgba(157,107,255,.08);border:1px solid rgba(157,107,255,.45);border-radius:1rem;padding:.28rem .6rem;cursor:pointer;transition:all .25s;opacity:.9}
+.themebtn{font-family:var(--mono);font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:var(--arcane);background:rgba(157,107,255,.08);border:1px solid rgba(157,107,255,.45);border-radius:1rem;padding:.18rem .42rem;cursor:pointer;transition:all .25s;opacity:.85}
 .themebtn:hover{color:#c9b8ff;border-color:rgba(201,184,255,.7);opacity:1}
 html[data-theme="light"]{
   --void:#f5f3fa; --deep:#ffffff; --deeper:#ece8f5; --ink:#241d3d; --dim:#54506e; --faint:#7d7794;
