@@ -89,6 +89,10 @@ table.tiers{border-collapse:collapse;width:100%;min-width:1040px}
 .tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
 .price{display:block;font-family:var(--accent);font-size:1.28rem;color:var(--stardust);margin-top:.7rem}
 .price small{display:block;font-size:.7rem;color:var(--dim);margin-top:.2rem;letter-spacing:.05em}
+
+.price .was{color:var(--faint);font-size:.95rem;margin-right:.35rem;text-decoration:line-through;text-decoration-color:#6dff9e;text-decoration-thickness:2.5px}
+.price .now{color:#6dff9e;font-size:1.75rem;font-weight:700;text-shadow:0 0 18px rgba(109,255,158,.55)}
+
 .rowlabel{font-weight:400;color:var(--ink)}
 .rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
 .sigil{color:var(--stardust);font-size:1.05rem;text-shadow:0 0 10px rgba(240,201,135,.55)}
@@ -244,7 +248,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
             <th scope="col">
               <span class="tiername">The Release</span>
               <span class="tiersub">Rapid Release · one 90-min call</span>
-              <span class="price">$222<small>first call: $99</small></span>
+              <span class="price"><s class="was">$222</s> <b class="now">$99</b><small>your first call — then $222</small></span>
             </th>
             <th scope="col">
               <span class="tiername">The Journey</span>
@@ -318,7 +322,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
       <div class="mtier">
         <span class="tiername">The Release</span>
         <span class="tiersub">Rapid Release · one 90-min call</span>
-        <span class="price">$222<small>first call: $99</small></span>
+        <span class="price"><s class="was">$222</s> <b class="now">$99</b><small>your first call — then $222</small></span>
         <ul>
           <li class="sr"><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
         </ul>
