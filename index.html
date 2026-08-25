@@ -45,7 +45,7 @@ body{
 
 /* ---------- structure ---------- */
 main{position:relative;z-index:2}
-section{padding:6.5rem 1.5rem}
+section{padding:4.6rem 1.5rem}
 .wrap{max-width:var(--maxw);margin:0 auto}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1.1rem}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance}
@@ -83,7 +83,7 @@ h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:400;letter-spacing:.08em
 .chart-scroll{overflow-x:auto;margin-top:3rem;padding-bottom:.5rem}
 table.tiers{border-collapse:collapse;width:100%;min-width:880px}
 .tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
-.tiers td:first-child,.tiers th:first-child{text-align:left;min-width:230px}
+.tiers td:first-child,.tiers th:first-child{text-align:left;min-width:330px}
 .tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
 .tiername{font-family:var(--accent);font-size:1.12rem;font-weight:700;letter-spacing:.04em}
 .tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
@@ -100,15 +100,15 @@ table.tiers{border-collapse:collapse;width:100%;min-width:880px}
 .price .now{color:#7dd8f7;font-size:2.7rem;font-weight:700;text-shadow:0 0 20px rgba(125,216,247,.65)}
 
 .rowlabel{font-weight:400;color:var(--ink)}
-.rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
-.sigil{color:var(--stardust);font-size:1.05rem;text-shadow:0 0 10px rgba(240,201,135,.55)}
+.rowlabel small{display:block;color:var(--dim);font-size:.95rem;font-style:italic}
+.sigil{color:var(--stardust);font-size:1.35rem;text-shadow:0 0 10px rgba(240,201,135,.55)}
 .no{color:#2e2847}
 
 .sigil.sr{color:#ff4d4d;text-shadow:0 0 10px rgba(255,77,77,.55);font-weight:700}
-.sigil.em{text-shadow:none;font-size:1rem}
+.sigil.em{text-shadow:none;font-size:1.25rem}
 .mtier li.sr::before{content:'✚';color:#ff4d4d;text-shadow:0 0 8px rgba(255,77,77,.5)}
 .mtier li.soul::before{content:'🌀';text-shadow:none}
-.mtier li.fire::before{content:'❤️‍🔥';text-shadow:none}
+.mtier li.fire::before{content:'🔥';text-shadow:none}
 .mtier li.call::before{content:'📞';text-shadow:none}
 
 /* ---------- clickable tiers -> checkout ---------- */
@@ -201,6 +201,30 @@ a.offer:hover{background:rgba(240,201,135,.12);box-shadow:0 0 16px -6px rgba(240
 header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
 header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
 
+
+/* ---------- theme toggle + light mode ---------- */
+.themebtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid rgba(93,84,128,.4);border-radius:2rem;padding:.4rem .85rem;cursor:pointer;transition:all .25s}
+.themebtn:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+html[data-theme="light"]{
+  --void:#f5f3fa; --deep:#ffffff; --deeper:#ece8f5; --ink:#241d3d; --dim:#54506e; --faint:#7d7794;
+  --arcane:#6b3fd4; --arcane-soft:rgba(107,63,212,.1); --stardust:#8a6a1a; --fire:#c4510e; --ice:#0e7ba6; --storm:#6b3fd4; --air:#1f7a4d;
+}
+html[data-theme="light"] body{background:linear-gradient(180deg,#f7f5fc,#ece7f7);background-attachment:fixed}
+html[data-theme="light"] body::before{display:none}
+html[data-theme="light"] #cosmos,html[data-theme="light"] .veil,html[data-theme="light"] #herovideo{display:none}
+html[data-theme="light"] .topnav{background:linear-gradient(180deg,rgba(247,245,252,.96),rgba(247,245,252,.75) 78%,transparent);border-bottom-color:rgba(107,63,212,.14)}
+html[data-theme="light"] .alt{background:linear-gradient(180deg,transparent,rgba(107,63,212,.06) 12%,rgba(107,63,212,.06) 88%,transparent)}
+html[data-theme="light"] .star-card,html[data-theme="light"] .area,html[data-theme="light"] .moon-card,html[data-theme="light"] .mtier,html[data-theme="light"] .promptcard,html[data-theme="light"] .card{background:#fff;border-color:rgba(107,63,212,.2)}
+html[data-theme="light"] footer{background:rgba(247,245,252,.92);border-top-color:rgba(107,63,212,.15)}
+html[data-theme="light"] .promptbox{background:#f4f1fb;color:#3d2f6b;border-color:rgba(107,63,212,.25)}
+html[data-theme="light"] h1.brand{background:linear-gradient(100deg,#6b3fd4,#241d3d 45%,#8a6a1a);-webkit-background-clip:text;background-clip:text}
+html[data-theme="light"] td.feat,html[data-theme="light"] th.feat{background:linear-gradient(180deg,rgba(107,63,212,.08),rgba(107,63,212,.03));border-left-color:rgba(107,63,212,.25);border-right-color:rgba(107,63,212,.25)}
+html[data-theme="light"] .price .now{color:#0e7ba6;text-shadow:none}
+html[data-theme="light"] .price .was .zap path{fill:#0e7ba6;filter:none}
+html[data-theme="light"] .no{color:#cfc9e2}
+html[data-theme="light"] .tbtn{color:#0e7ba6;border-color:rgba(14,123,166,.45)}
+html[data-theme="light"] input,html[data-theme="light"] textarea{background:#fff;color:#241d3d;border-color:rgba(107,63,212,.3)}
+
 /* ---------- footer ---------- */
 footer{position:relative;z-index:2;border-top:1px solid rgba(93,84,128,.25);padding:3.5rem 1.5rem 2.5rem;background:rgba(5,3,16,.85)}
 footer .wrap{display:grid;gap:1.4rem;text-align:center}
@@ -209,7 +233,7 @@ footer .wrap{display:grid;gap:1.4rem;text-align:center}
 .fineprint{color:var(--faint);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em}
 
 @media (max-width:760px){
-  section{padding:4.5rem 1.2rem}
+  section{padding:3.4rem 1.2rem}
   .monday{grid-template-columns:1fr}
   .chart-scroll{display:none}
   .tiers-mobile{display:grid;gap:1.1rem;margin-top:2.6rem}
@@ -238,6 +262,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
 
 <nav class="topnav" aria-label="Site">
   <div class="navwrap" style="justify-content:center">
+    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">◐ light</button>
     <div class="navlinks">
       <a href="index.html">The Path</a>
       <a href="metaphysical-monday.html">Metaphys Monday's</a>
@@ -306,9 +331,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
               <span class="tiername">The Journey</span>
               <span class="price">$555<small>one-time session · ~6 hrs</small></span>
             </th>
-            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/28E4gr43Yarj0FQ53FgEg0a','_blank')">
+            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/00w5kv9oi2YR60a7bNgEg0c','_blank')">
               <span class="tiername">90 Day Breakthrough</span>
-              <span class="price">$2,000/mo × 4<small><a class="piflink" href="https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $7,000 — save $1,000</a></small></span>
+              <span class="price">$2,500/mo × 3<small><a class="piflink" href="https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
             </th>
             <!-- ASCENT-DEACTIVATED (2026-08-25 — uncomment to reactivate)
 <th scope="col">
@@ -344,7 +369,12 @@ ASCENT-DEACTIVATED -->
           <tr>
             <td class="rowlabel">Breakthrough Session <small>one 7–10 hour deep-clearing session</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="sigil em">❤️‍🔥</span></td><!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">❤️‍🔥</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">🔥</span></td><!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">🔥</span></td>
+          </tr>
+          <tr>
+            <td class="rowlabel">Direct access <small>text me between calls; get on a call when it matters</small></td>
+            <td><span class="no">·</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil">✦</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil">✦</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Monthly integration follow-ups <small>two 90-min calls — 30 &amp; 60 days after</small></td>
@@ -355,11 +385,6 @@ ASCENT-DEACTIVATED -->
             <td class="rowlabel">High Touch Coaching <small>three 60–90 min calls per month × 4 months</small></td>
             <td><span class="no">·</span></td>
             <td><span class="no">·</span></td><td><span class="no">·</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil em">📞</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">📞</span></td>
-          </tr>
-          <tr>
-            <td class="rowlabel">Direct access <small>text me between calls; get on a call when it matters</small></td>
-            <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="no">·</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil">✦</span></td>
           </tr>
         </tbody>
       </table>
@@ -386,15 +411,16 @@ ASCENT-DEACTIVATED -->
           <li class="soul"><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
         </ul>
       </div>
-      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/28E4gr43Yarj0FQ53FgEg0a','_blank')">
+      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/00w5kv9oi2YR60a7bNgEg0c','_blank')">
         <span class="tiername">90 Day Breakthrough</span>
-        <span class="price">$2,000/mo × 4<small><a class="piflink" href="https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $7,000 — save $1,000</a></small></span>
+        <span class="price">$2,500/mo × 3<small><a class="piflink" href="https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
         <ul>
           <li>Everything in <b>The Release</b> and <b>The Journey</b></li>
         </ul>
         <div class="plusline">plus</div>
         <ul>
           <li class="fire"><b>Breakthrough Session</b> — one 7–10 hour deep-clearing session</li>
+          <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
           <li class="call"><b>Monthly integration follow-ups</b> — two 90-min calls, 30 &amp; 60 days after</li>
         </ul>
       </div>
@@ -659,6 +685,20 @@ document.querySelector('[data-signup]').addEventListener('click',e=>{
   var n = document.querySelector('.topnav'); if(!n) return;
   var on = function(){ if(window.scrollY > 70){ n.classList.add('shrunk'); } else { n.classList.remove('shrunk'); } };
   window.addEventListener('scroll', on, {passive:true}); on();
+})();
+
+/* ---------- dark/light toggle (no reload) ---------- */
+(function(){
+  try{ if(localStorage.getItem('tmg-theme')==='light') document.documentElement.setAttribute('data-theme','light'); }catch(e){}
+  var b=document.getElementById('themeToggle'); if(!b) return;
+  function label(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? '◑ dark' : '◐ light'; }
+  b.addEventListener('click',function(){
+    var l = document.documentElement.getAttribute('data-theme')==='light';
+    if(l){ document.documentElement.removeAttribute('data-theme'); } else { document.documentElement.setAttribute('data-theme','light'); }
+    try{ localStorage.setItem('tmg-theme', l?'dark':'light'); }catch(e){}
+    label();
+  });
+  label();
 })();
 </script>
 </body>
