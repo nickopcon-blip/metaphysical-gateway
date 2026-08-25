@@ -109,6 +109,13 @@ table.tiers{border-collapse:collapse;width:100%;min-width:880px}
 .mtier li.fire::before{content:'❤️‍🔥';text-shadow:none}
 .mtier li.call::before{content:'📞';text-shadow:none}
 
+/* ---------- clickable tiers -> checkout ---------- */
+.tierclick{cursor:pointer;transition:background .3s}
+th.tierclick:hover{background:rgba(240,201,135,.06)}
+.tierclick:hover .tiername{color:var(--stardust)}
+.mtier.tierclick:hover{border-color:rgba(240,201,135,.55);box-shadow:0 0 30px -12px rgba(240,201,135,.45)}
+
+
 td.feat,th.feat{background:linear-gradient(180deg,rgba(157,107,255,.13),rgba(157,107,255,.05));border-left:1px solid rgba(157,107,255,.35);border-right:1px solid rgba(157,107,255,.35)}
 th.feat{position:relative}
 .crown{position:absolute;top:.55rem;left:0;right:0;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--arcane)}
@@ -257,17 +264,17 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <thead>
           <tr>
             <th scope="col"><span class="tiersub">Included in each tier ↓</span></th>
-            <th scope="col">
+            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/14A9ALgQK8jb60agMngEg04','_blank')">
               <span class="tiername">The Release</span>
               <span class="tiersub">Rapid Release · one 90-min call</span>
               <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small>your first call — then $333 for follow-ups</small></span>
             </th>
-            <th scope="col">
+            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/bJe6oz9oifLD88idAbgEg06','_blank')">
               <span class="tiername">The Journey</span>
               <span class="tiersub">Past-Life Regression &amp; Higher Source Connection · ~6 hrs</span>
               <span class="price">$555<small>one-time session</small></span>
             </th>
-            <th scope="col">
+            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/6oU7sDgQKczrgEOeEfgEg07','_blank')">
               <span class="tiername">90 Day Breakthrough</span>
               <span class="tiersub">Breakthrough Session · one 7–10 hour session</span>
               <span class="price">$8,000<small>installments available</small></span>
@@ -279,7 +286,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
               <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
             </th>
 ASCENT-DEACTIVATED -->
-            <th scope="col" class="feat">
+            <th scope="col" class="feat tierclick" onclick="window.open('https://buy.stripe.com/9B628jeICdDvagqbs3gEg08','_blank')">
               <span class="crown">✦ The Complete Work</span>
               <span class="tiername">The Full Path</span>
               <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
@@ -333,7 +340,7 @@ ASCENT-DEACTIVATED -->
     </div>
 
     <div class="tiers-mobile">
-      <div class="mtier">
+      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/14A9ALgQK8jb60agMngEg04','_blank')">
         <span class="tiername">The Release</span>
         <span class="tiersub">Rapid Release · one 90-min call</span>
         <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small>your first call — then $333 for follow-ups</small></span>
@@ -341,7 +348,7 @@ ASCENT-DEACTIVATED -->
           <li class="sr"><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
         </ul>
       </div>
-      <div class="mtier">
+      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/bJe6oz9oifLD88idAbgEg06','_blank')">
         <span class="tiername">The Journey</span>
         <span class="tiersub">Past-Life Regression &amp; Higher Source Connection · ~6 hrs</span>
         <span class="price">$555<small>one-time session</small></span>
@@ -354,7 +361,7 @@ ASCENT-DEACTIVATED -->
           <li class="soul"><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
         </ul>
       </div>
-      <div class="mtier">
+      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/6oU7sDgQKczrgEOeEfgEg07','_blank')">
         <span class="tiername">90 Day Breakthrough</span>
         <span class="tiersub">Breakthrough Session · one 7–10 hour session</span>
         <span class="price">$8,000<small>installments available</small></span>
@@ -380,7 +387,7 @@ ASCENT-DEACTIVATED -->
         </ul>
       </div>
 ASCENT-DEACTIVATED -->
-      <div class="mtier feat">
+      <div class="mtier feat tierclick" onclick="window.open('https://buy.stripe.com/9B628jeICdDvagqbs3gEg08','_blank')">
         <span class="crown">✦ The Complete Work</span>
         <span class="tiername">The Full Path</span>
         <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
