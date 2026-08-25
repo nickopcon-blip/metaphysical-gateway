@@ -93,6 +93,14 @@ table.tiers{border-collapse:collapse;width:100%;min-width:1040px}
 .rowlabel small{display:block;color:var(--faint);font-size:.8rem;font-style:italic}
 .sigil{color:var(--stardust);font-size:1.05rem;text-shadow:0 0 10px rgba(240,201,135,.55)}
 .no{color:#2e2847}
+
+.sigil.sr{color:#ff4d4d;text-shadow:0 0 10px rgba(255,77,77,.55);font-weight:700}
+.sigil.em{text-shadow:none;font-size:1rem}
+.mtier li.sr::before{content:'✚';color:#ff4d4d;text-shadow:0 0 8px rgba(255,77,77,.5)}
+.mtier li.soul::before{content:'🌀';text-shadow:none}
+.mtier li.fire::before{content:'❤️‍🔥';text-shadow:none}
+.mtier li.call::before{content:'📞';text-shadow:none}
+
 td.feat,th.feat{background:linear-gradient(180deg,rgba(157,107,255,.13),rgba(157,107,255,.05));border-left:1px solid rgba(157,107,255,.35);border-right:1px solid rgba(157,107,255,.35)}
 th.feat{position:relative}
 .crown{position:absolute;top:.55rem;left:0;right:0;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--arcane)}
@@ -264,33 +272,33 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <tbody>
           <tr>
             <td class="rowlabel">Deep release work <small>baggage, limiting beliefs &amp; wounds — cleared before anything else</small></td>
-            <td><span class="sigil">✦</span></td>
-            <td><span class="sigil">✦</span></td><td><span class="sigil">✦</span></td><td><span class="sigil">✦</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="sigil sr">✚</span></td>
+            <td><span class="sigil sr">✚</span></td><td><span class="sigil sr">✚</span></td><td><span class="sigil sr">✚</span></td><td class="feat"><span class="sigil sr">✚</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Past-life regression</td>
             <td><span class="no">·</span></td>
-            <td><span class="sigil">✦</span></td><td><span class="sigil">✦</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="sigil em">🌀</span></td><td><span class="sigil em">🌀</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">🌀</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Higher source connection <small>channeled guidance &amp; karmic-pattern release</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="sigil">✦</span></td><td><span class="sigil">✦</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="sigil em">🌀</span></td><td><span class="sigil em">🌀</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">🌀</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Breakthrough Session <small>two 5-hour deep-clearing sessions</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="sigil">✦</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">❤️‍🔥</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">❤️‍🔥</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Integration follow-ups <small>two 90-min calls — 30 &amp; 60 days after</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="sigil">✦</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">❤️‍🔥</span></td><td><span class="no">·</span></td><td class="feat"><span class="sigil em">❤️‍🔥</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Coaching calls <small>three 60–90 min calls per month × 4 months</small></td>
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="no">·</span></td><td><span class="sigil">✦</span></td><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="no">·</span></td><td><span class="no">·</span></td><td><span class="sigil em">📞</span></td><td class="feat"><span class="sigil em">📞</span></td>
           </tr>
           <tr>
             <td class="rowlabel">Areas-of-Life curriculum <small>choose your arena — see below</small></td>
@@ -312,7 +320,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <span class="tiersub">Rapid Release · one 90-min call</span>
         <span class="price">$222<small>first call: $99</small></span>
         <ul>
-          <li><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
+          <li class="sr"><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
         </ul>
       </div>
       <div class="mtier">
@@ -321,8 +329,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <span class="price">$555<small>one-time session</small></span>
         <ul>
           <li>Everything in <b>The Release</b></li>
-          <li><b>Past-life regression</b></li>
-          <li><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
+          <li class="soul"><b>Past-life regression</b></li>
+          <li class="soul"><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
         </ul>
       </div>
       <div class="mtier">
@@ -331,8 +339,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <span class="price">$8,000<small>installments available</small></span>
         <ul>
           <li>Everything in <b>The Journey</b></li>
-          <li><b>Breakthrough Session</b> — two 5-hour deep-clearing sessions</li>
-          <li><b>Integration follow-ups</b> — two 90-min calls, 30 &amp; 60 days after</li>
+          <li class="fire"><b>Breakthrough Session</b> — two 5-hour deep-clearing sessions</li>
+          <li class="fire"><b>Integration follow-ups</b> — two 90-min calls, 30 &amp; 60 days after</li>
         </ul>
       </div>
       <div class="mtier">
@@ -340,8 +348,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
         <span class="tiersub">4-Month Coaching · after a completed Breakthrough</span>
         <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
         <ul>
-          <li><b>Deep release work</b> — whatever surfaces, cleared as we go</li>
-          <li><b>Coaching calls</b> — three 60–90 min calls per month × 4 months</li>
+          <li class="sr"><b>Deep release work</b> — whatever surfaces, cleared as we go</li>
+          <li class="call"><b>Coaching calls</b> — three 60–90 min calls per month × 4 months</li>
           <li><b>Areas-of-Life curriculum</b> — choose your arena</li>
           <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
         </ul>
