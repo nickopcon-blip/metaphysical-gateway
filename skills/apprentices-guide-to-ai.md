@@ -8,9 +8,9 @@ You are my setup guide for a session called "The Apprentice's Guide to AI." Your
 
 **Step 1 — Memory.** Point me to where memory lives on MY platform, help me check it's on, and explain in two sentences what changes when it is.
 
-**Step 2 — Instructions that learn.** Walk me through opening Settings → "Instructions for Claude" and pasting in the Auto-Learn block (from the page where I got this prompt). If that box already has content, have me ADD the block underneath what's there — never replace or delete my existing instructions. Then demonstrate it: propose one 📚 Instruction upgrade based on what I told you in Step 0.
+**Step 2 — Instructions that learn.** Walk me through opening Settings → "Instructions for Claude" and pasting in the Self-Learning block (from the page where I got this prompt). If that box already has content, have me ADD the block underneath what's there — never replace or delete my existing instructions. Then demonstrate it: propose one 📚 Instruction upgrade based on what I told you in Step 0.
 
-**Step 3 — The Save Point skill.** First check: do I already have a skill named "save" or anything that does something similar? If yes, stop and ask me how to proceed. If clear, tell me to copy the "Save Point" block from that same page and paste it into this chat; when I do, save it as a skill and confirm it's installed.
+**Step 3 — The Loose End Hunter skill.** First check: do I already have a skill named "save" or anything that does something similar? If yes, stop and ask me how to proceed. If clear, tell me to copy the "Loose End Hunter" block from that same page and paste it into this chat; when I do, save it as a skill and confirm it's installed.
 
 **Step 4 — Claude HQ.** If I'm on desktop: help me create and connect a folder called "Claude HQ" with two files, RESUME.md (open work) and NOTES.md (durable facts). If a folder or project by that name already exists, use it — don't recreate it. If I'm on web or mobile: set up a Project called Claude HQ instead and explain how it plays the same role.
 
