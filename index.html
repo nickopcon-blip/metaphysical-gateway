@@ -256,6 +256,7 @@ footer .wrap{display:grid;gap:1.4rem;text-align:center}
   .reveal{opacity:1;transform:none}
 }
 a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-offset:3px}
+@media (max-width:760px){.topnav .themebtn{order:99;margin-left:auto}}
 </style>
 </head>
 <body>
@@ -310,7 +311,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
     </div>
       </div>
       <div class="moon-card">
-        <a class="btn btn-primary" href="#" data-signup>Join the Circle</a>
+        <a class="btn btn-primary" href="register.html">Join the Circle</a>
       </div>
     </div>
   </div>
@@ -385,7 +386,7 @@ ASCENT-DEACTIVATED -->
           <tr>
             
             <td><span class="no">·</span></td>
-            <td><span class="no">·</span></td><td><span class="sigil">✦</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil">✦</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">🤝</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">🤝</span></td>
           <td class="rowlabel">Direct access <small>text me between calls; get on a call when it matters</small></td>
           </tr>
           <tr>
@@ -670,12 +671,6 @@ ASCENT-DEACTIVATED -->
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 })();
 
-/* ---------- signup placeholder (wire to Kit/ESP form later) ---------- */
-document.querySelector('[data-signup]').addEventListener('click',e=>{
-  e.preventDefault();
-  e.target.textContent='✦ Link coming soon ✦';
-  setTimeout(()=>e.target.textContent='Save My Seat',2200);
-});
 
 /* ---------- living portraits: dormant until clips are uploaded ---------- */
 (function(){
