@@ -243,6 +243,11 @@ html[data-theme="light"] .secflag span{text-shadow:none}
 html[data-theme="light"] .secflag::before{background:linear-gradient(90deg,transparent,rgba(107,63,212,.35))}
 html[data-theme="light"] .secflag::after{background:linear-gradient(90deg,rgba(107,63,212,.35),transparent)}
 @media (max-width:600px){.secflag span{font-size:.95rem;letter-spacing:.22em}}
+/* ---------- elemental area symbols ---------- */
+.area .el-sym{display:block;width:118px;height:118px;margin:0 auto .7rem}
+.area .el-sym svg{width:100%;height:100%;display:block;overflow:visible}
+.area .el-sym .ic{font-size:44px}
+html[data-theme="light"] .area .el-sym svg{filter:saturate(1.05)}
 /* ---------- footer ---------- */
 footer{position:relative;z-index:2;border-top:1px solid rgba(93,84,128,.25);padding:3.5rem 1.5rem 2.5rem;background:rgba(5,3,16,.85)}
 footer .wrap{display:grid;gap:1.4rem;text-align:center}
@@ -563,22 +568,38 @@ ASCENT-DEACTIVATED -->
     <p class="lede">Coaching moves through the arena you choose — with the tools to clear whatever surfaces along the way.</p>
     <div class="areas">
       <div class="area" style="--el:var(--stardust)">
-        <div class="rune">⚡</div>
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><linearGradient id="gEarth" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="rgba(203,164,117,.62)"/><stop offset="55%" stop-color="rgba(166,124,82,.34)"/><stop offset="100%" stop-color="rgba(130,92,56,.10)"/></linearGradient></defs>
+<rect x="16" y="16" width="88" height="88" rx="10" fill="url(#gEarth)"/>
+<text class="ic" x="60" y="76" text-anchor="middle">💸</text></svg></div>
         <h3>Wealth &amp; Abundance</h3>
         <p>Business, career, money. Built for entrepreneurs ready to move without the invisible brakes on.</p>
       </div>
       <div class="area" style="--el:var(--fire)">
-        <div class="rune">🜂</div>
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><linearGradient id="gFire" x1="0" y1="1" x2="0" y2="0">
+<stop offset="0%" stop-color="rgba(210,45,25,.55)"/><stop offset="55%" stop-color="rgba(255,95,50,.32)"/><stop offset="100%" stop-color="rgba(255,150,80,.10)"/></linearGradient></defs>
+<polygon points="60,10 110,106 10,106" fill="url(#gFire)"/>
+<text class="ic" x="60" y="94" text-anchor="middle">🔥</text></svg></div>
         <h3>Physical Health &amp; Self-Image</h3>
         <p>Remove the limiting beliefs and the negative view of yourself and your body — you shouldn't be working out while thinking poorly of yourself. Then install unconscious behaviors that make eating healthy and being active the attractive choice.</p>
       </div>
       <div class="area" style="--el:var(--ice)">
-        <div class="rune">🜄</div>
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><radialGradient id="gAir" cx="50%" cy="42%" r="65%">
+<stop offset="0%" stop-color="rgba(215,230,245,.62)"/><stop offset="60%" stop-color="rgba(175,200,230,.30)"/><stop offset="100%" stop-color="rgba(150,180,220,.08)"/></radialGradient></defs>
+<circle cx="60" cy="60" r="48" fill="url(#gAir)"/>
+<text class="ic" x="60" y="76" text-anchor="middle">☁️</text></svg></div>
         <h3>Mental &amp; Self-Talk</h3>
         <p>End the arguments in your head when things get quiet. Catch it, call it out, remove it.</p>
       </div>
       <div class="area" style="--el:var(--storm)">
-        <div class="rune">✧</div>
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="rgba(70,130,220,.18)"/><stop offset="55%" stop-color="rgba(40,90,185,.42)"/><stop offset="100%" stop-color="rgba(18,45,120,.65)"/></linearGradient></defs>
+<path fill="url(#gWater)" d="M10,50 A50,50 0 0 0 110,50 A50,58 0 0 1 10,50 Z"/>
+<text class="ic" x="60" y="70" text-anchor="middle">🧘</text></svg></div>
         <h3>Spirituality &amp; Higher Purpose</h3>
         <p>Deepen the connection, find the thread of purpose, and walk it with both feet on the ground.</p>
       </div>
