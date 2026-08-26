@@ -109,21 +109,32 @@ html[data-theme="light"] header.hero::before{display:none !important}
 .navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
 /* ---------- dark mode: extra stars + faint galaxies ---------- */
 html:not([data-theme="light"]) body::after{
- content:'';position:fixed;inset:0;pointer-events:none;
+ content:'';position:fixed;inset:-12%;pointer-events:none;
  background-image:
-  radial-gradient(1px 1px at 18% 12%, rgba(255,255,255,.8) 50%, transparent 51%),
-  radial-gradient(1px 1px at 41% 79%, rgba(255,217,160,.75) 50%, transparent 51%),
-  radial-gradient(1.5px 1.5px at 63% 33%, rgba(168,200,255,.8) 50%, transparent 51%),
-  radial-gradient(1px 1px at 86% 58%, rgba(255,255,255,.7) 50%, transparent 51%),
-  radial-gradient(1px 1px at 8% 47%, rgba(255,190,220,.6) 50%, transparent 51%),
-  radial-gradient(1.5px 1.5px at 29% 92%, rgba(255,255,255,.65) 50%, transparent 51%),
-  radial-gradient(1px 1px at 74% 8%, rgba(180,255,230,.6) 50%, transparent 51%),
-  radial-gradient(ellipse 42% 30% at 80% 16%, rgba(255,110,199,.10), transparent 70%),
-  radial-gradient(ellipse 46% 32% at 12% 60%, rgba(64,200,220,.09), transparent 70%),
-  radial-gradient(ellipse 40% 28% at 70% 85%, rgba(157,107,255,.12), transparent 70%);
- background-size:520px 520px,520px 520px,520px 520px,520px 520px,760px 760px,760px 760px,760px 760px,100% 100%,100% 100%,100% 100%;
- background-repeat:repeat,repeat,repeat,repeat,repeat,repeat,repeat,no-repeat,no-repeat,no-repeat;
+  radial-gradient(1px 1px at 18% 12%, rgba(255,255,255,.85) 50%, transparent 51%),
+  radial-gradient(1px 1px at 41% 79%, rgba(255,217,160,.8) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 63% 33%, rgba(168,200,255,.85) 50%, transparent 51%),
+  radial-gradient(1px 1px at 86% 58%, rgba(255,255,255,.75) 50%, transparent 51%),
+  radial-gradient(1px 1px at 52% 51%, rgba(255,255,255,.7) 50%, transparent 51%),
+  radial-gradient(1px 1px at 11% 84%, rgba(200,230,255,.7) 50%, transparent 51%),
+  radial-gradient(2px 2px at 92% 27%, rgba(255,244,214,.8) 50%, transparent 51%),
+  radial-gradient(1px 1px at 8% 47%, rgba(255,190,220,.65) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 29% 92%, rgba(255,255,255,.7) 50%, transparent 51%),
+  radial-gradient(1px 1px at 74% 8%, rgba(180,255,230,.65) 50%, transparent 51%),
+  radial-gradient(1px 1px at 47% 21%, rgba(255,255,255,.6) 50%, transparent 51%),
+  radial-gradient(2px 2px at 66% 71%, rgba(190,210,255,.65) 50%, transparent 51%),
+  radial-gradient(ellipse 42% 30% at 80% 16%, rgba(255,110,199,.12), transparent 70%),
+  radial-gradient(ellipse 46% 32% at 12% 60%, rgba(64,200,220,.11), transparent 70%),
+  radial-gradient(ellipse 40% 28% at 70% 85%, rgba(157,107,255,.14), transparent 70%),
+  radial-gradient(ellipse 34% 24% at 30% 20%, rgba(255,170,90,.09), transparent 70%),
+  radial-gradient(ellipse 38% 26% at 50% 45%, rgba(90,120,255,.09), transparent 70%);
+ background-size:520px 520px,520px 520px,520px 520px,520px 520px,640px 640px,640px 640px,640px 640px,760px 760px,760px 760px,760px 760px,880px 880px,880px 880px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%;
+ background-repeat:repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;
+ animation:tmg-drift 220s linear infinite alternate, tmg-twinkle 6.5s ease-in-out infinite alternate;
 }
+@keyframes tmg-drift{from{transform:translate(0,0)}to{transform:translate(3.5%,2.5%)}}
+@keyframes tmg-twinkle{from{opacity:.72}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){html:not([data-theme="light"]) body::after{animation:none}}
 </style>
 </head>
 <body>
