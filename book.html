@@ -135,6 +135,34 @@ html:not([data-theme="light"]) body::after{
 @keyframes tmg-drift{from{transform:translate(0,0)}to{transform:translate(3.5%,2.5%)}}
 @keyframes tmg-twinkle{from{opacity:.72}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){html:not([data-theme="light"]) body::after{animation:none}}
+/* ---------- calendar booking ---------- */
+.bookgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.8rem;align-items:start}
+.calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+.calhead .mt{font-family:var(--display);letter-spacing:.12em;font-size:1.05rem}
+.calnav{background:none;border:1px solid rgba(157,107,255,.45);color:var(--ink);border-radius:4px;font-size:1.05rem;line-height:1;padding:.3rem .7rem;cursor:pointer}
+.calnav:disabled{opacity:.22;cursor:default}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:center;margin-bottom:.35rem}
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:.32rem}
+.cald{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;border-radius:6px;border:1px solid transparent;color:var(--faint);user-select:none}
+.cald.av{color:var(--ink);border-color:rgba(157,107,255,.4);cursor:pointer;background:rgba(157,107,255,.08)}
+.cald.av:hover{border-color:rgba(240,201,135,.65)}
+.cald.sel{background:linear-gradient(120deg,#e8c987,#f5deb0);color:#1a1030;border-color:transparent;font-weight:600}
+.cald.today{outline:1px dashed rgba(240,201,135,.55);outline-offset:-1px}
+.calload{font-family:var(--mono);font-size:.6rem;color:var(--faint);text-align:center;margin-top:.6rem;min-height:1em}
+.timescol h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--arcane);margin-bottom:.6rem}
+.timescol .hint{color:var(--faint);font-style:italic;font-size:.92rem}
+.times2{display:flex;flex-wrap:wrap;gap:.5rem}
+.tbtn2{font-family:var(--mono);font-size:.74rem;padding:.55rem .85rem;border:1px solid rgba(125,216,247,.45);color:var(--ice);background:rgba(13,7,34,.5);border-radius:4px;cursor:pointer}
+.tbtn2:hover{border-color:rgba(240,201,135,.6)}
+.tbtn2.sel{background:linear-gradient(120deg,#e8c987,#f5deb0);color:#1a1030;border-color:transparent;font-weight:600}
+.picksum{font-family:var(--accent);color:var(--stardust);font-size:1.12rem;margin:1.6rem 0 .2rem;min-height:1.3em}
+.detaildim{opacity:.45;pointer-events:none}
+html[data-theme="light"] .tbtn2{background:#fff;color:#0e7ba6;border-color:rgba(14,123,166,.45)}
+html[data-theme="light"] .tbtn2.sel{color:#1a1030}
+html[data-theme="light"] .cald.av{background:rgba(107,63,212,.07);border-color:rgba(107,63,212,.3);color:#241d3d}
+html[data-theme="light"] .cald.sel{color:#1a1030}
+html[data-theme="light"] .calnav{color:#241d3d;border-color:rgba(107,63,212,.4)}
+@media (max-width:700px){.bookgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -156,41 +184,45 @@ html:not([data-theme="light"]) body::after{
   <div class="eyebrow" id="eyebrow">Payment received · One more step</div>
   <h1>CHOOSE YOUR TIME</h1>
   <div class="session" id="sessionLabel">…</div>
-  <p class="lede">Pick the day and time that feels right. The moment you confirm, it's on the calendar and an invite lands in your inbox.</p>
+  <p class="lede">Pick a day, pick a time, confirm. Change either at any moment just by clicking again — nothing locks until you confirm. All times Pacific.</p>
 
   <div class="card" id="widget">
-    <div id="stage-loading"><p class="msg">Reading the stars (and the calendar)…</p></div>
+    <div id="bookUI">
+      <div class="bookgrid">
+        <div>
+          <div class="calhead">
+            <button class="calnav" id="prevM" aria-label="Previous month">‹</button>
+            <div class="mt" id="calTitle">…</div>
+            <button class="calnav" id="nextM" aria-label="Next month">›</button>
+          </div>
+          <div class="dow"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="calgrid" id="calGrid"></div>
+          <div class="calload" id="calLoad"></div>
+        </div>
+        <div class="timescol">
+          <h4 id="timesTitle">Times</h4>
+          <div class="hint" id="timesHint">Choose a highlighted day ✦</div>
+          <div class="times2" id="timeList"></div>
+        </div>
+      </div>
 
-    <div id="stage-days" style="display:none">
-      <div class="steps"><b>1 · Day</b> &nbsp;→&nbsp; 2 · Time &nbsp;→&nbsp; 3 · Details</div>
-      <div class="days" id="dayList"></div>
-    </div>
-
-    <div id="stage-times" style="display:none">
-      <button class="back" id="backToDays">← different day</button>
-      <div class="steps">1 · Day &nbsp;→&nbsp; <b>2 · Time</b> &nbsp;→&nbsp; 3 · Details</div>
-      <div id="dayLabel" class="session"></div>
-      <div class="times" id="timeList"></div>
-    </div>
-
-    <div id="stage-form" style="display:none">
-      <button class="back" id="backToTimes">← different time</button>
-      <div class="steps">1 · Day &nbsp;→&nbsp; 2 · Time &nbsp;→&nbsp; <b>3 · Details</b></div>
-      <div class="session" id="chosenLabel"></div>
-      <label for="f-name">Your name</label>
-      <input id="f-name" type="text" autocomplete="name" maxlength="80">
-      <label for="f-email">Email — the invite goes here</label>
-      <input id="f-email" type="email" autocomplete="email" maxlength="120">
-      <label for="f-notes">Anything you want me to know (optional)</label>
-      <textarea id="f-notes" rows="3" maxlength="500"></textarea>
-      <div class="err" id="formErr" style="display:none;margin-top:.8rem"></div>
-      <button class="btn" id="confirmBtn">Confirm My Session ✦</button>
+      <div class="picksum" id="pickSummary"></div>
+      <div id="detailBlock" class="detaildim">
+        <label for="f-name">Your name</label>
+        <input id="f-name" type="text" autocomplete="name" maxlength="80">
+        <label for="f-email">Email — the invite goes here</label>
+        <input id="f-email" type="email" autocomplete="email" maxlength="120">
+        <label for="f-notes">Anything you want me to know (optional)</label>
+        <textarea id="f-notes" rows="3" maxlength="500"></textarea>
+        <div class="err" id="formErr" style="display:none;margin-top:.8rem"></div>
+        <button class="btn" id="confirmBtn">Confirm My Session ✦</button>
+      </div>
     </div>
 
     <div id="stage-success" class="success" style="display:none">
       <h2>It is done. ✦</h2>
       <div class="when" id="whenLabel"></div>
-      <p class="msg">A calendar invite is on its way to your inbox. Show up as you are — we'll handle the rest together.</p>
+      <p class="msg">A calendar invite is on its way to your inbox. Show up as you are — we’ll handle the rest together.</p>
       <p style="margin-top:1.4rem"><a class="btn" href="index.html">Return to the Gateway</a></p>
     </div>
 
@@ -221,65 +253,142 @@ html:not([data-theme="light"]) body::after{
   if (type === 'alignment') document.getElementById('eyebrow').textContent = 'Free · No strings';
   document.getElementById('sessionLabel').textContent = TYPE_META[type];
 
-  var data = null, selDay = null, selSlot = null;
-  function show(id){ ['loading','days','times','form','success','error'].forEach(function(s){ document.getElementById('stage-'+s).style.display = (s===id)?'':'none'; }); }
-  function fail(msg){ document.getElementById('bigErr').textContent = msg; show('error'); }
+  var MONTHS = {};           // 'YYYY-MM' -> {dayMap:{date:{label,slots}}, loaded}
+  var now = new Date();
+  var view = {y: now.getFullYear(), m: now.getMonth()};      // current view month
+  var MINK = ym(now.getFullYear(), now.getMonth());
+  var maxD = new Date(now.getFullYear(), now.getMonth()+24, 1);
+  var MAXK = ym(maxD.getFullYear(), maxD.getMonth());
+  var sel = { date:null, dayLabel:null, slot:null };
 
-  function load(){
-    show('loading');
-    fetch(API_SLOTS + '?type=' + encodeURIComponent(type))
+  function ym(y,m){ return y + '-' + String(m+1).padStart(2,'0'); }
+  function monthName(y,m){ return new Date(y,m,1).toLocaleDateString('en-US',{month:'long',year:'numeric'}); }
+  function fail(msg){ document.getElementById('bigErr').textContent = msg; document.getElementById('bookUI').style.display='none'; document.getElementById('stage-error').style.display=''; }
+
+  function fetchMonth(key){
+    if (MONTHS[key]) return Promise.resolve(MONTHS[key]);
+    document.getElementById('calLoad').textContent = 'reading the calendar…';
+    return fetch(API_SLOTS + '?type=' + encodeURIComponent(type) + '&month=' + key)
       .then(function(r){ return r.json(); })
       .then(function(j){
-        if (!j.ok || !j.days || !j.days.length) return fail('No open times found right now — email me and we’ll find one together.');
-        data = j; renderDays();
+        var dayMap = {};
+        if (j.ok) (j.days||[]).forEach(function(d){ dayMap[d.date] = d; });
+        MONTHS[key] = { dayMap: dayMap };
+        document.getElementById('calLoad').textContent = '';
+        return MONTHS[key];
       })
-      .catch(function(){ fail('The calendar didn’t answer. Give it a breath and try again.'); });
+      .catch(function(){ document.getElementById('calLoad').textContent = 'calendar didn’t answer — try the arrows again'; return { dayMap:{} }; });
   }
-  function renderDays(){
-    var el = document.getElementById('dayList'); el.innerHTML = '';
-    data.days.forEach(function(day){
-      var b = document.createElement('button'); b.className = 'chip'; b.textContent = day.label;
-      b.onclick = function(){ selDay = day; renderTimes(); };
-      el.appendChild(b);
-    });
-    show('days');
+
+  function renderCal(){
+    var key = ym(view.y, view.m);
+    document.getElementById('calTitle').textContent = monthName(view.y, view.m);
+    document.getElementById('prevM').disabled = (key <= MINK);
+    document.getElementById('nextM').disabled = (key >= MAXK);
+    var grid = document.getElementById('calGrid'); grid.innerHTML = '';
+    var first = new Date(view.y, view.m, 1);
+    var days = new Date(view.y, view.m+1, 0).getDate();
+    for (var i=0;i<first.getDay();i++){ grid.appendChild(document.createElement('div')); }
+    var todayISO = new Date().toLocaleDateString('sv-SE');
+    var data = MONTHS[key] || { dayMap:{} };
+    for (var d=1; d<=days; d++){
+      var cell = document.createElement('div');
+      var iso = key + '-' + String(d).padStart(2,'0');
+      cell.className = 'cald'; cell.textContent = d;
+      if (iso === todayISO) cell.className += ' today';
+      var info = data.dayMap[iso];
+      if (info){
+        cell.className += ' av' + (sel.date===iso ? ' sel' : '');
+        (function(iso, info){
+          cell.addEventListener('click', function(){ pickDay(iso, info); });
+        })(iso, info);
+      }
+      grid.appendChild(cell);
+    }
   }
-  function renderTimes(){
-    document.getElementById('dayLabel').textContent = selDay.label;
+
+  function pickDay(iso, info){
+    sel.date = iso; sel.dayLabel = info.label; sel.slot = null;
+    renderCal(); renderTimes(info); updateSummary();
+  }
+
+  function renderTimes(info){
+    document.getElementById('timesTitle').textContent = info ? info.label : 'Times';
+    document.getElementById('timesHint').style.display = info ? 'none' : '';
     var el = document.getElementById('timeList'); el.innerHTML = '';
-    selDay.slots.forEach(function(sl){
-      var b = document.createElement('button'); b.className = 'tbtn'; b.textContent = sl.label;
-      b.onclick = function(){ selSlot = sl; document.getElementById('chosenLabel').textContent = selDay.label + ' · ' + sl.label + ' PT'; show('form'); };
+    if (!info) return;
+    info.slots.forEach(function(slot){
+      var b = document.createElement('button');
+      b.className = 'tbtn2' + (sel.slot && sel.slot.start===slot.start ? ' sel' : '');
+      b.textContent = slot.label;
+      b.addEventListener('click', function(){ sel.slot = slot; renderTimes(info); updateSummary(); });
       el.appendChild(b);
     });
-    show('times');
   }
-  document.getElementById('backToDays').onclick = function(){ show('days'); };
-  document.getElementById('backToTimes').onclick = function(){ show('times'); };
-  document.getElementById('retryBtn').onclick = load;
-  document.getElementById('confirmBtn').onclick = function(){
+
+  function updateSummary(){
+    var s = document.getElementById('pickSummary');
+    var block = document.getElementById('detailBlock');
+    if (sel.date && sel.slot){
+      s.textContent = '✦ ' + sel.dayLabel + ' · ' + sel.slot.label + ' PT';
+      block.className = '';
+    } else if (sel.date){
+      s.textContent = sel.dayLabel + ' — now choose a time';
+      block.className = 'detaildim';
+    } else { s.textContent = ''; block.className = 'detaildim'; }
+  }
+
+  function nav(delta){
+    var d = new Date(view.y, view.m + delta, 1);
+    var key = ym(d.getFullYear(), d.getMonth());
+    if (key < MINK || key > MAXK) return;
+    view = {y: d.getFullYear(), m: d.getMonth()};
+    renderCal();
+    fetchMonth(key).then(renderCal);
+  }
+  document.getElementById('prevM').addEventListener('click', function(){ nav(-1); });
+  document.getElementById('nextM').addEventListener('click', function(){ nav(1); });
+
+  document.getElementById('confirmBtn').addEventListener('click', function(){
     var name = document.getElementById('f-name').value.trim();
     var email = document.getElementById('f-email').value.trim();
     var notes = document.getElementById('f-notes').value.trim();
-    var errEl = document.getElementById('formErr');
-    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { errEl.textContent = 'Name and a real email, please — the invite needs somewhere to land.'; errEl.style.display=''; return; }
-    errEl.style.display='none';
-    var btn = this; btn.disabled = true; btn.textContent = 'Sealing it…';
-    fetch(API_BOOK, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({ type:type, start:selSlot.start, name:name, email:email, notes:notes }) })
+    var err = document.getElementById('formErr');
+    if (!sel.slot){ return; }
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent = 'A name and a real email — the invite needs somewhere to land.'; err.style.display=''; return; }
+    err.style.display='none';
+    var btn = this; btn.disabled = true; btn.textContent = 'Weaving it in…';
+    fetch(API_BOOK, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({ type:type, start: sel.slot.start, name:name, email:email, notes:notes }) })
       .then(function(r){ return r.json(); })
       .then(function(j){
         btn.disabled = false; btn.textContent = 'Confirm My Session ✦';
-        if (j.ok) { document.getElementById('whenLabel').textContent = j.when; show('success'); }
-        else if (j.error === 'slot_taken') { errEl.textContent = 'That moment was just claimed by someone else — pick another and it’s yours.'; errEl.style.display=''; load(); }
-        else { errEl.textContent = 'Something slipped. Try once more.'; errEl.style.display=''; }
+        if (j.ok){
+          document.getElementById('whenLabel').textContent = j.human || (sel.dayLabel + ' · ' + sel.slot.label + ' PT');
+          document.getElementById('bookUI').style.display='none';
+          document.getElementById('stage-success').style.display='';
+        } else if (j.error === 'slot_taken'){
+          err.textContent = 'That exact moment was just claimed — pick another time.'; err.style.display='';
+          delete MONTHS[ym(view.y,view.m)]; sel.slot=null; updateSummary();
+          fetchMonth(ym(view.y,view.m)).then(function(md){ renderCal(); renderTimes(md.dayMap[sel.date]); });
+        } else {
+          err.textContent = 'Something slipped — try once more.'; err.style.display='';
+        }
       })
-      .catch(function(){ btn.disabled = false; btn.textContent = 'Confirm My Session ✦'; errEl.textContent = 'The connection wavered — try again.'; errEl.style.display=''; });
-  };
-  load();
-})();
+      .catch(function(){ btn.disabled=false; btn.textContent='Confirm My Session ✦'; err.textContent='The connection wavered — try again.'; err.style.display=''; });
+  });
+  document.getElementById('retryBtn').addEventListener('click', function(){ location.reload(); });
 
-/* ---------- dark/light toggle (no reload) ---------- */
-(function(){
+  /* boot */
+  renderCal();
+  fetchMonth(ym(view.y, view.m)).then(function(md){
+    renderCal();
+    if (!Object.keys(md.dayMap).length){
+      /* auto-advance once if this month is empty */
+      nav(1);
+    }
+  });
+
+  /* theme toggle */
   try{ if(localStorage.getItem('tmg-theme')==='light') document.documentElement.setAttribute('data-theme','light'); }catch(e){}
   var b=document.getElementById('themeToggle'); if(!b) return;
   function label(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? '◑ dark' : '◐ light'; }
