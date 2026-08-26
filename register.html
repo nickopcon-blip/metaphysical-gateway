@@ -130,16 +130,16 @@ html:not([data-theme="light"]) body::after{
 </nav>
 
 <main>
-  <div class="eyebrow">Metaphys Monday's · Free Weekly Call</div>
-  <h1>SAVE YOUR SEAT</h1>
-  <p class="lede">Every Monday, 5:30 PT/8:30 ET. Everything metaphysics &mdash; taught plainly, practiced live, of light always. Leave your name and email and the calendar invite comes straight to you.</p>
+  <div class="eyebrow" id="r-eyebrow">Metaphys Monday's · Free Weekly Call</div>
+  <h1 id="r-title">SAVE YOUR SEAT</h1>
+  <p class="lede" id="r-lede">Every Monday, 5:30 PT/8:30 ET. Everything metaphysics &mdash; taught plainly, practiced live, of light always. Leave your name and email and the calendar invite comes straight to you.</p>
 
   <div class="grid">
     <div class="card">
       <h2>What Happens Next</h2>
       <p>One invite covers every Monday &mdash; accept it once and it lives in your calendar, video link inside. No spam, no chain of emails. Just a seat held for you each week.</p>
       <p>New to this work? Perfect. The circle is built for beginners and old souls alike &mdash; come as you are, bring your questions.</p>
-      <p><a href="metaphysical-monday.html" style="color:var(--ice)">What we cover on the calls &rarr;</a></p>
+      <p><a href="metaphysical-monday.html" style="color:var(--ice)" id="r-morelink">What we cover on the calls &rarr;</a></p>
     </div>
 
     <div class="card">
@@ -163,6 +163,15 @@ html:not([data-theme="light"]) body::after{
 <script>
 (function(){
   var API = 'https://64-181-232-186.nip.io/webhook/gateway-monday-register-8e4a52';
+  var TYPE = (new URLSearchParams(location.search).get('type')==='ai') ? 'ai' : 'monday';
+  if (TYPE==='ai') {
+    document.title = 'Save Your Seat \u00b7 AI Office Hours \u00b7 The Metaphysical Gateway';
+    document.getElementById('r-eyebrow').textContent = 'AI Office Hours \u00b7 Free Monthly Call';
+    document.getElementById('r-lede').innerHTML = 'Monthly, every 2nd Tuesday \u2014 4pm PT / 7pm ET. Free AI office hours: coaching, consulting, and brainstorming for anyone building with AI. Leave your name and email and the calendar invite comes straight to you.';
+    var ml = document.getElementById('r-morelink');
+    ml.href = 'ai-coaching.html'; ml.innerHTML = 'What happens at office hours \u2192';
+    document.querySelectorAll('.navlinks a').forEach(function(a){ a.classList.remove('active'); if(a.getAttribute('href')==='ai-coaching.html') a.classList.add('active'); });
+  }
   document.getElementById('rform').addEventListener('submit', function(e){
     e.preventDefault();
     var name = document.getElementById('r-name').value.trim();
@@ -171,7 +180,7 @@ html:not([data-theme="light"]) body::after{
     ok.style.display='none';
     if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.textContent='A name and a real email \u2014 that\u2019s all it takes.'; err.style.display=''; return; }
     err.style.display='none'; btn.disabled = true; btn.textContent='Holding your seat\u2026';
-    fetch(API, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({name:name,email:email}) })
+    fetch(API, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({name:name,email:email,event:TYPE}) })
       .then(function(r){ return r.json(); })
       .then(function(j){
         btn.disabled=false; btn.textContent='Send Me the Invite \u2726';
