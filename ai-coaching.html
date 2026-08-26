@@ -306,7 +306,8 @@ html:not([data-theme="light"]) body::after{
       </div>
       <div class="moon-card">
         <h3>Join the Next AI Office Hours</h3>
-        <a class="btn btn-primary" href="#" data-signup>Save My Seat</a>
+        <p style="font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ice);margin:.4rem 0 1.1rem">Monthly &middot; every 2nd Tuesday &middot; 4pm PT / 7pm ET</p>
+        <a class="btn btn-primary" href="register.html?type=ai">Save My Seat</a>
       </div>
     </div>
   </div>
@@ -456,13 +457,6 @@ html:not([data-theme="light"]) body::after{
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 })();
 
-/* ---------- signup placeholder (wire to Kit/ESP form later) ---------- */
-document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('click',e=>{
-  e.preventDefault();
-  const orig=e.target.textContent;
-  e.target.textContent='✦ Link coming soon ✦';
-  setTimeout(()=>e.target.textContent=orig,2200);
-}));
 
 /* ---------- free skills: load + copy ---------- */
 (function(){
