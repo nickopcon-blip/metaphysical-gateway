@@ -233,6 +233,16 @@ html[data-theme="light"] header.hero{overflow:hidden}
 html[data-theme="light"] header.hero::before{content:'';position:absolute;z-index:-1;left:50%;top:calc(50% + 1.5rem);transform:translateX(-50%);width:160vw;height:160vw;max-width:2400px;max-height:2400px;border-radius:50%;pointer-events:none;
   background:radial-gradient(circle, rgba(255,128,40,.5) 0%, rgba(255,158,72,.34) 30%, rgba(255,196,120,.18) 52%, rgba(255,220,170,.08) 64%, transparent 74%)}
 
+/* ---------- section flags (free vs paid) ---------- */
+.secflag{display:flex;align-items:center;gap:1.2rem;max-width:var(--maxw);margin:3.4rem auto -1.2rem;padding:0 1.5rem}
+.secflag::before,.secflag::after{content:'';flex:1;height:1px}
+.secflag::before{background:linear-gradient(90deg,transparent,rgba(240,201,135,.55))}
+.secflag::after{background:linear-gradient(90deg,rgba(240,201,135,.55),transparent)}
+.secflag span{font-family:var(--display);font-size:1.2rem;letter-spacing:.32em;padding-left:.32em;text-transform:uppercase;color:var(--stardust);text-shadow:0 0 16px rgba(240,201,135,.4);white-space:nowrap}
+html[data-theme="light"] .secflag span{text-shadow:none}
+html[data-theme="light"] .secflag::before{background:linear-gradient(90deg,transparent,rgba(107,63,212,.35))}
+html[data-theme="light"] .secflag::after{background:linear-gradient(90deg,rgba(107,63,212,.35),transparent)}
+@media (max-width:600px){.secflag span{font-size:.95rem;letter-spacing:.22em}}
 /* ---------- footer ---------- */
 footer{position:relative;z-index:2;border-top:1px solid rgba(93,84,128,.25);padding:3.5rem 1.5rem 2.5rem;background:rgba(5,3,16,.85)}
 footer .wrap{display:grid;gap:1.4rem;text-align:center}
@@ -258,7 +268,7 @@ footer .wrap{display:grid;gap:1.4rem;text-align:center}
 a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-offset:3px}
 @media (max-width:760px){.topnav .themebtn{order:99;margin-left:auto}}
 html[data-theme="light"] .navlinks a{color:#fff}html[data-theme="light"] .navlinks a:hover,html[data-theme="light"] .navlinks a.active{color:#f0c987}
-@media (max-width:760px){.navlinks{gap:.4rem}.navlinks a{font-size:.56rem;letter-spacing:.08em;padding:.32rem .6rem}}
+@media (max-width:760px){.navlinks{gap:.35rem}.navlinks a{font-size:.55rem;letter-spacing:.06em;padding:.3rem .5rem}}
 </style>
 </head>
 <body>
@@ -294,6 +304,7 @@ html[data-theme="light"] .navlinks a{color:#fff}html[data-theme="light"] .navlin
 <main>
 
 <!-- ==================== METAPHYS MONDAY'S ==================== -->
+<div class="secflag"><span>&#10022; Free Offerings &#10022;</span></div>
 <section id="monday">
   <div class="wrap reveal">
     <div class="monday">
@@ -319,11 +330,21 @@ html[data-theme="light"] .navlinks a{color:#fff}html[data-theme="light"] .navlin
   </div>
 </section>
 
+<!-- ==================== AI COACHING (blurb) ==================== -->
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">The Third Door</div>
+    <h2>AI Office Hours</h2>
+    <p class="lede">Once a month we open free AI office hours — coaching, consulting, and brainstorming for anyone building with AI — plus free Claude upgrades built for the community that make any account sharper. The reason it lives here: AI takes tasks off our plate so our energy goes to what excites us.</p>
+    <p style="margin-top:2rem"><a class="btn btn-primary" href="ai-coaching.html">Enter AI Office Hours ✦</a></p>
+  </div>
+</section>
+
 <!-- ==================== THE PATH / OFFER LADDER ==================== -->
+<div class="secflag"><span>&#10022; Going Deeper &#10022;</span></div>
 <section id="path">
   <div class="wrap reveal">
     <div class="eyebrow">The Path · Ways to Work Together</div>
-    <h2>Going Deeper</h2>
     <p class="lede">Every tier contains the one before it. We always clear the baggage first, becoming a clear channel for deeper work and more expansive growth. <em>Attracting more of what you want, releasing what no longer serves you.</em></p>
 
     <div class="chart-scroll">
@@ -555,15 +576,6 @@ ASCENT-DEACTIVATED -->
 </section>
 
 
-<!-- ==================== AI COACHING (blurb) ==================== -->
-<section>
-  <div class="wrap reveal">
-    <div class="eyebrow">The Third Door</div>
-    <h2>AI Office Hours</h2>
-    <p class="lede">Once a month we open free AI office hours — coaching, consulting, and brainstorming for anyone building with AI — plus free Claude upgrades built for the community that make any account sharper. The reason it lives here: AI takes tasks off our plate so our energy goes to what excites us.</p>
-    <p style="margin-top:2rem"><a class="btn btn-primary" href="ai-coaching.html">Enter AI Office Hours ✦</a></p>
-  </div>
-</section>
 
 </main>
 
@@ -571,7 +583,7 @@ ASCENT-DEACTIVATED -->
   <div class="wrap">
     <div class="foot-sigil">✦ ✧ ✦</div>
     <p class="disclaimer">Sessions and classes are spiritual and personal-growth work. Nothing here diagnoses, treats, cures, or prevents any condition, and nothing here is medical, psychological, financial, or legal advice. People report profound experiences — you remain, always, at choice.</p>
-    <div class="fineprint">© 2026 · THE METAPHYSICAL GATEWAY · ALL OF THE LIGHT</div>
+    <div class="fineprint">© 2026 · THE METAPHYSICAL GATEWAY</div>
   </div>
 </footer>
 
