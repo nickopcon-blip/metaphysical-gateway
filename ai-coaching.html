@@ -206,6 +206,21 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-off
 @media (max-width:760px){.topnav .themebtn{order:99;margin-left:auto}}
 html[data-theme="light"] .navlinks a{color:#fff}html[data-theme="light"] .navlinks a:hover,html[data-theme="light"] .navlinks a.active{color:#f0c987}
 @media (max-width:760px){.navlinks{gap:.35rem}.navlinks a{font-size:.55rem;letter-spacing:.06em;padding:.3rem .5rem}}
+/* ---------- elemental light-mode glows (Keawe > air > fire > water > earth) ---------- */
+html[data-theme="light"] body{
+  background-image:
+    radial-gradient(ellipse 55% 50% at 50% 50%, rgba(157,107,255,.38), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 50% 50%, rgba(196,214,238,.58), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 50% 50%, rgba(255,150,60,.38), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 50% 50%, rgba(125,216,247,.38), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 50% 50%, rgba(96,178,112,.34), transparent 70%),
+    linear-gradient(180deg,#f7f5fc,#ece7f7);
+  background-attachment:scroll;
+  background-repeat:no-repeat;
+  background-size:160% 1300px,160% 1300px,160% 1300px,160% 1300px,160% 1300px,100% 100%;
+  background-position:50% -500px,50% 900px,50% 2300px,50% 3700px,50% 5100px,0 0;
+}
+html[data-theme="light"] header.hero::before{display:none !important}
 </style>
 </head>
 <body>
