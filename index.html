@@ -423,15 +423,15 @@ html:not([data-theme="light"]) body::after{
             <th scope="col" class="tierclick" onclick="openCheckout('first-call')">
               <span class="tiername">The Release</span>
               <span class="tiersub">one 90-min call</span>
-              <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small><a class="piflink" href="https://buy.stripe.com/cNidR19oi7f74W6bs3gEg05" onclick="event.stopPropagation()" target="_blank" rel="noopener">your first call — then $333 for follow-ups</a></small></span>
+              <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;rapid&#39;);return false" target="_blank" rel="noopener">your first call — then $333 for follow-ups</a></small></span>
             </th>
-            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/bJe6oz9oifLD88idAbgEg06','_blank')">
+            <th scope="col" class="tierclick" onclick="openCheckout('journey')">
               <span class="tiername">The Journey</span>
               <span class="price">$555<small>one-time session · ~6 hrs</small></span>
             </th>
             <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/00w5kv9oi2YR60a7bNgEg0c','_blank')">
               <span class="tiername">90 Day Breakthrough</span>
-              <span class="price">$2,500/mo × 3<small><a class="piflink" href="https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
+              <span class="price">$2,500/mo × 3<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;bts-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
             </th>
             <!-- ASCENT-DEACTIVATED (2026-08-25 — uncomment to reactivate)
 <th scope="col">
@@ -444,7 +444,7 @@ ASCENT-DEACTIVATED -->
               <span class="crown">✦ The Complete Work</span>
               <span class="tiername">The Ascension</span>
               <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
-              <span class="price">$3,500/mo × 4<small><a class="piflink" href="https://buy.stripe.com/9B628jeICdDvagqbs3gEg08" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $12,000 — save $2,000</a></small></span>
+              <span class="price">$3,500/mo × 4<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;ascension-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $12,000 — save $2,000</a></small></span>
             </th>
             <th scope="col"><span class="tiersub">← Included in each tier</span></th>
           </tr>
@@ -500,12 +500,12 @@ ASCENT-DEACTIVATED -->
       <div class="mtier tierclick" onclick="openCheckout('first-call')">
         <span class="tiername">The Release</span>
         <span class="tiersub">one 90-min call</span>
-        <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small><a class="piflink" href="https://buy.stripe.com/cNidR19oi7f74W6bs3gEg05" onclick="event.stopPropagation()" target="_blank" rel="noopener">your first call — then $333 for follow-ups</a></small></span>
+        <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;rapid&#39;);return false" target="_blank" rel="noopener">your first call — then $333 for follow-ups</a></small></span>
         <ul>
           <li class="sr"><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
         </ul>
       </div>
-      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/bJe6oz9oifLD88idAbgEg06','_blank')">
+      <div class="mtier tierclick" onclick="openCheckout('journey')">
         <span class="tiername">The Journey</span>
         <span class="price">$555<small>one-time session · ~6 hrs</small></span>
         <ul>
@@ -519,7 +519,7 @@ ASCENT-DEACTIVATED -->
       </div>
       <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/00w5kv9oi2YR60a7bNgEg0c','_blank')">
         <span class="tiername">90 Day Breakthrough</span>
-        <span class="price">$2,500/mo × 3<small><a class="piflink" href="https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
+        <span class="price">$2,500/mo × 3<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;bts-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
         <ul>
           <li>Everything in <b>The Release</b> and <b>The Journey</b></li>
         </ul>
@@ -546,7 +546,7 @@ ASCENT-DEACTIVATED -->
         <span class="crown">✦ The Complete Work</span>
         <span class="tiername">The Ascension</span>
         <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
-        <span class="price">$3,500/mo × 4<small><a class="piflink" href="https://buy.stripe.com/9B628jeICdDvagqbs3gEg08" onclick="event.stopPropagation()" target="_blank" rel="noopener">or pay in full: $12,000 — save $2,000</a></small></span>
+        <span class="price">$3,500/mo × 4<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;ascension-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $12,000 — save $2,000</a></small></span>
         <ul>
           <li>Everything in <b>The Release</b>, <b>The Journey</b> &amp; the <b>90 Day Breakthrough</b></li>
         </ul>
@@ -819,7 +819,7 @@ ASCENT-DEACTIVATED -->
 <script>
 var CO_API='https://64-181-232-186.nip.io/webhook/gateway-checkout-49f2b7';
 var CO_PK='pk_live_51TNDUt0SXGAfXpoK8dwaSWIwOLhKlUqcMJlvFvZTQ2WnzRJbYwNtsOExhBiNq5ztBly2mcIUwhc81peZ2nLLOLIq00mdNKNMbQ';
-var CO_FALLBACK={'first-call':'https://buy.stripe.com/14A9ALgQK8jb60agMngEg04'};
+var CO_FALLBACK={'first-call':'https://buy.stripe.com/14A9ALgQK8jb60agMngEg04','rapid':'https://buy.stripe.com/cNidR19oi7f74W6bs3gEg05','journey':'https://buy.stripe.com/bJe6oz9oifLD88idAbgEg06','bts-pif':'https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b','ascension-pif':'https://buy.stripe.com/9B628jeICdDvagqbs3gEg08'};
 var coInstance=null, coStripe=null;
 function coFallback(product){
   document.getElementById('coMsg').innerHTML='Checkout is taking a moment — <a href="'+CO_FALLBACK[product]+'" target="_blank" rel="noopener">pay securely here instead</a>.';
