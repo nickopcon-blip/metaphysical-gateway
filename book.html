@@ -224,6 +224,7 @@ html[data-theme="light"] .calnav{color:#241d3d;border-color:rgba(107,63,212,.4)}
       <div class="when" id="whenLabel"></div>
       <p class="msg">A calendar invite is on its way to your inbox. Show up as you are — we’ll handle the rest together.</p>
       <p style="margin-top:1.4rem"><a class="btn" href="index.html">Return to the Gateway</a></p>
+      <p id="bookAnother" style="margin-top:1rem;display:none"><a href="#" onclick="location.reload();return false" style="color:var(--ice);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em">SCHEDULING FOR A PARTNER OR A SECOND SESSION FROM YOUR PURCHASE? → BOOK THE NEXT ONE</a></p>
     </div>
 
     <div id="stage-error" style="display:none">
@@ -366,6 +367,7 @@ html[data-theme="light"] .calnav{color:#241d3d;border-color:rgba(107,63,212,.4)}
           document.getElementById('whenLabel').textContent = j.human || (sel.dayLabel + ' · ' + sel.slot.label + ' PT');
           document.getElementById('bookUI').style.display='none';
           document.getElementById('stage-success').style.display='';
+          if (params.get('paid')) document.getElementById('bookAnother').style.display='';
         } else if (j.error === 'slot_taken'){
           err.textContent = 'That exact moment was just claimed — pick another time.'; err.style.display='';
           delete MONTHS[ym(view.y,view.m)]; sel.slot=null; updateSummary();
