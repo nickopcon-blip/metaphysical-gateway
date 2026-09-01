@@ -32,8 +32,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.5;
 .navlinks a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:.45rem .95rem;border:1px solid rgba(157,107,255,.45);background:rgba(13,7,34,.55);border-radius:2rem;transition:all .25s}
 .navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
 .navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
-.themebtn{font-family:var(--mono);font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:var(--arcane);background:rgba(157,107,255,.08);border:1px solid rgba(157,107,255,.45);border-radius:1rem;padding:.18rem .42rem;cursor:pointer;transition:all .25s;opacity:.85}
-.themebtn:hover{color:#c9b8ff;border-color:rgba(201,184,255,.7);opacity:1}
+.themebtn{font-family:var(--mono);font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:#0d0716;background:linear-gradient(120deg,#9d6bff,#c9b8ff);border:none;border-radius:1rem;padding:.2rem .5rem;cursor:pointer;transition:all .25s;opacity:1;font-weight:600;box-shadow:0 0 13px -3px rgba(157,107,255,.9);animation:tbglow 2.6s ease-in-out infinite}
+.themebtn:hover{box-shadow:0 0 22px -2px rgba(157,107,255,1)}
+@keyframes tbglow{0%,100%{box-shadow:0 0 9px -3px rgba(157,107,255,.7)}50%{box-shadow:0 0 17px -2px rgba(157,107,255,1)}}
+html[data-theme="light"] .themebtn{animation:none;box-shadow:none;background:rgba(255,255,255,.85);border:1px solid rgba(107,63,212,.4);color:#2a1f45;font-weight:500}
 main{max-width:var(--maxw);margin:0 auto;padding:8.5rem 1.4rem 4rem;position:relative;z-index:2}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1rem}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,5vw,3rem);letter-spacing:.06em;margin-bottom:.6rem;background:linear-gradient(100deg,var(--arcane),var(--ink) 45%,var(--stardust));-webkit-background-clip:text;background-clip:text;color:transparent}
