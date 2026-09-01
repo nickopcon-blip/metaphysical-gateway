@@ -163,6 +163,11 @@ html[data-theme="light"] .cald.av{background:rgba(107,63,212,.07);border-color:r
 html[data-theme="light"] .cald.sel{color:#1a1030}
 html[data-theme="light"] .calnav{color:#241d3d;border-color:rgba(107,63,212,.4)}
 @media (max-width:700px){.bookgrid{grid-template-columns:1fr}}
+/* ---------- The Physical chip ---------- */
+.navlinks a.physical{color:var(--ice);border-color:rgba(125,216,247,.55);background:rgba(10,45,60,.55)}
+.navlinks a.physical:hover{color:#bfe9ff;border-color:rgba(125,216,247,.8)}
+.navlinks a.physical.active{color:#bfe9ff;border-color:rgba(125,216,247,.9);background:rgba(125,216,247,.12)}
+html[data-theme="light"] .navlinks a.physical{color:#dff4ff;background:rgba(11,77,102,.85);border-color:rgba(14,123,166,.5)}
 </style>
 </head>
 <body>
@@ -173,9 +178,9 @@ html[data-theme="light"] .calnav{color:#241d3d;border-color:rgba(107,63,212,.4)}
     <div class="navlinks">
       <a href="index.html">The Path</a>
       <a href="metaphysical-monday.html">Monthly Metaphysics</a>
-      <a href="ai-coaching.html">AI Office Hours</a>
       <a href="trusted-allies.html">Trusted Allies</a>
       <a href="connect.html">Connect</a>
+      <a href="ai-coaching.html" class="physical">The Physical</a>
     </div>
   </div>
 </nav>
