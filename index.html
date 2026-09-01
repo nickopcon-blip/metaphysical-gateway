@@ -206,8 +206,10 @@ header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
 
 
 /* ---------- theme toggle + light mode ---------- */
-.themebtn{font-family:var(--mono);font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:var(--arcane);background:rgba(157,107,255,.08);border:1px solid rgba(157,107,255,.45);border-radius:1rem;padding:.18rem .42rem;cursor:pointer;transition:all .25s;opacity:.85}
-.themebtn:hover{color:#c9b8ff;border-color:rgba(201,184,255,.7);opacity:1}
+.themebtn{font-family:var(--mono);font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:#0d0716;background:linear-gradient(120deg,#9d6bff,#c9b8ff);border:none;border-radius:1rem;padding:.2rem .5rem;cursor:pointer;transition:all .25s;opacity:1;font-weight:600;box-shadow:0 0 13px -3px rgba(157,107,255,.9);animation:tbglow 2.6s ease-in-out infinite}
+.themebtn:hover{box-shadow:0 0 22px -2px rgba(157,107,255,1)}
+@keyframes tbglow{0%,100%{box-shadow:0 0 9px -3px rgba(157,107,255,.7)}50%{box-shadow:0 0 17px -2px rgba(157,107,255,1)}}
+html[data-theme="light"] .themebtn{animation:none;box-shadow:none;background:rgba(255,255,255,.85);border:1px solid rgba(107,63,212,.4);color:#2a1f45;font-weight:500}
 html[data-theme="light"]{
   --void:#f5f3fa; --deep:#ffffff; --deeper:#ece8f5; --ink:#241d3d; --dim:#54506e; --faint:#7d7794;
   --arcane:#6b3fd4; --arcane-soft:rgba(107,63,212,.1); --stardust:#8a6a1a; --fire:#c4510e; --ice:#0e7ba6; --storm:#6b3fd4; --air:#1f7a4d;
