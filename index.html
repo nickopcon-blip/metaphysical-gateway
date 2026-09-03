@@ -31,11 +31,11 @@
   --maxw:1120px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:112.5%}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;max-width:100%;font-size:112.5%}
 body{
   background:var(--void);color:var(--ink);
   font-family:var(--body);font-weight:300;font-size:1.06rem;line-height:1.7;
-  overflow-x:hidden;
+  overflow-x:hidden;overflow-x:clip;
 }
 ::selection{background:var(--arcane);color:#fff}
 
@@ -313,7 +313,7 @@ html[data-theme="light"] header.hero::before{display:none !important}
 .navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
 /* ---------- dark mode: extra stars + faint galaxies ---------- */
 html:not([data-theme="light"]) body::after{
- content:'';position:fixed;inset:-12%;pointer-events:none;
+ content:'';position:fixed;inset:0;pointer-events:none;
  background-image:
   radial-gradient(1px 1px at 18% 12%, rgba(255,255,255,.85) 50%, transparent 51%),
   radial-gradient(1px 1px at 41% 79%, rgba(255,217,160,.8) 50%, transparent 51%),
@@ -344,6 +344,13 @@ html:not([data-theme="light"]) body::after{
 .navlinks a.physical:hover{color:#bfe9ff;border-color:rgba(125,216,247,.8)}
 .navlinks a.physical.active{color:#bfe9ff;border-color:rgba(125,216,247,.9);background:rgba(125,216,247,.12)}
 html[data-theme="light"] .navlinks a.physical{color:#dff4ff;background:rgba(11,77,102,.85);border-color:rgba(14,123,166,.5)}
+
+/* --- mobile paint/scroll guard (fixes long blank gap at page bottom) --- */
+@media (max-width:900px){
+  html,body{overflow-x:clip}
+  body{background-attachment:scroll!important}
+  body::before,body::after{inset:0}
+}
 </style>
 </head>
 <body>
