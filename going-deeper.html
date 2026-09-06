@@ -418,17 +418,19 @@ html[data-theme="light"] .dropmenu{background:rgba(255,255,255,.99);border-color
 
 <style id="tmg-nav-2026-09-06">
 /* ============================================================
-   2026-09-06 - desktop single-row header + borderless gradient chips
+   2026-09-06 - single-row header + gradient chips that fill on hover
    ============================================================ */
 :root{
-  --chipgrad:linear-gradient(100deg,rgba(157,107,255,.74) 0%,rgba(157,107,255,.58) 13%,rgba(170,130,255,.27) 34%,rgba(201,184,255,.11) 56%,rgba(240,201,135,.04) 76%,rgba(240,201,135,0) 94%);
-  --chip-rest:.8; --chip-active:.95;
+  --chipgrad:linear-gradient(100deg,rgba(157,107,255,.74) 0%,rgba(157,107,255,.52) 6%,rgba(170,130,255,.24) 22%,rgba(201,184,255,.10) 42%,rgba(240,201,135,.04) 62%,rgba(240,201,135,0) 85%);
+  --chip-rest:.56; --chip-active:.70;
+  --chip-fill:#8a56f0; --chip-ink:#fdf3dd;
   --chip-edge:rgba(240,201,135,.75); --chip-glow:rgba(157,107,255,.85);
 }
 html[data-theme="light"]{
-  --chipgrad:linear-gradient(100deg,rgba(107,63,212,.44) 0%,rgba(107,63,212,.33) 13%,rgba(122,80,220,.16) 34%,rgba(160,120,235,.08) 56%,rgba(240,201,135,.05) 76%,rgba(240,201,135,0) 94%);
-  --chip-rest:.92; --chip-active:1;
-  --chip-edge:rgba(107,63,212,.8); --chip-glow:rgba(107,63,212,.5);
+  --chipgrad:linear-gradient(100deg,rgba(107,63,212,.44) 0%,rgba(107,63,212,.30) 6%,rgba(122,80,220,.14) 22%,rgba(160,120,235,.07) 42%,rgba(240,201,135,.04) 62%,rgba(240,201,135,0) 85%);
+  --chip-rest:.64; --chip-active:.80;
+  --chip-fill:#5a2fbd; --chip-ink:#fff8ec;
+  --chip-edge:rgba(107,63,212,.85); --chip-glow:rgba(107,63,212,.5);
 }
 
 /* 1. one row on desktop: brand left, menu right, toggle far right */
@@ -444,20 +446,24 @@ html[data-theme="light"]{
   .navbrand{font-size:.7rem;letter-spacing:.12em}
 }
 
-/* 2. rectangular gradient chips - no outline at rest, outline + glow on hover */
+/* 2. chips: borderless gradient at rest, solid colour slides in left to right on hover */
 .navlinks a,.navdrop>.dropbtn{position:relative;isolation:isolate;border-radius:3px;overflow:hidden}
 .topnav .navlinks a,.topnav .navdrop>.dropbtn{
   background:transparent!important;border-color:transparent!important;box-shadow:none;
-  transition:border-color .3s ease,box-shadow .3s ease,color .25s ease;
+  transition:border-color .35s ease,box-shadow .35s ease,color .35s ease;
 }
-.navlinks a::before,.navdrop>.dropbtn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--chipgrad);opacity:var(--chip-rest);transition:opacity .38s ease;pointer-events:none}
-.navlinks a:hover::before,.navdrop>.dropbtn:hover::before,.navdrop.open>.dropbtn::before{opacity:1}
+.navlinks a::before,.navdrop>.dropbtn::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--chipgrad);opacity:var(--chip-rest);transition:opacity .45s ease;pointer-events:none}
+.navlinks a::after,.navdrop>.dropbtn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--chip-fill);transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.45,.05,.25,1);pointer-events:none}
 .navlinks a.active::before,.navdrop>.dropbtn.active::before{opacity:var(--chip-active)}
+.navlinks a:hover::after,.navdrop>.dropbtn:hover::after,.navdrop.open>.dropbtn::after{transform:scaleX(1)}
+.navlinks a:hover::before,.navdrop>.dropbtn:hover::before,.navdrop.open>.dropbtn::before{opacity:0}
 .topnav .navlinks a:hover,.topnav .navdrop>.dropbtn:hover,.topnav .navdrop.open>.dropbtn{
+  color:var(--chip-ink)!important;
   border-color:var(--chip-edge)!important;
   box-shadow:0 0 20px -4px var(--chip-glow),0 0 0 1px rgba(240,201,135,.12);
 }
 .dropmenu{border-radius:4px}
+@media (prefers-reduced-motion:reduce){.navlinks a::after,.navdrop>.dropbtn::after{transition:none}}
 
 /* 3. light mode: a genuinely dark toggle button */
 .themebtn{border-radius:3px}
