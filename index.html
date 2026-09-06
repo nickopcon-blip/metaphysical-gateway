@@ -382,6 +382,14 @@ html[data-theme="light"]{
 .themebtn{border-radius:3px}
 html[data-theme="light"] .themebtn{background:linear-gradient(120deg,#3c1d84,#5a2fbd);color:#f6f2ff;border:1px solid rgba(43,20,96,.65);box-shadow:0 2px 10px -4px rgba(43,20,96,.65);font-weight:700}
 html[data-theme="light"] .themebtn:hover{background:linear-gradient(120deg,#2c1268,#4a22a6);box-shadow:0 3px 14px -4px rgba(43,20,96,.85)}
+
+/* 4. touch: tap plays the fill, then navigates (page is prefetched on touchstart) */
+@media (hover:none){
+  .navlinks a::after,.navdrop>.dropbtn::after{transition-duration:.34s}
+}
+.topnav .navlinks a.tmg-filling{color:var(--chip-ink)!important;border-color:var(--chip-edge)!important;box-shadow:0 0 20px -4px var(--chip-glow),0 0 0 1px rgba(240,201,135,.12)}
+.navlinks a.tmg-filling::after{transform:scaleX(1)}
+.navlinks a.tmg-filling::before{opacity:0}
 </style>
 </head>
 <body>
@@ -643,6 +651,30 @@ html[data-theme="light"] .themebtn:hover{background:linear-gradient(120deg,#2c12
   });
   document.addEventListener('click',function(e){ if(!d.contains(e.target)) close(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+<script id="tmg-nav-tap-2026-09-06">
+(function(){
+  var mm=window.matchMedia;
+  if(!mm||!mm('(hover: none)').matches) return;
+  if(mm('(prefers-reduced-motion: reduce)').matches) return;
+  var DELAY=320;
+  document.querySelectorAll('.navlinks a[href]').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(!href||href.charAt(0)==='#'||/^[a-z]+:/i.test(href)||/^\/\//.test(href)||a.target) return;
+    var warmed=false,going=false;
+    a.addEventListener('touchstart',function(){
+      if(warmed) return; warmed=true;
+      var l=document.createElement('link');l.rel='prefetch';l.href=href;document.head.appendChild(l);
+    },{passive:true});
+    a.addEventListener('click',function(e){
+      if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button) return;
+      e.preventDefault();
+      if(going) return; going=true;
+      a.classList.add('tmg-filling');
+      setTimeout(function(){location.href=href;},DELAY);
+    });
+  });
 })();
 </script>
 </body>
