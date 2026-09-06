@@ -265,7 +265,7 @@ html[data-theme="light"] .themebtn:hover{background:linear-gradient(120deg,#2c12
 <body>
 <nav class="topnav" aria-label="Site">
   <div class="navwrap">
-    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">&#9680; light</button>
+    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">&#9680; <span class="tw">light</span></button>
     <a class="navbrand" href="index.html"><span class="nb-sigil">&#10022;</span>THE METAPHYSICAL GATEWAY</a>
     <div class="navlinks">
       <a href="index.html">Monthly Metaphysics</a>
@@ -301,7 +301,7 @@ html[data-theme="light"] .themebtn:hover{background:linear-gradient(120deg,#2c12
 (function(){
   try{ if(localStorage.getItem('tmg-theme')==='light') document.documentElement.setAttribute('data-theme','light'); }catch(e){}
   var b=document.getElementById('themeToggle'); if(!b) return;
-  function label(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? '\u25d1 dark' : '\u25d0 light'; }
+  function label(){ var l = document.documentElement.getAttribute('data-theme')==='light'; b.innerHTML = l ? '\u25d1 <span class="tw">dark</span>' : '\u25d0 <span class="tw">light</span>'; }
   b.addEventListener('click',function(){
     var l = document.documentElement.getAttribute('data-theme')==='light';
     if(l){ document.documentElement.removeAttribute('data-theme'); } else { document.documentElement.setAttribute('data-theme','light'); }
