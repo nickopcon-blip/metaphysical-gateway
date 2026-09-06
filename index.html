@@ -328,6 +328,40 @@ html[data-theme="light"] .navlinks a.physical:hover,
 html[data-theme="light"] .navlinks a.physical.active{color:#07404f;background:rgba(14,123,166,.14);border-color:rgba(14,123,166,.85)}
 html[data-theme="light"] .dropmenu{background:rgba(255,255,255,.99);border-color:rgba(107,63,212,.3);box-shadow:0 18px 40px rgba(55,35,110,.18)}
 </style>
+
+<style id="tmg-nav-2026-09-06">
+/* ============================================================
+   2026-09-06 - desktop single-row header + rectangular nav chips
+   ============================================================ */
+:root{--chipgrad:linear-gradient(115deg,rgba(157,107,255,.55) 0%,rgba(201,184,255,.30) 46%,rgba(240,201,135,.13) 76%,rgba(240,201,135,0) 100%)}
+html[data-theme="light"]{--chipgrad:linear-gradient(115deg,rgba(107,63,212,.30) 0%,rgba(107,63,212,.15) 46%,rgba(240,201,135,.18) 76%,rgba(240,201,135,0) 100%)}
+
+/* 1. one row on desktop: brand left, menu right, toggle far right */
+@media (min-width:761px){
+  .topnav .navwrap{max-width:1400px;flex-wrap:nowrap;gap:.7rem 1.1rem;padding:.7rem 1.8rem}
+  .navbrand{order:1;flex:0 0 auto}
+  .navlinks{order:2;flex:1 1 auto;flex-wrap:nowrap;justify-content:flex-end;gap:.45rem}
+  .topnav .themebtn{order:3;flex:0 0 auto;margin-left:.5rem}
+  .navlinks a,.navdrop>.dropbtn{white-space:nowrap;padding:.5rem .85rem}
+}
+@media (min-width:761px) and (max-width:1080px){
+  .navlinks a,.navdrop>.dropbtn{font-size:.62rem;letter-spacing:.1em;padding:.42rem .6rem}
+  .navbrand{font-size:.7rem;letter-spacing:.12em}
+}
+
+/* 2. rectangular chips, gradient that fades in under the cursor */
+.navlinks a,.navdrop>.dropbtn{position:relative;isolation:isolate;border-radius:3px;overflow:hidden}
+.topnav .navlinks a,.topnav .navdrop>.dropbtn{background:transparent!important}
+.navlinks a::before,.navdrop>.dropbtn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--chipgrad);opacity:.16;transition:opacity .38s ease;pointer-events:none}
+.navlinks a:hover::before,.navdrop>.dropbtn:hover::before,.navdrop.open>.dropbtn::before{opacity:1}
+.navlinks a.active::before,.navdrop>.dropbtn.active::before{opacity:.6}
+.dropmenu{border-radius:4px}
+
+/* 3. light mode: a genuinely dark toggle button */
+.themebtn{border-radius:3px}
+html[data-theme="light"] .themebtn{background:linear-gradient(120deg,#3c1d84,#5a2fbd);color:#f6f2ff;border:1px solid rgba(43,20,96,.65);box-shadow:0 2px 10px -4px rgba(43,20,96,.65);font-weight:700}
+html[data-theme="light"] .themebtn:hover{background:linear-gradient(120deg,#2c1268,#4a22a6);box-shadow:0 3px 14px -4px rgba(43,20,96,.85)}
+</style>
 </head>
 <body>
 
