@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Going Deeper &#183; The Metaphysical Gateway</title>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌌</text></svg>'>
+<meta name="description" content="Going Deeper - the full path of ways to work together with The Metaphysical Gateway: Rapid Release, the Breakthrough, coaching, and the complete work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ============================================================
+   CONFIG-FRIENDLY TOKENS — customize everything here
+   ============================================================ */
+:root{
+  --void:#050310;          /* page ground — deep space black          */
+  --deep:#0d0722;          /* panel / card ground                     */
+  --deeper:#090517;        /* alternating section ground              */
+  --ink:#ece9f7;           /* primary text (violet-biased off-white)  */
+  --dim:#9b93b8;           /* secondary text                          */
+  --faint:#5d5480;         /* tertiary / rules                        */
+  --arcane:#9d6bff;        /* primary purple accent                   */
+  --arcane-soft:rgba(157,107,255,.14);
+  --stardust:#f0c987;      /* gold — sigils, prices                   */
+  --fire:#ff8a5c; --ice:#7dd8f7; --storm:#c9b8ff; --air:#bfe9c9;
+  --display:'Marcellus',Georgia,serif;
+  --accent:'Philosopher','Trebuchet MS',sans-serif;
+  --body:'Spectral',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;max-width:100%;font-size:112.5%}
+body{
+  background:var(--void);color:var(--ink);
+  font-family:var(--body);font-weight:300;font-size:1.06rem;line-height:1.7;
+  overflow-x:hidden;overflow-x:clip;
+}
+::selection{background:var(--arcane);color:#fff}
+
+/* ---------- cosmic canvas (site-wide, fixed) ---------- */
+#cosmos{position:fixed;inset:0;z-index:0;display:block;width:100%;height:100%}
+.veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 0%,transparent 0%,rgba(5,3,16,.55) 75%,rgba(5,3,16,.9) 100%)}
+
+/* ---------- structure ---------- */
+main{position:relative;z-index:2}
+section{padding:4.6rem 1.5rem}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--arcane);margin-bottom:1.1rem}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.9rem}
+.lede{color:var(--dim);max-width:38rem;font-size:1.1rem}
+.alt{background:linear-gradient(180deg,transparent,rgba(13,7,34,.72) 12%,rgba(13,7,34,.72) 88%,transparent)}
+
+/* ---------- hero ---------- */
+header.hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 6rem}
+#herovideo{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2s ease}
+#herovideo.live{opacity:.34}
+.sigil-top{font-size:1.5rem;color:var(--stardust);letter-spacing:1.2em;padding-left:1.2em;margin-bottom:2rem;opacity:.9}
+h1.brand{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:400;letter-spacing:.08em;
+  background:linear-gradient(120deg,#f4efff 20%,var(--storm) 45%,var(--arcane) 70%,#f4efff 95%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 9s linear infinite}
+@keyframes shimmer{to{background-position:220% 0}}
+.tagline{margin-top:1.4rem;font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--dim);font-style:italic;max-width:34rem}
+.tagline b{color:var(--ink);font-weight:600}
+.ctas{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{font-family:var(--mono);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  padding:1rem 1.9rem;border-radius:2px;transition:all .3s ease;display:inline-block}
+.btn-primary{color:#0a0618;background:linear-gradient(120deg,var(--stardust),#ffe9c4);box-shadow:0 0 28px rgba(240,201,135,.25)}
+.btn-primary:hover{box-shadow:0 0 44px rgba(240,201,135,.5);transform:translateY(-2px)}
+.btn-ghost{color:var(--storm);border:1px solid rgba(201,184,255,.35)}
+.btn-ghost:hover{border-color:var(--arcane);color:#fff;box-shadow:0 0 24px var(--arcane-soft)}
+.scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);color:var(--faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- offer chart ---------- */
+.chart-scroll{overflow-x:auto;margin-top:3rem;padding-bottom:.5rem}
+table.tiers{border-collapse:collapse;width:100%;min-width:990px}
+.chart-scroll{width:calc(100vw - 3rem);max-width:1290px;margin-left:calc(50% - min(50vw - 1.5rem, 645px))}
+.tiers th,.tiers td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid rgba(93,84,128,.25)}
+.tiers td:last-child,.tiers th:last-child{text-align:left;min-width:260px;padding-left:1.4rem}
+.tiers th:not(:last-child),.tiers td:not(:last-child){min-width:165px}
+.tiers thead th{vertical-align:bottom;border-bottom:1px solid rgba(157,107,255,.45)}
+.tiername{font-family:var(--accent);font-size:1.12rem;font-weight:700;letter-spacing:.04em}
+.tiersub{display:block;font-family:var(--body);font-weight:300;font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.35rem;letter-spacing:0;text-transform:none}
+.price{display:block;font-family:var(--accent);font-size:1.55rem;color:var(--stardust);margin-top:.7rem;white-space:nowrap}
+.price small{display:block;font-size:.95rem;color:var(--dim);margin-top:.3rem;letter-spacing:.03em;white-space:normal}
+.piflink{color:var(--dim);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.piflink:hover{color:var(--stardust)}
+
+.price .was{position:relative;display:inline-block;color:var(--dim);font-size:1.5rem;margin-right:.5rem}
+.price .was .zap{position:absolute;left:-8%;top:50%;width:116%;height:20px;transform:translateY(-50%);overflow:visible;pointer-events:none}
+.price .was .zap path{fill:#7dd8f7;filter:drop-shadow(0 0 5px rgba(125,216,247,.95));transform-origin:left center;animation:boltgrow .5s .25s ease-out both,zapflicker 3.2s 1.5s infinite}
+@keyframes boltgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes zapflicker{0%,100%{opacity:1}44%{opacity:.55}48%{opacity:1}62%{opacity:.7}66%{opacity:1}}
+.price .now{color:#7dd8f7;font-size:2.7rem;font-weight:700;text-shadow:0 0 20px rgba(125,216,247,.65)}
+
+.rowlabel{font-weight:400;color:var(--ink)}
+.rowlabel small{display:block;color:var(--dim);font-size:.95rem;font-style:italic}
+.sigil{color:var(--stardust);font-size:1.35rem;text-shadow:0 0 10px rgba(240,201,135,.55)}
+.no{color:#2e2847}
+
+.sigil.sr{color:#ff4d4d;text-shadow:0 0 10px rgba(255,77,77,.55);font-weight:700}
+.sigil.em{text-shadow:none;font-size:1.25rem}
+.mtier li.sr::before{content:'✚';color:#ff4d4d;text-shadow:0 0 8px rgba(255,77,77,.5)}
+.mtier li.soul::before{content:'🌀';text-shadow:none}
+.mtier li.fire::before{content:'🔥';text-shadow:none}
+.mtier li.call::before{content:'📞';text-shadow:none}
+
+/* ---------- clickable tiers -> checkout ---------- */
+.tierclick{cursor:pointer;transition:background .3s}
+th.tierclick:hover{background:rgba(240,201,135,.06)}
+.tierclick:hover .tiername{color:var(--stardust)}
+.mtier.tierclick:hover{border-color:rgba(240,201,135,.55);box-shadow:0 0 30px -12px rgba(240,201,135,.45)}
+
+
+td.feat,th.feat{background:linear-gradient(180deg,rgba(157,107,255,.13),rgba(157,107,255,.05));border-left:1px solid rgba(157,107,255,.35);border-right:1px solid rgba(157,107,255,.35)}
+th.feat{position:relative}
+.crown{position:absolute;top:.55rem;left:0;right:0;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--arcane)}
+.chart-notes{margin-top:1.6rem;display:grid;gap:.45rem;color:var(--dim);font-size:.92rem;font-style:italic}
+.chart-notes span{color:var(--stardust);font-style:normal}
+
+/* ---------- mobile tier cards (chart alternative ≤760px) ---------- */
+.tiers-mobile{display:none}
+.mtier{border:1px solid rgba(93,84,128,.35);border-radius:6px;padding:1.6rem 1.4rem;background:rgba(13,7,34,.6)}
+.mtier.feat{border-color:rgba(157,107,255,.5);background:linear-gradient(180deg,rgba(157,107,255,.13),rgba(157,107,255,.04))}
+.mtier .crown{position:static;display:block;margin-bottom:.5rem}
+.mtier .tiername{font-size:1.25rem}
+.mtier ul{list-style:none;margin-top:1rem;display:grid;gap:.5rem}
+.mtier li{color:var(--dim);font-size:.93rem;padding-left:1.3rem;position:relative}
+.mtier li::before{content:'✦';position:absolute;left:0;color:var(--stardust);text-shadow:0 0 8px rgba(240,201,135,.5)}
+.mtier li b{color:var(--ink);font-weight:400}
+
+/* ---------- 'plus' divider with shimmer wands ---------- */
+.plusline{display:flex;align-items:center;gap:.8rem;margin:.95rem 0 .15rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--arcane)}
+.plusline::before,.plusline::after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--arcane) 35%,#c9b8ff 50%,var(--arcane) 65%,transparent);background-size:220% 100%;animation:wandshimmer 2.6s linear infinite;box-shadow:0 0 8px -2px var(--arcane)}
+@keyframes wandshimmer{0%{background-position:220% 0}100%{background-position:-220% 0}}
+
+
+
+/* ---------- areas of life ---------- */
+.areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:3rem}
+.area{background:rgba(13,7,34,.66);border:1px solid rgba(93,84,128,.3);border-top:2px solid var(--el);padding:1.8rem 1.5rem;border-radius:3px;backdrop-filter:blur(4px);transition:transform .35s ease,box-shadow .35s ease}
+.area:hover{transform:translateY(-5px);box-shadow:0 12px 40px -18px var(--el)}
+.area .rune{font-size:1.4rem;color:var(--el);text-shadow:0 0 14px var(--el)}
+.area h3{font-size:1.05rem;margin:.9rem 0 .5rem;letter-spacing:.05em}
+.area p{color:var(--dim);font-size:.94rem}
+
+/* ---------- monday ---------- */
+.monday{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+.monday .free{font-family:var(--mono);color:var(--air);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase}
+.topics{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.6rem}
+.topic{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--storm);border:1px solid rgba(201,184,255,.28);padding:.45rem .8rem;border-radius:2rem;transition:all .3s}
+.topic:hover{border-color:var(--stardust);color:var(--stardust);text-shadow:0 0 8px rgba(240,201,135,.4)}
+.moon-card{background:rgba(13,7,34,.72);border:1px solid rgba(157,107,255,.3);padding:2.4rem 2rem;border-radius:4px;text-align:center;box-shadow:0 0 60px -20px var(--arcane)}
+.moon-card h3{font-size:1.35rem;margin-bottom:.6rem}
+.moon-card p{color:var(--dim);font-size:.95rem;margin-bottom:1.6rem}
+
+/* ---------- constellation / lineage ---------- */
+.lineage{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:3rem}
+.star-card{position:relative;background:rgba(9,5,23,.7);border:1px solid rgba(93,84,128,.3);padding:1.9rem 1.6rem;border-radius:3px;transition:border-color .3s,box-shadow .3s}
+.star-card:hover{border-color:rgba(240,201,135,.5);box-shadow:0 0 34px -12px rgba(240,201,135,.4)}
+.star-card .who{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--stardust)}
+.star-card h3{font-size:1.08rem;margin:.7rem 0 .5rem}
+.star-card p{color:var(--dim);font-size:.92rem}
+
+
+
+/* ---------- allies: multi-offering cards ---------- */
+.allylist{display:grid;gap:1.5rem;margin-top:3rem}
+.ally .offers{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
+.offer{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--stardust);border:1px solid rgba(240,201,135,.4);padding:.5rem 1rem;border-radius:2rem;text-decoration:none;transition:all .3s}
+a.offer:hover{background:rgba(240,201,135,.12);box-shadow:0 0 16px -6px rgba(240,201,135,.5)}
+.offer.soon{color:var(--dim);border-color:rgba(93,84,128,.45)}
+/* ---------- living portraits (auto-activate when media/portraits/*.mp4 exist) ---------- */
+.portrait{display:none}
+.portrait.live{display:block;width:110px;height:110px;border-radius:50%;overflow:hidden;border:1px solid rgba(240,201,135,.45);box-shadow:0 0 26px -10px rgba(240,201,135,.5);margin-bottom:1.1rem}
+.portrait video{width:100%;height:100%;object-fit:cover;display:block}
+
+
+/* ---------- photos ---------- */
+.photo{width:100%;border-radius:6px;border:1px solid rgba(93,84,128,.35);box-shadow:0 14px 50px -18px rgba(0,0,0,.85);display:block}
+.photorow{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-top:2.6rem;align-items:start}
+.headshot{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top;border:1px solid rgba(240,201,135,.55);box-shadow:0 0 34px -8px rgba(240,201,135,.55);margin:0 auto;display:block}
+
+/* ---------- top nav ---------- */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(5,3,16,.94),rgba(5,3,16,.62) 78%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid rgba(93,84,128,.16)}
+.topnav .navwrap{max-width:var(--maxw);margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;flex-wrap:wrap}
+.navbrand{font-family:var(--display);font-size:.82rem;font-weight:400;letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navbrand .nb-sigil{color:var(--stardust);margin-right:.55rem}
+.navlinks{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.navlinks a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:.45rem .95rem;border:1px solid rgba(157,107,255,.45);background:rgba(13,7,34,.55);border-radius:2rem;transition:all .25s}
+.navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
+@media (max-width:700px){.topnav .navwrap{justify-content:center}}
+/* ---------- sub-page hero ---------- */
+header.hero.page-hero{min-height:46svh;padding-top:9rem;padding-bottom:3.5rem}
+header.hero.page-hero h1.brand{font-size:clamp(1.9rem,5.2vw,3.4rem)}
+
+
+/* ---------- theme toggle + light mode ---------- */
+.themebtn{font-family:var(--mono);font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;color:#0d0716;background:linear-gradient(120deg,#9d6bff,#c9b8ff);border:none;border-radius:1rem;padding:.2rem .5rem;cursor:pointer;transition:all .25s;opacity:1;font-weight:600;box-shadow:0 0 13px -3px rgba(157,107,255,.9);animation:tbglow 2.6s ease-in-out infinite}
+.themebtn:hover{box-shadow:0 0 22px -2px rgba(157,107,255,1)}
+@keyframes tbglow{0%,100%{box-shadow:0 0 9px -3px rgba(157,107,255,.7)}50%{box-shadow:0 0 17px -2px rgba(157,107,255,1)}}
+html[data-theme="light"] .themebtn{animation:none;box-shadow:none;background:rgba(255,255,255,.85);border:1px solid rgba(107,63,212,.4);color:#2a1f45;font-weight:500}
+html[data-theme="light"]{
+  --void:#f5f3fa; --deep:#ffffff; --deeper:#ece8f5; --ink:#241d3d; --dim:#54506e; --faint:#7d7794;
+  --arcane:#6b3fd4; --arcane-soft:rgba(107,63,212,.1); --stardust:#8a6a1a; --fire:#c4510e; --ice:#0e7ba6; --storm:#6b3fd4; --air:#1f7a4d;
+}
+html[data-theme="light"] body{background:linear-gradient(180deg,#f7f5fc,#ece7f7);background-attachment:fixed}
+html[data-theme="light"] body::before{display:none}
+html[data-theme="light"] #cosmos,html[data-theme="light"] .veil,html[data-theme="light"] #herovideo{display:none}
+html[data-theme="light"] .topnav{background:linear-gradient(180deg,rgba(247,245,252,.96),rgba(247,245,252,.75) 78%,transparent);border-bottom-color:rgba(107,63,212,.14)}
+html[data-theme="light"] .alt{background:linear-gradient(180deg,transparent,rgba(107,63,212,.06) 12%,rgba(107,63,212,.06) 88%,transparent)}
+html[data-theme="light"] .star-card,html[data-theme="light"] .area,html[data-theme="light"] .moon-card,html[data-theme="light"] .mtier,html[data-theme="light"] .promptcard,html[data-theme="light"] .card{background:#fff;border-color:rgba(107,63,212,.2)}
+html[data-theme="light"] footer{background:rgba(247,245,252,.92);border-top-color:rgba(107,63,212,.15)}
+html[data-theme="light"] .promptbox{background:#f4f1fb;color:#3d2f6b;border-color:rgba(107,63,212,.25)}
+html[data-theme="light"] h1.brand{background:linear-gradient(100deg,#6b3fd4,#241d3d 45%,#8a6a1a);-webkit-background-clip:text;background-clip:text}
+html[data-theme="light"] td.feat,html[data-theme="light"] th.feat{background:linear-gradient(180deg,rgba(107,63,212,.08),rgba(107,63,212,.03));border-left-color:rgba(107,63,212,.25);border-right-color:rgba(107,63,212,.25)}
+html[data-theme="light"] .price .now{color:#0e7ba6;text-shadow:none}
+html[data-theme="light"] .price .was .zap path{fill:#0e7ba6;filter:none}
+html[data-theme="light"] .no{color:#cfc9e2}
+html[data-theme="light"] .tbtn{color:#0e7ba6;border-color:rgba(14,123,166,.45)}
+html[data-theme="light"] input,html[data-theme="light"] textarea{background:#fff;color:#241d3d;border-color:rgba(107,63,212,.3)}
+
+
+/* ---------- light mode: rising sun in the hero (home) ---------- */
+html[data-theme="light"] header.hero{overflow:hidden}
+html[data-theme="light"] header.hero::before{content:'';position:absolute;z-index:-1;left:50%;top:calc(50% + 1.5rem);transform:translateX(-50%);width:160vw;height:160vw;max-width:2400px;max-height:2400px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle, rgba(255,128,40,.4) 0%, rgba(255,158,72,.27) 30%, rgba(255,196,120,.14) 52%, rgba(255,220,170,.06) 64%, transparent 74%)}
+
+/* ---------- section flags (free vs paid) ---------- */
+.secflag{display:flex;align-items:center;gap:1.2rem;max-width:var(--maxw);margin:3.4rem auto -1.2rem;padding:0 1.5rem}
+.secflag::before,.secflag::after{content:'';flex:1;height:1px}
+.secflag::before{background:linear-gradient(90deg,transparent,rgba(240,201,135,.55))}
+.secflag::after{background:linear-gradient(90deg,rgba(240,201,135,.55),transparent)}
+.secflag span{font-family:var(--display);font-size:1.2rem;letter-spacing:.32em;padding-left:.32em;text-transform:uppercase;color:var(--stardust);text-shadow:0 0 16px rgba(240,201,135,.4);white-space:nowrap}
+html[data-theme="light"] .secflag span{text-shadow:none}
+html[data-theme="light"] .secflag::before{background:linear-gradient(90deg,transparent,rgba(107,63,212,.35))}
+html[data-theme="light"] .secflag::after{background:linear-gradient(90deg,rgba(107,63,212,.35),transparent)}
+@media (max-width:600px){.secflag span{font-size:.95rem;letter-spacing:.22em}}
+/* ---------- elemental area symbols ---------- */
+.area .el-sym{display:block;width:118px;height:118px;margin:0 auto .7rem}
+.area .el-sym svg{width:100%;height:100%;display:block;overflow:visible}
+.area .el-sym .ic{font-size:44px}
+html[data-theme="light"] .area .el-sym svg{filter:saturate(1.05)}
+/* ---------- embedded checkout drawer ---------- */
+#coOverlay{position:fixed;inset:0;background:rgba(5,3,16,.78);backdrop-filter:blur(4px);z-index:200;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:3.5rem 1rem}
+#coPanel{background:#fff;border-radius:10px;max-width:480px;width:100%;position:relative;box-shadow:0 30px 90px -20px rgba(0,0,0,.9);padding:0 0 .5rem}
+#coHead{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem .4rem}
+#coHead .t{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#6b3fd4}
+#coClose{background:none;border:none;font-size:1.3rem;color:#666;cursor:pointer;line-height:1}
+#coMount{min-height:380px}
+#coMsg{text-align:center;color:#54506e;font-family:var(--mono);font-size:.72rem;padding:2.5rem 1rem}
+#coMsg a{color:#6b3fd4}
+/* ---------- free column in tiers table ---------- */
+.tiers th.freecol-h{min-width:150px;background:linear-gradient(180deg,rgba(125,216,247,.10),rgba(125,216,247,.03));border-left:1px solid rgba(125,216,247,.3);border-right:1px solid rgba(125,216,247,.3)}
+.tiers td.freecell{min-width:150px;background:linear-gradient(180deg,rgba(125,216,247,.07),rgba(125,216,247,.02));border-left:1px solid rgba(125,216,247,.3);border-right:1px solid rgba(125,216,247,.3);vertical-align:middle;padding:1.2rem .8rem}
+.freecell .fc-t{font-family:var(--display);font-size:.95rem;letter-spacing:.05em;display:block;margin-bottom:.4rem;color:var(--ink)}
+.freecell .fc-s{display:block;color:var(--dim);font-size:.78rem;font-style:italic;line-height:1.5;margin-bottom:.9rem}
+.freecell .btn{font-size:.62rem;padding:.55rem .8rem;margin-top:0}
+html[data-theme="light"] .tiers th.freecol-h,html[data-theme="light"] .tiers td.freecell{background:linear-gradient(180deg,rgba(14,123,166,.07),rgba(14,123,166,.02));border-left-color:rgba(14,123,166,.25);border-right-color:rgba(14,123,166,.25)}
+/* ---------- footer ---------- */
+footer{position:relative;z-index:2;border-top:1px solid rgba(93,84,128,.25);padding:3.5rem 1.5rem 2.5rem;background:rgba(5,3,16,.85)}
+footer .wrap{display:grid;gap:1.4rem;text-align:center}
+.foot-sigil{color:var(--stardust);letter-spacing:1em;padding-left:1em}
+.disclaimer{color:var(--dim);font-family:var(--body);font-size:.98rem;max-width:48rem;margin:0 auto;font-style:normal;line-height:1.75}
+.fineprint{color:var(--faint);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em}
+
+@media (max-width:760px){
+  section{padding:3.4rem 1.2rem}
+  .monday{grid-template-columns:1fr}
+  .chart-scroll{display:none}
+  .tiers-mobile{display:grid;gap:1.1rem;margin-top:2.6rem}
+  .navlinks a{font-size:.6rem;padding:.4rem .75rem}
+  .navbrand{font-size:.72rem}
+  .navbrand{transition:opacity .2s}
+  .topnav.shrunk .navbrand{display:none}
+  .topnav.shrunk .navwrap{padding-top:.55rem;padding-bottom:.55rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,h1.brand,.scrollcue{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--stardust);outline-offset:3px}
+@media (max-width:760px){.topnav .themebtn{order:99;margin-left:auto}}
+html[data-theme="light"] .navlinks a{color:#fff}html[data-theme="light"] .navlinks a:hover,html[data-theme="light"] .navlinks a.active{color:#f0c987}
+@media (max-width:760px){.navlinks{gap:.35rem}.navlinks a{font-size:.55rem;letter-spacing:.06em;padding:.3rem .5rem}}
+/* ---------- elemental light-mode glows (Keawe > air > fire > water > earth) ---------- */
+html[data-theme="light"] body{
+  background-image:
+    radial-gradient(circle 1150px at 50% 900px, rgba(147,90,255,.4) 0%, rgba(147,90,255,.27) 30%, rgba(157,107,255,.14) 52%, rgba(157,107,255,.06) 64%, transparent 74%),
+    radial-gradient(circle 1150px at 50% 2400px, rgba(160,185,220,.48) 0%, rgba(170,195,225,.34) 30%, rgba(190,208,232,.19) 52%, rgba(205,220,240,.08) 64%, transparent 74%),
+    radial-gradient(circle 1150px at 50% 3900px, rgba(255,128,40,.4) 0%, rgba(255,158,72,.27) 30%, rgba(255,196,120,.14) 52%, rgba(255,220,170,.06) 64%, transparent 74%),
+    radial-gradient(circle 1150px at 50% 5400px, rgba(56,170,225,.4) 0%, rgba(86,186,232,.27) 30%, rgba(125,216,247,.14) 52%, rgba(160,225,250,.06) 64%, transparent 74%),
+    radial-gradient(circle 1150px at 50% 6900px, rgba(62,155,84,.38) 0%, rgba(84,170,104,.26) 30%, rgba(110,185,128,.13) 52%, rgba(140,200,152,.06) 64%, transparent 74%),
+    linear-gradient(180deg,#f7f5fc,#ece7f7);
+  background-attachment:scroll;
+  background-repeat:no-repeat;
+  background-size:auto,auto,auto,auto,auto,100% 100%;
+}
+html[data-theme="light"] header.hero::before{display:none !important}
+/* ---------- uniform nav chips (match index) ---------- */
+.navlinks a{color:var(--ink);background:rgba(13,7,34,.55);border:1px solid rgba(157,107,255,.45)}
+.navlinks a:hover{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navlinks a.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
+/* ---------- dark mode: extra stars + faint galaxies ---------- */
+html:not([data-theme="light"]) body::after{
+ content:'';position:fixed;inset:0;pointer-events:none;
+ background-image:
+  radial-gradient(1px 1px at 18% 12%, rgba(255,255,255,.85) 50%, transparent 51%),
+  radial-gradient(1px 1px at 41% 79%, rgba(255,217,160,.8) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 63% 33%, rgba(168,200,255,.85) 50%, transparent 51%),
+  radial-gradient(1px 1px at 86% 58%, rgba(255,255,255,.75) 50%, transparent 51%),
+  radial-gradient(1px 1px at 52% 51%, rgba(255,255,255,.7) 50%, transparent 51%),
+  radial-gradient(1px 1px at 11% 84%, rgba(200,230,255,.7) 50%, transparent 51%),
+  radial-gradient(2px 2px at 92% 27%, rgba(255,244,214,.8) 50%, transparent 51%),
+  radial-gradient(1px 1px at 8% 47%, rgba(255,190,220,.65) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 29% 92%, rgba(255,255,255,.7) 50%, transparent 51%),
+  radial-gradient(1px 1px at 74% 8%, rgba(180,255,230,.65) 50%, transparent 51%),
+  radial-gradient(1px 1px at 47% 21%, rgba(255,255,255,.6) 50%, transparent 51%),
+  radial-gradient(2px 2px at 66% 71%, rgba(190,210,255,.65) 50%, transparent 51%),
+  radial-gradient(ellipse 42% 30% at 80% 16%, rgba(255,110,199,.12), transparent 70%),
+  radial-gradient(ellipse 46% 32% at 12% 60%, rgba(64,200,220,.11), transparent 70%),
+  radial-gradient(ellipse 40% 28% at 70% 85%, rgba(157,107,255,.14), transparent 70%),
+  radial-gradient(ellipse 34% 24% at 30% 20%, rgba(255,170,90,.09), transparent 70%),
+  radial-gradient(ellipse 38% 26% at 50% 45%, rgba(90,120,255,.09), transparent 70%);
+ background-size:520px 520px,520px 520px,520px 520px,520px 520px,640px 640px,640px 640px,640px 640px,760px 760px,760px 760px,760px 760px,880px 880px,880px 880px,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%;
+ background-repeat:repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;
+ animation:tmg-drift 220s linear infinite alternate, tmg-twinkle 6.5s ease-in-out infinite alternate;
+}
+@keyframes tmg-drift{from{transform:translate(0,0)}to{transform:translate(3.5%,2.5%)}}
+@keyframes tmg-twinkle{from{opacity:.72}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){html:not([data-theme="light"]) body::after{animation:none}}
+/* ---------- The Physical chip ---------- */
+.navlinks a.physical{color:var(--ice);border-color:rgba(125,216,247,.55);background:rgba(10,45,60,.55)}
+.navlinks a.physical:hover{color:#bfe9ff;border-color:rgba(125,216,247,.8)}
+.navlinks a.physical.active{color:#bfe9ff;border-color:rgba(125,216,247,.9);background:rgba(125,216,247,.12)}
+html[data-theme="light"] .navlinks a.physical{color:#dff4ff;background:rgba(11,77,102,.85);border-color:rgba(14,123,166,.5)}
+
+/* --- mobile paint/scroll guard (fixes long blank gap at page bottom) --- */
+@media (max-width:900px){
+  html,body{overflow-x:clip}
+  body{background-attachment:scroll!important}
+  body::before,body::after{inset:0}
+}
+
+/* ---------- offerings dropdown (added 2026-09-05) ---------- */
+.navdrop{position:relative;display:inline-block}
+.navdrop>.dropbtn{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);cursor:pointer;padding:.45rem .95rem;border:1px solid rgba(157,107,255,.45);background:rgba(13,7,34,.55);border-radius:2rem;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;line-height:1.45}
+.navdrop>.dropbtn:hover,.navdrop.open>.dropbtn{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navdrop>.dropbtn.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
+.navdrop .caret{font-size:.58rem;transition:transform .25s}
+.navdrop.open .caret{transform:rotate(180deg)}
+.dropmenu{position:absolute;top:calc(100% + .5rem);left:50%;transform:translateX(-50%) translateY(-.4rem);min-width:12.5rem;display:flex;flex-direction:column;gap:.45rem;padding:.6rem;background:rgba(9,5,23,.97);border:1px solid rgba(157,107,255,.35);border-radius:.95rem;box-shadow:0 18px 40px rgba(0,0,0,.55);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:80}
+.navdrop.open .dropmenu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropmenu a{display:block;text-align:center;white-space:nowrap}
+html[data-theme="light"] .navdrop>.dropbtn{color:#fff}
+html[data-theme="light"] .navdrop>.dropbtn:hover,html[data-theme="light"] .navdrop.open>.dropbtn,html[data-theme="light"] .navdrop>.dropbtn.active{color:#f0c987}
+@media (max-width:760px){.navdrop>.dropbtn{font-size:.55rem;letter-spacing:.06em;padding:.3rem .5rem}.dropmenu{min-width:11rem}}
+</style>
+</head>
+<body>
+
+<canvas id="cosmos" aria-hidden="true"></canvas>
+<!-- HYBRID BACKGROUND: drop a hosted .mp4/.webm URL into data-src to enable the
+     rolling-video hero. If absent, slow, or blocked, the living galaxy canvas
+     carries the page — zero bandwidth, instant load. -->
+<video id="herovideo" data-src="" muted loop playsinline aria-hidden="true"></video>
+<div class="veil" aria-hidden="true"></div>
+
+
+<nav class="topnav" aria-label="Site">
+  <div class="navwrap">
+    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">&#9680; light</button>
+    <a class="navbrand" href="index.html"><span class="nb-sigil">&#10022;</span>THE METAPHYSICAL GATEWAY</a>
+    <div class="navlinks">
+      <a href="index.html">Monthly Metaphysics</a>
+      <div class="navdrop">
+        <button type="button" class="dropbtn active" aria-expanded="false" aria-haspopup="true">Offerings <span class="caret">&#9662;</span></button>
+        <div class="dropmenu" role="menu">
+          <a href="going-deeper.html" class="active" role="menuitem">Going Deeper</a>
+          <a href="ai-coaching.html" class="physical" role="menuitem">The Physical</a>
+        </div>
+      </div>
+      <a href="trusted-allies.html">Trusted Allies</a>
+      <a href="connect.html">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero page-hero">
+  <div class="sigil-top">&#10022; &#10023; &#10022;</div>
+  <h1 class="brand">GOING DEEPER</h1>
+  <p class="tagline">Ways to work together &#183; <b>every tier contains the one before it.</b></p>
+</header>
+
+<main>
+
+<!-- ==================== THE PATH / OFFER LADDER ==================== -->
+<div class="secflag"><span>&#10022; Going Deeper &#10022;</span></div>
+<section id="path">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Path · Ways to Work Together</div>
+    <p class="lede">Every tier contains the one before it. We always clear the baggage first, becoming a clear channel for deeper work and more expansive growth. <em>Attracting more of what you want, releasing what no longer serves you.</em></p>
+
+    <div class="chart-scroll">
+      <table class="tiers">
+        <thead>
+          <tr>
+            <th scope="col" class="freecol-h"><span class="tiername" style="font-size:.95rem;color:var(--ice)">Begin Free</span><span class="tiersub">no cost · no strings</span></th>
+            <th scope="col" class="tierclick" onclick="openCheckout('first-call')">
+              <span class="tiername">The Release</span>
+              <span class="tiersub">one 90-min call</span>
+              <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;rapid&#39;);return false" target="_blank" rel="noopener">your first call — then $333 for follow-ups</a></small></span>
+            </th>
+            <th scope="col" class="tierclick" onclick="openCheckout('journey')">
+              <span class="tiername">The Journey</span>
+              <span class="price">$555<small>one-time session · ~6 hrs</small></span>
+            </th>
+            <th scope="col" class="tierclick" onclick="window.open('https://buy.stripe.com/00w5kv9oi2YR60a7bNgEg0c','_blank')">
+              <span class="tiername">90 Day Breakthrough</span>
+              <span class="price">$2,500/mo × 3<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;bts-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
+            </th>
+            <!-- ASCENT-DEACTIVATED (2026-08-25 — uncomment to reactivate)
+<th scope="col">
+              <span class="tiername">The Ascent</span>
+              <span class="tiersub">4-Month Coaching · after a completed Breakthrough</span>
+              <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
+            </th>
+ASCENT-DEACTIVATED -->
+            <th scope="col" class="feat tierclick" onclick="window.open('https://buy.stripe.com/3cI00b7ga6b374e8fRgEg09','_blank')">
+              <span class="crown">✦ The Complete Work</span>
+              <span class="tiername">The Ascension</span>
+              <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
+              <span class="price">$3,500/mo × 4<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;ascension-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $12,000 — save $2,000</a></small></span>
+            </th>
+            <th scope="col"><span class="tiersub">← Included in each tier</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="freecell" rowspan="3">
+              <span class="fc-t">Alignment Call</span>
+              <span class="fc-s">30 minutes, free — where you are, where you’re headed, and what fits.</span>
+              <a class="btn btn-primary" href="book.html?type=alignment">Book Free Call ✦</a>
+            </td>
+            
+            <td><span class="sigil sr">✚</span></td>
+            <td><span class="sigil sr">✚</span></td><td><span class="sigil sr">✚</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil sr">✚</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil sr">✚</span></td>
+          <td class="rowlabel">Deep release work <small>baggage, limiting beliefs &amp; wounds — cleared before anything else</small></td>
+          </tr>
+          <tr>
+            
+            <td><span class="no">·</span></td>
+            <td><span class="sigil em">🌀</span></td><td><span class="sigil em">🌀</span></td><!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">🌀</span></td>
+          <td class="rowlabel">Past-life regression <small>uncover karmic patterns and core wounds on the unconscious level</small></td>
+          </tr>
+          <tr>
+            
+            <td><span class="no">·</span></td>
+            <td><span class="sigil em">🌀</span></td><td><span class="sigil em">🌀</span></td><!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">🌀</span></td>
+          <td class="rowlabel">Higher source connection <small>channeled guidance, karmic pattern &amp; core wound release work</small></td>
+          </tr>
+          <tr>
+            <td class="freecell" rowspan="4">
+              <span class="fc-t">Monthly Metaphysics</span>
+              <span class="fc-s">Free group call — first Monday, 5:30pm PT.</span>
+              <a class="btn btn-primary" href="register.html">Join the Circle ✦</a>
+            </td>
+            
+            <td><span class="no">·</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">🔥</span></td><!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">🔥</span></td>
+          <td class="rowlabel">Breakthrough Session <small>one 7–10 hour deep-clearing session</small></td>
+          </tr>
+          <tr>
+            
+            <td><span class="no">·</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">🤝</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil">✦</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">🤝</span></td>
+          <td class="rowlabel">Direct access <small>text me between calls; get on a call when it matters</small></td>
+          </tr>
+          <tr>
+            
+            <td><span class="no">·</span></td>
+            <td><span class="no">·</span></td><td><span class="sigil em">📞</span></td><!-- ASCENT-DEACTIVATED <td><span class="no">·</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="no">·</span></td>
+          <td class="rowlabel">Monthly integration follow-ups <small>two 60–90 min calls — 30 &amp; 60 days after</small></td>
+          </tr>
+          <tr>
+            
+            <td><span class="no">·</span></td>
+            <td><span class="no">·</span></td><td><span class="no">·</span></td><!-- ASCENT-DEACTIVATED <td><span class="sigil em">📞</span></td> ASCENT-DEACTIVATED --><td class="feat"><span class="sigil em">📞</span></td>
+          <td class="rowlabel">High Touch Coaching <small>three 60–90 min calls per month × 4 months</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tiers-mobile">
+      <div class="mtier" style="border-color:rgba(125,216,247,.45)">
+        <span class="tiername" style="color:var(--ice)">Begin Free</span>
+        <p style="color:var(--dim);font-size:.9rem;font-style:italic;margin:.5rem 0 .9rem">Alignment Call — 30 minutes, free. Or join Monthly Metaphysics, first Monday 5:30pm PT.</p>
+        <p style="display:flex;gap:.6rem;flex-wrap:wrap"><a class="btn btn-primary" style="font-size:.62rem;padding:.55rem .8rem" href="book.html?type=alignment">Book Free Call ✦</a><a class="btn btn-primary" style="font-size:.62rem;padding:.55rem .8rem" href="register.html">Join the Circle ✦</a></p>
+      </div>
+      <div class="mtier tierclick" onclick="openCheckout('first-call')">
+        <span class="tiername">The Release</span>
+        <span class="tiersub">one 90-min call</span>
+        <span class="price"><span class="was">$333<svg class="zap" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 L38 6 L33 11 L58 3 L53 10 L100 7 L57 13 L62 8 L37 16 L42 11 L0 12 Z"/></svg></span> <b class="now">$99</b><small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;rapid&#39;);return false" target="_blank" rel="noopener">your first call — then $333 for follow-ups</a></small></span>
+        <ul>
+          <li class="sr"><b>Deep release work</b> — baggage, limiting beliefs &amp; wounds, cleared before anything else</li>
+        </ul>
+      </div>
+      <div class="mtier tierclick" onclick="openCheckout('journey')">
+        <span class="tiername">The Journey</span>
+        <span class="price">$555<small>one-time session · ~6 hrs</small></span>
+        <ul>
+          <li>Everything in <b>The Release</b></li>
+        </ul>
+        <div class="plusline">plus</div>
+        <ul>
+          <li class="soul"><b>Past-life regression</b></li>
+          <li class="soul"><b>Higher source connection</b> — channeled guidance &amp; karmic-pattern release</li>
+        </ul>
+      </div>
+      <div class="mtier tierclick" onclick="window.open('https://buy.stripe.com/00w5kv9oi2YR60a7bNgEg0c','_blank')">
+        <span class="tiername">90 Day Breakthrough</span>
+        <span class="price">$2,500/mo × 3<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;bts-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $7,000 — save $500</a></small></span>
+        <ul>
+          <li>Everything in <b>The Release</b> and <b>The Journey</b></li>
+        </ul>
+        <div class="plusline">plus</div>
+        <ul>
+          <li class="fire"><b>Breakthrough Session</b> — one 7–10 hour deep-clearing session</li>
+          <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
+          <li class="call"><b>Monthly integration follow-ups</b> — two 60–90 min calls, 30 &amp; 60 days after</li>
+        </ul>
+      </div>
+      <!-- ASCENT-DEACTIVATED (mobile card — uncomment to reactivate)
+<div class="mtier">
+        <span class="tiername">The Ascent</span>
+        <span class="tiersub">4-Month Coaching · after a completed Breakthrough</span>
+        <span class="price">$1,500/mo<small>re-up monthly after month 4</small></span>
+        <ul>
+          <li class="sr"><b>Deep release work</b> — whatever surfaces, cleared as we go</li>
+          <li class="call"><b>Coaching calls</b> — three 60–90 min calls per month × 4 months</li>
+          <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
+        </ul>
+      </div>
+ASCENT-DEACTIVATED -->
+      <div class="mtier feat tierclick" onclick="window.open('https://buy.stripe.com/3cI00b7ga6b374e8fRgEg09','_blank')">
+        <span class="crown">✦ The Complete Work</span>
+        <span class="tiername">The Ascension</span>
+        <span class="tiersub">Breakthrough + 4-Month Coaching bundle</span>
+        <span class="price">$3,500/mo × 4<small><a class="piflink" href="#" onclick="event.stopPropagation();openCheckout(&#39;ascension-pif&#39;);return false" target="_blank" rel="noopener">or pay in full: $12,000 — save $2,000</a></small></span>
+        <ul>
+          <li>Everything in <b>The Release</b>, <b>The Journey</b> &amp; the <b>90 Day Breakthrough</b></li>
+        </ul>
+        <div class="plusline">plus</div>
+        <ul>
+          <li class="call"><b>High Touch Coaching</b> — three 60–90 min calls per month × 4 months</li>
+          <li><b>Direct access</b> — text between calls; get on a call when it matters</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart-notes">
+      <div><span>✦</span> Never done this work before? Your first Rapid Release call is <span>$99</span> — the doorway.</div>
+      <div><span>✦</span> Coaching opens only after a completed Breakthrough Session — the baggage goes first, so the coaching lands on the real you.</div>
+      <div><span>✦</span> The 90 Day Breakthrough contains the full Journey within it. The Ascension contains everything.</div>
+    </div>
+    <div style="margin-top:3.2rem;text-align:center"><img class="headshot" src="media/photos/nick-headshot.jpg" alt="Nick" loading="lazy"></div>
+    <p style="margin-top:1.4rem;text-align:center"><a class="btn btn-primary" href="book.html?type=alignment">Book A Free Alignment Call</a></p>
+    <p style="margin-top:.7rem;text-align:center;color:var(--dim);font-size:.98rem;font-style:italic">Let's hop on a call and talk through what you're facing — and see if we're a good fit.</p>
+  </div>
+</section>
+
+<!-- ==================== AREAS OF LIFE ==================== -->
+<section class="alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Four Arenas</div>
+    <h2>Areas of Life</h2>
+    <p class="lede">Coaching moves through the arena you choose — with the tools to clear whatever surfaces along the way.</p>
+    <div class="areas">
+      <div class="area" style="--el:var(--stardust)">
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><linearGradient id="gEarth" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="rgba(203,164,117,.62)"/><stop offset="55%" stop-color="rgba(166,124,82,.34)"/><stop offset="100%" stop-color="rgba(130,92,56,.10)"/></linearGradient></defs>
+<rect x="16" y="16" width="88" height="88" rx="10" fill="url(#gEarth)"/>
+<text class="ic" x="60" y="76" text-anchor="middle">💸</text></svg></div>
+        <h3>Wealth &amp; Abundance</h3>
+        <p>Built for entrepreneurs, coaches, and productive individuals ready to move without the invisible brakes on.</p>
+      </div>
+      <div class="area" style="--el:var(--fire)">
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><linearGradient id="gFire" x1="0" y1="1" x2="0" y2="0">
+<stop offset="0%" stop-color="rgba(210,45,25,.55)"/><stop offset="55%" stop-color="rgba(255,95,50,.32)"/><stop offset="100%" stop-color="rgba(255,150,80,.10)"/></linearGradient></defs>
+<polygon points="60,10 110,106 10,106" fill="url(#gFire)"/>
+<text class="ic" x="60" y="94" text-anchor="middle">🔥</text></svg></div>
+        <h3>Physical Health &amp; Self-Image</h3>
+        <p>Remove the limiting beliefs and the negative view of yourself and your body. Install unconscious behaviors that make eating healthy and being active the attractive choice.</p>
+      </div>
+      <div class="area" style="--el:var(--ice)">
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><radialGradient id="gAir" cx="50%" cy="42%" r="65%">
+<stop offset="0%" stop-color="rgba(215,230,245,.62)"/><stop offset="60%" stop-color="rgba(175,200,230,.30)"/><stop offset="100%" stop-color="rgba(150,180,220,.08)"/></radialGradient></defs>
+<circle cx="60" cy="60" r="48" fill="url(#gAir)"/>
+<text class="ic" x="60" y="76" text-anchor="middle">💭</text></svg></div>
+        <h3>Mental &amp; Self-Talk</h3>
+        <p>End the arguments in your head when things get quiet. Catch it, call it out, remove it.</p>
+      </div>
+      <div class="area" style="--el:var(--storm)">
+        <div class="el-sym" aria-hidden="true"><svg viewBox="0 0 120 120">
+<defs><linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="rgba(70,130,220,.18)"/><stop offset="55%" stop-color="rgba(40,90,185,.42)"/><stop offset="100%" stop-color="rgba(18,45,120,.65)"/></linearGradient></defs>
+<path fill="url(#gWater)" d="M10,50 A50,50 0 0 0 110,50 A50,58 0 0 1 10,50 Z"/>
+<text class="ic" x="60" y="70" text-anchor="middle">🧘</text></svg></div>
+        <h3>Spirituality &amp; Higher Purpose</h3>
+        <p>Deepen the connection, find the thread of purpose, and walk it with both feet on the ground.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ==================== TRUSTED ALLIES ==================== -->
+<section class="alt" id="constellation">
+  <div class="wrap reveal">
+    <div class="eyebrow">Trusted Allies</div>
+    <p class="lede">This work doesn't live alone — these are the teachers I learn with, and <b>send my people to</b>.</p>
+    <div class="allylist">
+      <div class="star-card ally">
+        <div class="portrait" data-portrait="media/portraits/patrick.mp4"></div>
+        <div class="who">Kumu of Huna · Teacher of Hoʻomana</div>
+        <h3>Dr. Patrick Scott</h3>
+        <p>My Kumu. A teacher of energy work carrying an unbroken Hawaiian lineage, and a clinician whose practice serves tens of thousands in Las Vegas, NV. He teaches Huna, also called Ho'omana, in Hawaii and across the nation. Also known for his profoundly attuned psychic abilities.</p>
+        <div class="offers">
+          <a class="offer" href="https://store.drpatrickscott.com/product-details/product/6941c5bb620b5c5e606ca002" target="_blank" rel="noopener">Hawaiian Negative Emotions Release</a>
+          <a class="offer" href="https://store.drpatrickscott.com/product-details/product/6a8936d832d4e69ff9d8920b" target="_blank" rel="noopener">Realm Travels &amp; Psychic Development</a>
+          <a class="offer" href="https://store.drpatrickscott.com/product-details/product/696e5757397b506e1c2a4df1" target="_blank" rel="noopener">Huna Level 1</a>
+        </div>
+      </div>
+      <div class="star-card ally">
+        <div class="portrait" data-portrait="media/portraits/valen.mp4"></div>
+        <div class="who">Energy Worker · Alaka'i</div>
+        <h3>Valen Bishop</h3>
+        <p>An Alaka'i of Huna who has taught in Hawaii, and a great doorway into the fundamentals of energy work. Working with Valen, begin to feel energy move through yourself and initiate the deepening of your practice.</p>
+        <!-- HIDDEN 2026-09-05: Valen class signup buttons temporarily removed at Nick's request.
+             To restore, delete this comment wrapper (the two links below are unchanged).
+        <div class="offers">
+          <a class="offer" href="https://us06web.zoom.us/meeting/register/64S1zXoQQLee9SEGu0eRMA#/registration" target="_blank" rel="noopener">Free Monthly Intro to Energetic Refinement Call</a>
+          <a class="offer" href="https://www.mindsetalchemy.co/energetic-refinement" target="_blank" rel="noopener">Explore Energetic Refinement</a>
+        </div>
+        -->
+      </div>
+      <div class="star-card ally">
+        <div class="portrait" data-portrait="media/portraits/lisset.mp4"></div>
+        <div class="who">Emotional Ninja</div>
+        <h3>Lisset King</h3>
+        <p>Among many things, she opens the path for newcomers and holds the space where the lineage's tools become second nature. She also hosts a weekly morning call to calibrate for the upcoming week with entrepreneurs, coaches, and many others focused on bettering themselves.</p>
+        <div class="offers">
+          <a class="offer" href="https://www.masterymornings.com/mastery-mornings-membership" target="_blank" rel="noopener">Free Weekly Mastery Mornings Call</a>
+          <a class="offer" href="https://www.lissetking.com/huna" target="_blank" rel="noopener">Intro to Huna</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-sigil">✦ ✧ ✦</div>
+    <p class="disclaimer">Sessions and classes are spiritual and personal-growth work. Nothing here diagnoses, treats, cures, or prevents any condition, and nothing here is medical, psychological, financial, or legal advice. People report profound experiences — you remain, always, at choice.</p>
+    <div class="fineprint">© 2026 · THE METAPHYSICAL GATEWAY</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   LIVING GALAXY — canvas starfield + drifting nebulae
+   Tuned for performance: capped counts, DPR-aware, pauses when
+   hidden, honors prefers-reduced-motion.
+   ============================================================ */
+(function(){
+  const c=document.getElementById('cosmos'),x=c.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,stars=[],nebulae=[],dust=[],t=0,raf;
+  const DPR=Math.min(devicePixelRatio||1,2);
+  function size(){
+    W=innerWidth;H=innerHeight;
+    c.width=W*DPR;c.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);
+    seed();
+  }
+  function seed(){
+    const n=Math.min(240,Math.floor(W*H/9000));
+    stars=Array.from({length:n},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.3+.2,
+      tw:Math.random()*Math.PI*2,
+      sp:.15+Math.random()*.5,
+      hue:[260,220,200,45,190,15,140][Math.floor(Math.random()*7)]
+    }));
+    const cols=[[157,107,255],[64,156,255],[40,220,255],[255,70,30],[240,201,135],[70,230,140]];
+    nebulae=Array.from({length:6},(_,i)=>({
+      x:Math.random()*W,y:Math.random()*H,
+      r:Math.min(W,H)*(.35+Math.random()*.3),
+      col:cols[i%cols.length],
+      dx:(Math.random()-.5)*.06,dy:(Math.random()-.5)*.04,
+      a:.08+Math.random()*.06
+    }));
+    dust=Array.from({length:Math.min(70,Math.floor(W/16))},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.12,vy:-(.05+Math.random()*.14),
+      r:Math.random()*1+.3,a:.1+Math.random()*.25
+    }));
+  }
+  function frame(){
+    t+=.016;
+    x.fillStyle='#050310';x.fillRect(0,0,W,H);
+    /* nebulae */
+    for(const n of nebulae){
+      n.x+=n.dx;n.y+=n.dy;
+      if(n.x<-n.r)n.x=W+n.r;if(n.x>W+n.r)n.x=-n.r;
+      if(n.y<-n.r)n.y=H+n.r;if(n.y>H+n.r)n.y=-n.r;
+      const g=x.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+      g.addColorStop(0,`rgba(${n.col[0]},${n.col[1]},${n.col[2]},${n.a})`);
+      g.addColorStop(1,'rgba(5,3,16,0)');
+      x.fillStyle=g;x.fillRect(n.x-n.r,n.y-n.r,n.r*2,n.r*2);
+    }
+    /* stars */
+    for(const s of stars){
+      const tw=.55+.45*Math.sin(t*s.sp*2+s.tw);
+      x.fillStyle=`hsla(${s.hue},80%,85%,${tw})`;
+      x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill();
+    }
+    /* rising stardust */
+    for(const d of dust){
+      d.x+=d.vx;d.y+=d.vy;
+      if(d.y<-4){d.y=H+4;d.x=Math.random()*W}
+      x.fillStyle=`rgba(240,201,135,${d.a*(.6+.4*Math.sin(t+d.x))})`;
+      x.beginPath();x.arc(d.x,d.y,d.r,0,7);x.fill();
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  size();addEventListener('resize',size);
+  if(reduce){ t=1; frameOnce(); function frameOnce(){x.fillStyle='#050310';x.fillRect(0,0,W,H);
+    for(const n of nebulae){const g=x.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+      g.addColorStop(0,`rgba(${n.col[0]},${n.col[1]},${n.col[2]},${n.a})`);g.addColorStop(1,'rgba(5,3,16,0)');
+      x.fillStyle=g;x.fillRect(n.x-n.r,n.y-n.r,n.r*2,n.r*2);}
+    for(const s of stars){x.fillStyle=`hsla(${s.hue},80%,85%,.7)`;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill();}}
+  } else {
+    frame();
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden)cancelAnimationFrame(raf);else frame();
+    });
+  }
+})();
+
+/* ---------- hybrid hero video: activates only if a src is set AND loads fast ---------- */
+(function(){
+  const v=document.getElementById('herovideo');
+  const src=v.getAttribute('data-src');
+  if(!src)return;
+  const timer=setTimeout(()=>{v.removeAttribute('src');v.load();},4000); // slow network → stay on canvas
+  v.addEventListener('canplaythrough',()=>{clearTimeout(timer);v.classList.add('live');v.play().catch(()=>{});},{once:true});
+  v.src=src;
+})();
+
+/* ---------- scroll reveals ---------- */
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+
+
+/* ---------- living portraits: dormant until clips are uploaded ---------- */
+(function(){
+  document.querySelectorAll('.portrait[data-portrait]').forEach(function(el){
+    var s = el.getAttribute('data-portrait');
+    fetch(s, {method:'HEAD'}).then(function(r){
+      if(!r.ok) return;
+      var v = document.createElement('video');
+      v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = s;
+      el.appendChild(v); el.classList.add('live');
+      var play = function(){ try{ v.currentTime = 0; v.play(); }catch(e){} };
+      el.addEventListener('mouseenter', play);
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ play(); io.unobserve(e.target); } }); }, {threshold:.6});
+      io.observe(el);
+    }).catch(function(){});
+  });
+})();
+
+/* ---------- mobile: collapse brand row on scroll, keep menu frozen ---------- */
+(function(){
+  var n = document.querySelector('.topnav'); if(!n) return;
+  var on = function(){ if(window.scrollY > 70){ n.classList.add('shrunk'); } else { n.classList.remove('shrunk'); } };
+  window.addEventListener('scroll', on, {passive:true}); on();
+})();
+
+/* ---------- dark/light toggle (no reload) ---------- */
+(function(){
+  try{ if(localStorage.getItem('tmg-theme')==='light') document.documentElement.setAttribute('data-theme','light'); }catch(e){}
+  var b=document.getElementById('themeToggle'); if(!b) return;
+  function label(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? '◑ dark' : '◐ light'; }
+  b.addEventListener('click',function(){
+    var l = document.documentElement.getAttribute('data-theme')==='light';
+    if(l){ document.documentElement.removeAttribute('data-theme'); } else { document.documentElement.setAttribute('data-theme','light'); }
+    try{ localStorage.setItem('tmg-theme', l?'dark':'light'); }catch(e){}
+    label();
+  });
+  label();
+})();
+</script>
+<div id="coOverlay" role="dialog" aria-modal="true">
+  <div id="coPanel">
+    <div id="coHead"><span class="t">✦ Secure Checkout · Stripe</span><button id="coClose" aria-label="Close">✕</button></div>
+    <div id="coMsg">Opening secure checkout…</div>
+    <div id="coMount"></div>
+  </div>
+</div>
+<script>
+var CO_API='https://64-181-232-186.nip.io/webhook/gateway-checkout-49f2b7';
+var CO_PK='pk_live_51TNDUt0SXGAfXpoK8dwaSWIwOLhKlUqcMJlvFvZTQ2WnzRJbYwNtsOExhBiNq5ztBly2mcIUwhc81peZ2nLLOLIq00mdNKNMbQ';
+var CO_FALLBACK={'first-call':'https://buy.stripe.com/14A9ALgQK8jb60agMngEg04','rapid':'https://buy.stripe.com/cNidR19oi7f74W6bs3gEg05','journey':'https://buy.stripe.com/bJe6oz9oifLD88idAbgEg06','bts-pif':'https://buy.stripe.com/8x28wHgQK2YRcoy8fRgEg0b','ascension-pif':'https://buy.stripe.com/9B628jeICdDvagqbs3gEg08'};
+var coInstance=null, coStripe=null;
+function coFallback(product){
+  document.getElementById('coMsg').innerHTML='Checkout is taking a moment — <a href="'+CO_FALLBACK[product]+'" target="_blank" rel="noopener">pay securely here instead</a>.';
+  document.getElementById('coMsg').style.display='';
+}
+function coCleanup(){
+  if(coInstance){ try{coInstance.destroy();}catch(e){} coInstance=null; }
+  document.getElementById('coMount').innerHTML='';
+  document.getElementById('coOverlay').style.display='none';
+  document.body.style.overflow='';
+}
+function openCheckout(product){
+  var ov=document.getElementById('coOverlay');
+  ov.style.display='flex'; document.body.style.overflow='hidden';
+  document.getElementById('coMsg').textContent='Opening secure checkout…';
+  document.getElementById('coMsg').style.display='';
+  function start(){
+    if(!coStripe) coStripe=Stripe(CO_PK);
+    fetch(CO_API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({product:product,qty:1})})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(!j.ok||!j.client_secret){ coFallback(product); return; }
+        return coStripe.initEmbeddedCheckout({clientSecret:j.client_secret}).then(function(co){
+          coInstance=co;
+          document.getElementById('coMsg').style.display='none';
+          co.mount('#coMount');
+        });
+      })
+      .catch(function(){ coFallback(product); });
+  }
+  if(window.Stripe){ start(); }
+  else{
+    var sc=document.createElement('script'); sc.src='https://js.stripe.com/v3/';
+    sc.onload=start; sc.onerror=function(){ coFallback(product); };
+    document.head.appendChild(sc);
+  }
+}
+document.getElementById('coClose').addEventListener('click', coCleanup);
+document.getElementById('coOverlay').addEventListener('click', function(e){ if(e.target===this) coCleanup(); });
+</script>
+
+<script>
+/* ---------- offerings dropdown ---------- */
+(function(){
+  var d=document.querySelector('.navdrop'); if(!d) return;
+  var b=d.querySelector('.dropbtn');
+  function close(){d.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=d.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){ if(!d.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+</body>
+</html>
+
+<!-- build-bump 20260826a -->
