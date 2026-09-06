@@ -390,6 +390,23 @@ html[data-theme="light"] .themebtn:hover{background:linear-gradient(120deg,#2c12
 .topnav .navlinks a.tmg-filling{color:var(--chip-ink)!important;border-color:var(--chip-edge)!important;box-shadow:0 0 20px -4px var(--chip-glow),0 0 0 1px rgba(240,201,135,.12)}
 .navlinks a.tmg-filling::after{transform:scaleX(1)}
 .navlinks a.tmg-filling::before{opacity:0}
+
+/* 5. mobile: one chip row, brand above, toggle inline at the end */
+@media (max-width:760px){
+  .topnav .navwrap{flex-wrap:wrap;justify-content:center;gap:.4rem .3rem;padding:.5rem .45rem .55rem}
+  .navbrand{order:1;flex:0 0 100%;text-align:center;font-size:.68rem;letter-spacing:.13em}
+  .navlinks{order:2;flex:0 1 auto;flex-wrap:nowrap;gap:.26rem;align-items:stretch;justify-content:center}
+  .navlinks a,.navdrop>.dropbtn{
+    font-size:.56rem;letter-spacing:.04em;padding:0 .5rem;height:38px;min-height:38px;
+    display:inline-flex;align-items:center;justify-content:center;text-align:center;
+    white-space:normal;line-height:1.15;border-radius:3px;
+  }
+  .navdrop,.navdrop>.dropbtn{height:38px}
+  .navdrop>.dropbtn{white-space:nowrap;gap:.25rem}
+  .topnav .themebtn{order:3;flex:0 0 38px;width:38px;height:38px;min-height:38px;padding:0;margin-left:.3rem;border-radius:50%;font-size:.95rem;letter-spacing:0;display:inline-flex;align-items:center;justify-content:center}
+  .themebtn .tw{display:none}
+  .dropmenu a{height:auto;min-height:38px;white-space:nowrap;font-size:.62rem}
+}
 </style>
 </head>
 <body>
@@ -625,7 +642,7 @@ document.querySelectorAll('[data-signup]').forEach(el=>el.addEventListener('clic
 (function(){
   try{ if(localStorage.getItem('tmg-theme')==='light') document.documentElement.setAttribute('data-theme','light'); }catch(e){}
   var b=document.getElementById('themeToggle'); if(!b) return;
-  function label(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? '◑ dark' : '◐ light'; }
+  function label(){ var l = document.documentElement.getAttribute('data-theme')==='light'; b.innerHTML = l ? '◑ <span class="tw">dark</span>' : '◐ <span class="tw">light</span>'; }
   b.addEventListener('click',function(){
     var l = document.documentElement.getAttribute('data-theme')==='light';
     if(l){ document.documentElement.removeAttribute('data-theme'); } else { document.documentElement.setAttribute('data-theme','light'); }
