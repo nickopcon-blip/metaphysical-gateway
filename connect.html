@@ -8,7 +8,7 @@
 <meta name="description" content="Book an alignment call or send a message. Expand your awareness. Master your energy. Build your reality.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Philosopher:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&display=swap">
 <style>
 :root{
   --void:#050310; --deep:#0d0722; --ink:#ece9f7; --dim:#9b93b8; --faint:#5d5480;
@@ -133,6 +133,55 @@ html[data-theme="light"] .navlinks a.physical{color:#dff4ff;background:rgba(11,7
 html[data-theme="light"] .navdrop>.dropbtn{color:#fff}
 html[data-theme="light"] .navdrop>.dropbtn:hover,html[data-theme="light"] .navdrop.open>.dropbtn,html[data-theme="light"] .navdrop>.dropbtn.active{color:#f0c987}
 @media (max-width:760px){.navdrop>.dropbtn{font-size:.55rem;letter-spacing:.06em;padding:.3rem .5rem}.dropmenu{min-width:11rem}}
+
+/* ============================================================
+   2026-09-06 — sacred type pass + light-mode legibility
+   ============================================================ */
+/* 1. no more techy monospace anywhere: the label face becomes Philosopher,
+      and the top nav takes the Marcellus display face of the wordmark. */
+:root{--mono:'Philosopher','Trebuchet MS',sans-serif}
+html[data-theme="light"]{--mono:'Philosopher','Trebuchet MS',sans-serif}
+.navbrand,.navlinks a,.navdrop>.dropbtn{font-family:var(--display),Georgia,serif}
+.navlinks a,.navdrop>.dropbtn{font-size:.75rem;letter-spacing:.17em;font-weight:400}
+.themebtn{font-family:var(--accent);font-size:.52rem;letter-spacing:.1em;font-weight:700}
+.eyebrow{font-size:.82rem;letter-spacing:.26em}
+.btn{font-size:.9rem;letter-spacing:.13em}
+.scrollcue{font-size:.75rem;letter-spacing:.28em}
+.fineprint{font-size:.78rem;letter-spacing:.14em}
+.star-card .who{font-size:.76rem;letter-spacing:.2em}
+.crown{font-size:.7rem;letter-spacing:.26em}
+.plusline{font-size:.72rem;letter-spacing:.3em}
+.topic{font-size:.82rem;letter-spacing:.04em}
+.offer{font-size:.8rem;letter-spacing:.06em}
+.monday .free{font-size:.84rem;letter-spacing:.26em}
+@media (max-width:760px){.navlinks a,.navdrop>.dropbtn{font-size:.64rem;letter-spacing:.08em;padding:.32rem .6rem}}
+
+/* 2. light mode — darker ink across the board */
+html[data-theme="light"]{
+  --ink:#191233; --dim:#3b3560; --faint:#5b547e;
+  --arcane:#5a2fbd; --stardust:#7a5a10; --ice:#0a5f82; --storm:#4f2aa8;
+  --fire:#a8410a; --air:#186340;
+}
+html[data-theme="light"] .price .now{color:#0a5f82}
+html[data-theme="light"] .price .was .zap path{fill:#0a5f82}
+html[data-theme="light"] .tbtn{color:#0a5f82;border-color:rgba(10,95,130,.5)}
+html[data-theme="light"] .no{color:#b7b0cf}
+html[data-theme="light"] .disclaimer{color:#413a63}
+html[data-theme="light"] .topic{border-color:rgba(90,47,189,.35)}
+
+/* 3. light mode — legible nav chips (dark ink on white, not white on grey) */
+html[data-theme="light"] .navbrand{color:#191233}
+html[data-theme="light"] .navlinks a,
+html[data-theme="light"] .navdrop>.dropbtn{color:#2a2049;background:rgba(255,255,255,.94);border-color:rgba(107,63,212,.42)}
+html[data-theme="light"] .navlinks a:hover,
+html[data-theme="light"] .navlinks a.active,
+html[data-theme="light"] .navdrop>.dropbtn:hover,
+html[data-theme="light"] .navdrop.open>.dropbtn,
+html[data-theme="light"] .navdrop>.dropbtn.active{color:#4d24a8;background:rgba(107,63,212,.12);border-color:rgba(107,63,212,.75)}
+html[data-theme="light"] .navlinks a.physical{color:#0a5266;background:rgba(255,255,255,.94);border-color:rgba(14,123,166,.55)}
+html[data-theme="light"] .navlinks a.physical:hover,
+html[data-theme="light"] .navlinks a.physical.active{color:#07404f;background:rgba(14,123,166,.14);border-color:rgba(14,123,166,.85)}
+html[data-theme="light"] .dropmenu{background:rgba(255,255,255,.99);border-color:rgba(107,63,212,.3);box-shadow:0 18px 40px rgba(55,35,110,.18)}
 </style>
 </head>
 <body>
