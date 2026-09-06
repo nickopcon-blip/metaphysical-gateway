@@ -170,19 +170,38 @@ html[data-theme="light"] .calnav{color:#241d3d;border-color:rgba(107,63,212,.4)}
 .navlinks a.physical:hover{color:#bfe9ff;border-color:rgba(125,216,247,.8)}
 .navlinks a.physical.active{color:#bfe9ff;border-color:rgba(125,216,247,.9);background:rgba(125,216,247,.12)}
 html[data-theme="light"] .navlinks a.physical{color:#dff4ff;background:rgba(11,77,102,.85);border-color:rgba(14,123,166,.5)}
+
+/* ---------- offerings dropdown (added 2026-09-05) ---------- */
+.navdrop{position:relative;display:inline-block}
+.navdrop>.dropbtn{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);cursor:pointer;padding:.45rem .95rem;border:1px solid rgba(157,107,255,.45);background:rgba(13,7,34,.55);border-radius:2rem;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;line-height:1.45}
+.navdrop>.dropbtn:hover,.navdrop.open>.dropbtn{color:var(--stardust);border-color:rgba(240,201,135,.5)}
+.navdrop>.dropbtn.active{color:var(--stardust);border-color:rgba(240,201,135,.65);background:rgba(240,201,135,.08)}
+.navdrop .caret{font-size:.58rem;transition:transform .25s}
+.navdrop.open .caret{transform:rotate(180deg)}
+.dropmenu{position:absolute;top:calc(100% + .5rem);left:50%;transform:translateX(-50%) translateY(-.4rem);min-width:12.5rem;display:flex;flex-direction:column;gap:.45rem;padding:.6rem;background:rgba(9,5,23,.97);border:1px solid rgba(157,107,255,.35);border-radius:.95rem;box-shadow:0 18px 40px rgba(0,0,0,.55);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:80}
+.navdrop.open .dropmenu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropmenu a{display:block;text-align:center;white-space:nowrap}
+html[data-theme="light"] .navdrop>.dropbtn{color:#fff}
+html[data-theme="light"] .navdrop>.dropbtn:hover,html[data-theme="light"] .navdrop.open>.dropbtn,html[data-theme="light"] .navdrop>.dropbtn.active{color:#f0c987}
+@media (max-width:760px){.navdrop>.dropbtn{font-size:.55rem;letter-spacing:.06em;padding:.3rem .5rem}.dropmenu{min-width:11rem}}
 </style>
 </head>
 <body>
 <nav class="topnav" aria-label="Site">
   <div class="navwrap">
-    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">◐ light</button>
-    <a class="navbrand" href="index.html"><span class="nb">✦</span>THE METAPHYSICAL GATEWAY</a>
+    <button class="themebtn" id="themeToggle" aria-label="Toggle light or dark mode">&#9680; light</button>
+    <a class="navbrand" href="index.html"><span class="nb-sigil">&#10022;</span>THE METAPHYSICAL GATEWAY</a>
     <div class="navlinks">
-      <a href="index.html">The Path</a>
-      <a href="metaphysical-monday.html">Monthly Metaphysics</a>
+      <a href="index.html">Monthly Metaphysics</a>
+      <div class="navdrop">
+        <button type="button" class="dropbtn" aria-expanded="false" aria-haspopup="true">Offerings <span class="caret">&#9662;</span></button>
+        <div class="dropmenu" role="menu">
+          <a href="going-deeper.html" role="menuitem">Going Deeper</a>
+          <a href="ai-coaching.html" class="physical" role="menuitem">The Physical</a>
+        </div>
+      </div>
       <a href="trusted-allies.html">Trusted Allies</a>
       <a href="connect.html">Connect</a>
-      <a href="ai-coaching.html" class="physical">The Physical</a>
     </div>
   </div>
 </nav>
@@ -408,6 +427,22 @@ html[data-theme="light"] .navlinks a.physical{color:#dff4ff;background:rgba(11,7
     label();
   });
   label();
+})();
+</script>
+
+<script>
+/* ---------- offerings dropdown ---------- */
+(function(){
+  var d=document.querySelector('.navdrop'); if(!d) return;
+  var b=d.querySelector('.dropbtn');
+  function close(){d.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=d.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){ if(!d.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
 })();
 </script>
 </body>
